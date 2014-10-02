@@ -1,8 +1,15 @@
 package com.nincodedo.nincraftythings;
 
+import net.minecraft.item.crafting.RecipesArmor;
+
+import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
+import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
+import com.nincodedo.nincraftythings.utility.LogHelper;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -20,16 +27,22 @@ public class NincraftyThings {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+		ModItems.init();
+		
+		LogHelper.info("Pre Init Complete");
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-
+		Recipes.init();
+		LogHelper.info("Init Complete");
 	}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 
+		LogHelper.info("Post Init Complete");
 	}
 }
