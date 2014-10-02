@@ -30,7 +30,7 @@ public class NincraftyThings {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		ModItems.init();
-		
+
 		LogHelper.info("Pre Init Complete");
 	}
 

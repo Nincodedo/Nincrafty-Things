@@ -27,8 +27,8 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadConfiguration() {
-		
-		//Create configs here
+
+		// Create configs here
 
 		if (configuration.hasChanged()) {
 			configuration.save();

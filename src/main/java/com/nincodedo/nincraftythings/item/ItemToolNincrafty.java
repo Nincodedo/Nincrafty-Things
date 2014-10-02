@@ -13,14 +13,14 @@ import net.minecraft.item.ItemTool;
 
 public class ItemToolNincrafty extends ItemTool {
 
-	protected ItemToolNincrafty(float damageVsEntity, ToolMaterial toolMaterial,
-			Set blocksEffectiveAgainst) {
+	protected ItemToolNincrafty(float damageVsEntity,
+			ToolMaterial toolMaterial, Set blocksEffectiveAgainst) {
 		super(damageVsEntity, toolMaterial, blocksEffectiveAgainst);
 		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 		this.setNoRepair();
 		this.maxStackSize = 1;
 	}
-	
+
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",

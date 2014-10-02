@@ -28,24 +28,40 @@ public class ItemNincodiumPickaxe extends ItemToolNincrafty {
 		super(2f, Material.Tools.NINCODIUM, blocksEffectiveAgainst);
 		this.setUnlocalizedName("nincodiumPickaxe");
 	}
-	
-	//Not totally sure what these do, taken from EE3 source
-	@Override
-    public boolean func_150897_b(Block block)
-    {
-        return block == Blocks.obsidian ? this.toolMaterial.getHarvestLevel() == 3 : (block != Blocks.diamond_block && block != Blocks.diamond_ore ? (block != Blocks.emerald_ore && block != Blocks.emerald_block ? (block != Blocks.gold_block && block != Blocks.gold_ore ? (block != Blocks.iron_block && block != Blocks.iron_ore ? (block != Blocks.lapis_block && block != Blocks.lapis_ore ? (block != Blocks.redstone_ore && block != Blocks.lit_redstone_ore ? (block.getMaterial() == net.minecraft.block.material.Material.rock || (block.getMaterial() == net.minecraft.block.material.Material.iron || block.getMaterial() == net.minecraft.block.material.Material.anvil)) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 1) : this.toolMaterial.getHarvestLevel() >= 1) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 2);
-    }
 
-	//Not totally sure what these do, taken from EE3 source
-    @Override
-    public float func_150893_a(ItemStack itemStack, Block block)
-    {
-        return block.getMaterial() != net.minecraft.block.material.Material.iron && block.getMaterial() != net.minecraft.block.material.Material.anvil && block.getMaterial() != net.minecraft.block.material.Material.rock ? super.func_150893_a(itemStack, block) : this.efficiencyOnProperMaterial;
-    }
-    
-    @Override
-    public Set<String> getToolClasses(ItemStack itemStack)
-    {
-        return ImmutableSet.of("pickaxe");
-    }
+	// Not totally sure what these do, taken from EE3 source
+	@Override
+	public boolean func_150897_b(Block block) {
+		return block == Blocks.obsidian ? this.toolMaterial.getHarvestLevel() == 3
+				: (block != Blocks.diamond_block && block != Blocks.diamond_ore ? (block != Blocks.emerald_ore
+						&& block != Blocks.emerald_block ? (block != Blocks.gold_block
+						&& block != Blocks.gold_ore ? (block != Blocks.iron_block
+						&& block != Blocks.iron_ore ? (block != Blocks.lapis_block
+						&& block != Blocks.lapis_ore ? (block != Blocks.redstone_ore
+						&& block != Blocks.lit_redstone_ore ? (block
+						.getMaterial() == net.minecraft.block.material.Material.rock || (block
+						.getMaterial() == net.minecraft.block.material.Material.iron || block
+						.getMaterial() == net.minecraft.block.material.Material.anvil))
+						: this.toolMaterial.getHarvestLevel() >= 2)
+						: this.toolMaterial.getHarvestLevel() >= 1)
+						: this.toolMaterial.getHarvestLevel() >= 1)
+						: this.toolMaterial.getHarvestLevel() >= 2)
+						: this.toolMaterial.getHarvestLevel() >= 2)
+						: this.toolMaterial.getHarvestLevel() >= 2);
+	}
+
+	// Not totally sure what these do, taken from EE3 source
+	@Override
+	public float func_150893_a(ItemStack itemStack, Block block) {
+		return block.getMaterial() != net.minecraft.block.material.Material.iron
+				&& block.getMaterial() != net.minecraft.block.material.Material.anvil
+				&& block.getMaterial() != net.minecraft.block.material.Material.rock ? super
+				.func_150893_a(itemStack, block)
+				: this.efficiencyOnProperMaterial;
+	}
+
+	@Override
+	public Set<String> getToolClasses(ItemStack itemStack) {
+		return ImmutableSet.of("pickaxe");
+	}
 }
