@@ -17,4 +17,11 @@ public class ItemNincodiumPickaxe extends ItemPickaxeNincrafty {
 		super(Material.Tools.NINCODIUM);
 		this.setUnlocalizedName("nincodiumPickaxe");
 	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2)
+    {
+        return this.toolMaterial.func_150995_f() == itemStack2.getItem() ? true : super.getIsRepairable(itemStack1, itemStack2);
+    }
+	
 }
