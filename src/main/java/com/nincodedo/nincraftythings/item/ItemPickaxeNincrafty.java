@@ -14,7 +14,6 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 	protected ItemPickaxeNincrafty(ToolMaterial toolMaterial) {
 		super(toolMaterial);
 		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-		this.setNoRepair();
 		this.maxStackSize = 1;
 	}
 	
