@@ -15,7 +15,6 @@ public class ItemNincodiumPickaxe extends ItemPickaxeNincrafty {
 
 	public ItemNincodiumPickaxe() {
 		super(Material.Tools.NINCODIUM);
-		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 		this.setUnlocalizedName("nincodiumPickaxe");
 	}
 }

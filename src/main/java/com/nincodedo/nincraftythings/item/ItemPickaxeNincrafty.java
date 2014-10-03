@@ -1,5 +1,6 @@
 package com.nincodedo.nincraftythings.item;
 
+import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -12,6 +13,9 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 
 	protected ItemPickaxeNincrafty(ToolMaterial toolMaterial) {
 		super(toolMaterial);
+		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
+		this.setNoRepair();
+		this.maxStackSize = 1;
 	}
 	
 	@Override
