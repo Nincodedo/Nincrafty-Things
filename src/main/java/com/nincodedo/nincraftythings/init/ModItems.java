@@ -4,7 +4,6 @@ import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
 import com.nincodedo.nincraftythings.item.ItemNincodiumPickaxe;
 import com.nincodedo.nincraftythings.item.ItemNincrafty;
 import com.nincodedo.nincraftythings.item.ItemPickaxeNincrafty;
-import com.nincodedo.nincraftythings.item.ItemToolNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.common.registry.GameRegistry;

@@ -1,7 +1,5 @@
 package com.nincodedo.nincraftythings;
 
-import net.minecraft.item.crafting.RecipesArmor;
-
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;

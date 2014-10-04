@@ -2,14 +2,15 @@ package com.nincodedo.nincraftythings.item;
 
 import java.util.Set;
 
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
+
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 
 public class ItemToolNincrafty extends ItemTool {
 
