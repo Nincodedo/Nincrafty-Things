@@ -1,4 +1,4 @@
-package com.nincodedo.nincraftythings.item;
+package com.nincodedo.nincraftythings.tool;
 
 import java.util.Set;
 

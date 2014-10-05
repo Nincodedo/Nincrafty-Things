@@ -1,10 +1,10 @@
 package com.nincodedo.nincraftythings.init;
 
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
-import com.nincodedo.nincraftythings.item.ItemNincodiumPickaxe;
 import com.nincodedo.nincraftythings.item.ItemNincrafty;
-import com.nincodedo.nincraftythings.item.ItemPickaxeNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
+import com.nincodedo.nincraftythings.tool.ItemNincodiumPickaxe;
+import com.nincodedo.nincraftythings.tool.ItemPickaxeNincrafty;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 

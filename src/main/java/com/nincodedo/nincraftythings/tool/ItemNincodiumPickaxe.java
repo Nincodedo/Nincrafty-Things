@@ -1,15 +1,16 @@
-package com.nincodedo.nincraftythings.item;
+package com.nincodedo.nincraftythings.tool;
 
 import net.minecraft.item.ItemStack;
 
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Material;
+import com.nincodedo.nincraftythings.reference.Names;
 
 public class ItemNincodiumPickaxe extends ItemPickaxeNincrafty {
 
 	public ItemNincodiumPickaxe() {
 		super(Material.Tools.NINCODIUM);
-		this.setUnlocalizedName("nincodiumPickaxe");
+		this.setUnlocalizedName(Names.Tools.NINCODIUM_PICKAXE);
 		this.setRepairIngot(ModItems.nincodiumIngot);
 	}
 	
