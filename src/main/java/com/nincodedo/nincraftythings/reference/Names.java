@@ -9,5 +9,9 @@ public class Names {
 	}
 	public static final class Items{
 		public static final String NINCODIUM_INGOT = "nincodiumIngot";
+		public static final String NINCODIUM_HELMET = "nincodiumHelmet";
+		public static final String NINCODIUM_CHESTPLATE = "nincodiumChestplate";
+		public static final String NINCODIUM_LEGGINGS = "nincodiumLeggings";
+		public static final String NINCODIUM_BOOTS = "nincodiumBoots";
 	}
 }
