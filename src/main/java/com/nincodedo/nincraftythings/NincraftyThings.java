@@ -1,7 +1,5 @@
 package com.nincodedo.nincraftythings;
 
-import net.minecraft.item.crafting.RecipesArmor;
-
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
@@ -16,7 +14,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION,guiFactory=Reference.GUI_FACTORY_CLASS)
 public class NincraftyThings {
 
 	@Mod.Instance(Reference.MOD_ID)

@@ -2,11 +2,15 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.io.File;
 
-import com.nincodedo.nincraftythings.reference.Reference;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.oredict.RecipeSorter.Category;
 
+import com.nincodedo.nincraftythings.reference.Reference;
+import com.nincodedo.nincraftythings.reference.Settings;
+
+import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.common.config.Configuration;
 
 public class ConfigurationHandler {
 	public static Configuration configuration;
@@ -29,7 +33,8 @@ public class ConfigurationHandler {
 	private static void loadConfiguration() {
 
 		// Create configs here
-
+		Settings.Items.enableNincodiumArmor = configuration.getBoolean("enableNincodiumArmor", Configuration.CATEGORY_GENERAL, true, "Nincodium armor recipes");
+		Settings.Items.enableNincodiumTools = configuration.getBoolean("enableNincodiumTools", Configuration.CATEGORY_GENERAL, true, "Nincodium tool recipes");
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

@@ -1,3 +1,7 @@
 itemGroup.nincraftythings=Nincrafty Things
 item.nincraftythings:nincodiumIngot.name=Nincodium Ingot
 item.nincraftythings:nincodiumPickaxe.name=Nincodium Pickaxe
+item.nincraftythings:nincodiumHelmet.name=Nincodium Helmet
+item.nincraftythings:nincodiumChestplate.name=Nincodium Chestplate
+item.nincraftythings:nincodiumLeggings.name=Nincodium Leggings
+item.nincraftythings:nincodiumBoots.name=Nincodium Boots
