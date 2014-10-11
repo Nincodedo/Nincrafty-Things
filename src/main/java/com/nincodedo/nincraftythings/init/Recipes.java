@@ -9,5 +9,15 @@ public class Recipes {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
 				ModItems.nincodiumPickaxe), "iii", " s ", " s ", 's',
 				"stickWood", 'i', new ItemStack(ModItems.nincodiumIngot)));
+		GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumBoots), "i i",
+				"i i", 'i', new ItemStack(ModItems.nincodiumIngot));
+		GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumChestplate),
+				"i i", "iii", "iii", 'i',
+				new ItemStack(ModItems.nincodiumIngot));
+		GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumHelmet), "iii",
+				"i i", 'i', new ItemStack(ModItems.nincodiumIngot));
+		GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumLeggings),
+				"iii", "i i", "i i", 'i',
+				new ItemStack(ModItems.nincodiumIngot));
 	}
 }
