@@ -33,6 +33,7 @@ public class ConfigurationHandler {
 	private static void loadConfiguration() {
 
 		// Create configs here
+		Settings.Items.enableNincodiumIngot = configuration.getBoolean("enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true, "Nincodium ingot recipe");
 		Settings.Items.enableNincodiumArmor = configuration.getBoolean("enableNincodiumArmor", Configuration.CATEGORY_GENERAL, true, "Nincodium armor recipes");
 		Settings.Items.enableNincodiumTools = configuration.getBoolean("enableNincodiumTools", Configuration.CATEGORY_GENERAL, true, "Nincodium tool recipes");
 		if (configuration.hasChanged()) {
