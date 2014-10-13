@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemArmorNincrafty extends ItemArmor {
-	
+
 	private Item repairIngot;
 
 	public ItemArmorNincrafty(ArmorMaterial armorMaterial, int renderIndex,
@@ -30,7 +30,7 @@ public class ItemArmorNincrafty extends ItemArmor {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
 				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
-	
+
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",

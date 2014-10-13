@@ -13,11 +13,11 @@ public class ItemNincodiumPickaxe extends ItemPickaxeNincrafty {
 		this.setUnlocalizedName(Names.Tools.NINCODIUM_PICKAXE);
 		this.setRepairIngot(ModItems.nincodiumIngot);
 	}
-	
+
 	@Override
-	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2)
-    {
-        return getRepairIngot() == itemStack2.getItem() ? true : super.getIsRepairable(itemStack1, itemStack2);
-    }
-	
+	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
+		return getRepairIngot() == itemStack2.getItem() ? true : super
+				.getIsRepairable(itemStack1, itemStack2);
+	}
+
 }

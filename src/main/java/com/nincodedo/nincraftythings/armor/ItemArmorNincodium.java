@@ -32,19 +32,20 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 			break;
 		}
 	}
-	
+
 	@Override
-	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2)
-    {
-        return getRepairIngot() == itemStack2.getItem() ? true : super.getIsRepairable(itemStack1, itemStack2);
-    }
-	
+	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
+		return getRepairIngot() == itemStack2.getItem() ? true : super
+				.getIsRepairable(itemStack1, itemStack2);
+	}
+
 	@Override
-	  public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String layer) {
-	    if(armorType == 2) {
-	      return "nincraftythings:textures/models/armor/nincodium_layer_2.png";
-	    }
-	    return "nincraftythings:textures/models/armor/nincodium_layer_1.png";
-	  }
+	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot,
+			String layer) {
+		if (armorType == 2) {
+			return "nincraftythings:textures/models/armor/nincodium_layer_2.png";
+		}
+		return "nincraftythings:textures/models/armor/nincodium_layer_1.png";
+	}
 
 }

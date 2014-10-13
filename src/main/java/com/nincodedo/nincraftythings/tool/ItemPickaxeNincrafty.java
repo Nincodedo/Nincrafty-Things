@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemPickaxeNincrafty extends ItemPickaxe {
 
 	private Item repairIngot;
-	
+
 	public Item getRepairIngot() {
 		return repairIngot;
 	}
@@ -27,7 +27,7 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 		super(toolMaterial);
 		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
-	
+
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
