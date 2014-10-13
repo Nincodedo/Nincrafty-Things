@@ -22,8 +22,7 @@ group= "com.nincodedo.nincraftythings" // http://maven.apache.org/guides/mini/gu
 archivesBaseName = "NincraftyThings"
 
 minecraft {
-    version = "1.7.10-10.13.1.1224"
-    assetDir = "eclipse/assets"
+    version = "1.7.10-10.13.1.1225"
 }
 
 dependencies {
