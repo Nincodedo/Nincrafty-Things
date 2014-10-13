@@ -1,17 +1,18 @@
 package com.nincodedo.nincraftythings.armor;
 
-import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
-import com.nincodedo.nincraftythings.reference.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
+import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
+import com.nincodedo.nincraftythings.reference.Reference;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ItemArmorNincrafty extends ItemArmor {
-	
+
 	private Item repairIngot;
 
 	public ItemArmorNincrafty(ArmorMaterial armorMaterial, int renderIndex,
@@ -29,7 +30,7 @@ public class ItemArmorNincrafty extends ItemArmor {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
 				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
-	
+
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",

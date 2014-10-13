@@ -1,5 +1,8 @@
 package com.nincodedo.nincraftythings;
 
+import net.minecraftforge.common.MinecraftForge;
+
+import com.nincodedo.nincraftythings.handler.ArmorSetBonusHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
@@ -14,7 +17,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION,guiFactory=Reference.GUI_FACTORY_CLASS)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class NincraftyThings {
 
 	@Mod.Instance(Reference.MOD_ID)
@@ -26,6 +29,7 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		ModItems.init();
 

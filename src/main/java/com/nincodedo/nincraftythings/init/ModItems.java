@@ -14,10 +14,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModItems {
 	public static final ItemNincrafty nincodiumIngot = new ItemNincodiumIngot();
 	public static final ItemPickaxeNincrafty nincodiumPickaxe = new ItemNincodiumPickaxe();
-	public static final ItemArmorNincrafty nincodiumHelmet = new ItemArmorNincodium(0);
-	public static final ItemArmorNincrafty nincodiumChestplate = new ItemArmorNincodium(1);
-	public static final ItemArmorNincrafty nincodiumLeggings = new ItemArmorNincodium(2);
-	public static final ItemArmorNincrafty nincodiumBoots = new ItemArmorNincodium(3);
+	public static final ItemArmorNincrafty nincodiumHelmet = new ItemArmorNincodium(
+			0);
+	public static final ItemArmorNincrafty nincodiumChestplate = new ItemArmorNincodium(
+			1);
+	public static final ItemArmorNincrafty nincodiumLeggings = new ItemArmorNincodium(
+			2);
+	public static final ItemArmorNincrafty nincodiumBoots = new ItemArmorNincodium(
+			3);
 
 	public static void init() {
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");

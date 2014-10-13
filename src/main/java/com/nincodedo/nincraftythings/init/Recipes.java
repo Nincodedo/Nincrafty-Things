@@ -1,19 +1,19 @@
 package com.nincodedo.nincraftythings.init;
 
-import com.nincodedo.nincraftythings.reference.Settings;
-
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import com.nincodedo.nincraftythings.reference.Settings;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
 	public static void init() {
 
 		if (Settings.Items.enableNincodiumIngot) {
-			GameRegistry.addSmelting(
-					(Item) Item.itemRegistry.getObject("diamond"),
-					new ItemStack(ModItems.nincodiumIngot), 1);
+			GameRegistry.addSmelting(Items.diamond, new ItemStack(
+					ModItems.nincodiumIngot), 1);
 		}
 
 		if (Settings.Items.enableNincodiumTools) {
