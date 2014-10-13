@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -11,43 +12,45 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ArmorSetBonusHook {
 
-	private int healDivider = 7;
-	private double healRadius = 5;
+	private int healDivisor = Settings.Items.nincodiumArmorHealingDivisor;
+	private float healRadius = Settings.Items.nincodiumArmorHealingRadius;
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
+			LogHelper.info("Event fired");
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
 			if (isWearingNincodiumArmorSet(player)) {
-				ChunkCoordinates ob = player.playerLocation;
 				List players = Minecraft.getMinecraft().theWorld.playerEntities;
-				EntityPlayer closestPlayer = getClosestPlayerToEntityWithLeastHealth(
+				EntityClientPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
-				if (closestPlayer != null) {
-					float healed = event.ammount / healDivider;
+				if (closestPlayer != null && event.entityLiving.getHealth() > 0) {
+					float healed = event.ammount / healDivisor;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
+					closestPlayer.playSound("random.levelup", 1, 2);
 				}
 			}
 		}
 	}
 
-	private EntityPlayer getClosestPlayerToEntityWithLeastHealth(
+	private EntityClientPlayerMP getClosestPlayerToEntityWithLeastHealth(
 			EntityPlayer player, double healRadius2) {
 		return getClosestPlayerWithLeastHealth(player.posX, player.posY,
 				player.posZ, healRadius2);
 	}
 
-	private EntityPlayer getClosestPlayerWithLeastHealth(double p_72977_1_,
+	private EntityClientPlayerMP getClosestPlayerWithLeastHealth(double p_72977_1_,
 			double p_72977_3_, double p_72977_5_, double p_72977_7_) {
 		double d4 = -1.0D;
-		EntityPlayer entityplayer = null;
+		EntityClientPlayerMP entityplayer = null;
 		List playersNear = new ArrayList();
 
 		for (int i = 0; i < Minecraft.getMinecraft().theWorld.playerEntities
@@ -62,16 +65,16 @@ public class ArmorSetBonusHook {
 				playersNear.add(entityplayer1);
 			}
 		}
-
+		LogHelper.info(playersNear);
 		entityplayer = getLowestHPOfEntities(playersNear);
 
 		return entityplayer;
 	}
 
-	private EntityPlayer getLowestHPOfEntities(List<EntityPlayer> playersNear) {
+	private EntityClientPlayerMP getLowestHPOfEntities(List<EntityClientPlayerMP> playersNear) {
 		float lowestHP = 21;
-		EntityPlayer lowestPlayer = null;
-		for (EntityPlayer player : playersNear) {
+		EntityClientPlayerMP lowestPlayer = null;
+		for (EntityClientPlayerMP player : playersNear) {
 			if (player.getHealth() < lowestHP) {
 				lowestPlayer = player;
 				lowestHP = player.getHealth();
