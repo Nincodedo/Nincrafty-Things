@@ -25,20 +25,25 @@ public class ArmorSetBonusHook {
 	public void entityAttacked(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
-			if (isWearingNincodiumArmorSet(player)) {
+			if (!player.isEntityEqual(event.entity)) {
+				if (isWearingNincodiumArmorSet(player)) {
 
-				List players = MinecraftServer.getServer().worldServers[event.source
-						.getEntity().dimension].playerEntities;
+					List players = MinecraftServer.getServer().worldServers[event.source
+							.getEntity().dimension].playerEntities;
 
-				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
-						player, healRadius);
+					EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
+							player, healRadius);
 
-				if (closestPlayer != null && event.entityLiving.getHealth() > 0) {
-					float healed = event.ammount / healDivisor;
-					closestPlayer.setHealth(closestPlayer.getHealth()
-							+ (healed));
-					EntityPlayer close = Minecraft.getMinecraft().theWorld.getPlayerEntityByName(closestPlayer.getDisplayName());
-					close.playSound("random.levelup", 1, 2);
+					if (closestPlayer != null
+							&& event.entityLiving.getHealth() > 0) {
+						float healed = event.ammount / healDivisor;
+						closestPlayer.setHealth(closestPlayer.getHealth()
+								+ (healed));
+						EntityPlayer close = Minecraft.getMinecraft().theWorld
+								.getPlayerEntityByName(closestPlayer
+										.getDisplayName());
+						close.playSound("random.levelup", 1, 2);
+					}
 				}
 			}
 		}
