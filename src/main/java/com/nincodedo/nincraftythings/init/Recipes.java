@@ -2,6 +2,7 @@ package com.nincodedo.nincraftythings.init;
 
 import com.nincodedo.nincraftythings.reference.Settings;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -12,7 +13,7 @@ public class Recipes {
 
 		if (Settings.Items.enableNincodiumIngot) {
 			GameRegistry.addSmelting(
-					(Item) Item.itemRegistry.getObject("diamond"),
+					Items.diamond,
 					new ItemStack(ModItems.nincodiumIngot), 1);
 		}
 
