@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
-import com.nincodedo.nincraftythings.utility.LogHelper;
 
 public class ItemArmorNincodium extends ItemArmorNincrafty {
 

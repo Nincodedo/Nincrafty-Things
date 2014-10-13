@@ -1,11 +1,11 @@
 package com.nincodedo.nincraftythings.init;
 
-import com.nincodedo.nincraftythings.reference.Settings;
-
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import com.nincodedo.nincraftythings.reference.Settings;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {

@@ -3,12 +3,10 @@ package com.nincodedo.nincraftythings.handler;
 import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.oredict.RecipeSorter.Category;
 
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 
-import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
