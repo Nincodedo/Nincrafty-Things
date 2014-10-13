@@ -2,7 +2,7 @@ package com.nincodedo.nincraftythings;
 
 import net.minecraftforge.common.MinecraftForge;
 
-import com.nincodedo.nincraftythings.events.ArmorSetBonusHook;
+import com.nincodedo.nincraftythings.handler.ArmorSetBonusHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
@@ -29,7 +29,7 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHook());
+		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		ModItems.init();
 

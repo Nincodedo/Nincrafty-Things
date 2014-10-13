@@ -1,4 +1,4 @@
-package com.nincodedo.nincraftythings.events;
+package com.nincodedo.nincraftythings.handler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
-public class ArmorSetBonusHook {
+public class ArmorSetBonusHandler {
 
 	private int healDivisor = Settings.Items.nincodiumArmorHealingDivisor;
 	private float healRadius = Settings.Items.nincodiumArmorHealingRadius;
