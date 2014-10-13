@@ -40,6 +40,13 @@ public class ConfigurationHandler {
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
 				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium tool recipes");
+		Settings.Items.nincodiumArmorHealingDivisor = configuration.getInt(
+				"nincodiumArmorHealingDivisor", Configuration.CATEGORY_GENERAL,
+				7, 1, 20,
+				"Attack divided to get healing set bonus of Nincodium armor");
+		Settings.Items.nincodiumArmorHealingRadius = configuration.getFloat(
+				"nincodiumArmorHealingRadius", Configuration.CATEGORY_GENERAL,
+				5, 1, 10, "Radius of healing set bonus of Nincodium armor");
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
