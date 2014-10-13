@@ -3,6 +3,7 @@ package com.nincodedo.nincraftythings.events;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -35,7 +37,8 @@ public class ArmorSetBonusHook {
 					float healed = event.ammount / healDivisor;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
-					closestPlayer.playSound("random.levelup", 1, 2);
+					EntityPlayer close = Minecraft.getMinecraft().theWorld.getPlayerEntityByName(closestPlayer.getDisplayName());
+					close.playSound("random.levelup", 1, 2);
 				}
 			}
 		}
