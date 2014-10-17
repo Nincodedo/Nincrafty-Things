@@ -18,7 +18,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ArmorSetBonusHandler {
 
-	private int healDivisor = Settings.Items.nincodiumArmorHealingDivisor;
+	private float healPercentage = Settings.Items.nincodiumArmorHealingPercentage;
 	private float healRadius = Settings.Items.nincodiumArmorHealingRadius;
 
 	@SubscribeEvent
@@ -34,8 +34,8 @@ public class ArmorSetBonusHandler {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
 
-				if (closestPlayer != null && event.entityLiving.getHealth() > 0) {
-					float healed = event.ammount / healDivisor;
+				if (closestPlayer != null && event.entityLiving.getHealth() > 0 && closestPlayer.getHealth() < 20) {
+					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
 					EntityPlayer close = Minecraft.getMinecraft().theWorld
