@@ -4,6 +4,7 @@ import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
 
+import com.nincodedo.nincraftythings.reference.NincraftyConfiguration;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 
@@ -30,23 +31,27 @@ public class ConfigurationHandler {
 
 	private static void loadConfiguration() {
 
-		// Create configs here
+		// General
 		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
 				"enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium ingot recipe");
+		
+		// Nincodium Armor
 		Settings.Items.enableNincodiumArmor = configuration.getBoolean(
-				"enableNincodiumArmor", Configuration.CATEGORY_GENERAL, true,
+				"enableNincodiumArmor", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR, true,
 				"Nincodium armor recipes");
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
 				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium tool recipes");
 		Settings.Items.nincodiumArmorHealingPercentage = configuration.getFloat(
-				"nincodiumArmorHealingPercentage", Configuration.CATEGORY_GENERAL,
+				"nincodiumArmorHealingPercentage", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
 				0.14F, 0F, 1F,
 				"Attack divided to get healing set bonus of Nincodium armor");
 		Settings.Items.nincodiumArmorHealingRadius = configuration.getFloat(
-				"nincodiumArmorHealingRadius", Configuration.CATEGORY_GENERAL,
+				"nincodiumArmorHealingRadius", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
 				5, 1, 10, "Radius of healing set bonus of Nincodium armor");
+		
+		
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
