@@ -21,7 +21,7 @@ public class Recipes {
 					ModItems.nincodiumPickaxe), "iii", " s ", " s ", 's',
 					"stickWood", 'i', new ItemStack(ModItems.nincodiumIngot)));
 		}
-		if (Settings.Items.enableNincodiumArmor) {
+		if (Settings.Armor.enableNincodiumArmor) {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumBoots),
 					"i i", "i i", 'i', new ItemStack(ModItems.nincodiumIngot));
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumChestplate),

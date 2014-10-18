@@ -18,8 +18,8 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ArmorSetBonusHandler {
 
-	private float healPercentage = Settings.Items.nincodiumArmorHealingPercentage;
-	private float healRadius = Settings.Items.nincodiumArmorHealingRadius;
+	private float healPercentage = Settings.Armor.nincodiumArmorHealingPercentage;
+	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {

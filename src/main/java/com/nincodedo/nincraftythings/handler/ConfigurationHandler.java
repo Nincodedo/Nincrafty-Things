@@ -35,19 +35,20 @@ public class ConfigurationHandler {
 		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
 				"enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium ingot recipe");
-		
-		// Nincodium Armor
-		Settings.Items.enableNincodiumArmor = configuration.getBoolean(
-				"enableNincodiumArmor", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR, true,
-				"Nincodium armor recipes");
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
 				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium tool recipes");
-		Settings.Items.nincodiumArmorHealingPercentage = configuration.getFloat(
+
+		
+		// Nincodium Armor
+		Settings.Armor.enableNincodiumArmor = configuration.getBoolean(
+				"enableNincodiumArmor", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR, true,
+				"Nincodium armor recipes");
+		Settings.Armor.nincodiumArmorHealingPercentage = configuration.getFloat(
 				"nincodiumArmorHealingPercentage", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
 				0.14F, 0F, 1F,
 				"Attack divided to get healing set bonus of Nincodium armor");
-		Settings.Items.nincodiumArmorHealingRadius = configuration.getFloat(
+		Settings.Armor.nincodiumArmorHealingRadius = configuration.getFloat(
 				"nincodiumArmorHealingRadius", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
 				5, 1, 10, "Radius of healing set bonus of Nincodium armor");
 		
