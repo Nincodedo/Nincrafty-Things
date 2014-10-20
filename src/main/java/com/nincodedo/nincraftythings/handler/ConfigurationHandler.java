@@ -4,9 +4,10 @@ import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
 
-import com.nincodedo.nincraftythings.reference.NincraftyConfiguration;
+import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincodedo.nincraftythings.reference.Settings.Armor;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -39,20 +40,44 @@ public class ConfigurationHandler {
 				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
 				"Nincodium tool recipes");
 
-		
 		// Nincodium Armor
 		Settings.Armor.enableNincodiumArmor = configuration.getBoolean(
-				"enableNincodiumArmor", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR, true,
+				"enableNincodiumArmor",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, true,
 				"Nincodium armor recipes");
-		Settings.Armor.nincodiumArmorHealingPercentage = configuration.getFloat(
-				"nincodiumArmorHealingPercentage", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
-				0.14F, 0F, 1F,
-				"Attack divided to get healing set bonus of Nincodium armor");
+		Settings.Armor.nincodiumArmorHealingPercentage = configuration
+				.getFloat("nincodiumArmorHealingPercentage",
+						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 0.14F,
+						0F, 1F,
+						"Percent of damage dealt healing set bonus of Nincodium armor");
 		Settings.Armor.nincodiumArmorHealingRadius = configuration.getFloat(
-				"nincodiumArmorHealingRadius", NincraftyConfiguration.CATEGORY_NINCODIUM_ARMOR,
-				5, 1, 10, "Radius of healing set bonus of Nincodium armor");
-		
-		
+				"nincodiumArmorHealingRadius",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 5, 1, 10,
+				"Radius of healing set bonus of Nincodium armor");
+		Settings.Armor.nincodiumDurability = configuration.getInt(
+				"nincodiumDurability",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,
+				"Nincodium armor durability");
+		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
+				"helmet",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				1, 20, "");
+
+		Settings.Armor.nincodiumChestplateDamageReduction = configuration
+				.getInt("chestplate",
+						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION,
+						9, 1, 20, "");
+
+		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
+				"leggings",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 7,
+				1, 20, "");
+
+		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
+				"boots",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				1, 20, "");
+
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

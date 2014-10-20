@@ -11,6 +11,12 @@ public class Settings {
 		public static float nincodiumArmorHealingRadius;
 		public static float nincodiumArmorHealingPercentage;
 		public static boolean enableNincodiumArmor;
+		public static int nincodiumDurability;
+		public static int nincodiumEnchantability;
+		public static int nincodiumBootsDamageReduction;
+		public static int nincodiumLeggingsDamageReduction;
+		public static int nincodiumChestplateDamageReduction;
+		public static int nincodiumHelmetDamageReduction;
 
 	}
 }

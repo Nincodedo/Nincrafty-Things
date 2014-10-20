@@ -12,7 +12,14 @@ public class Material {
 
 	public static final class Armor {
 		public static final ItemArmor.ArmorMaterial NINCODIUM = EnumHelper
-				.addArmorMaterial(Names.Materials.NINCODIUM, 1989, new int[] {
-						4, 9, 7, 4 }, 10);
+				.addArmorMaterial(
+						Names.Materials.NINCODIUM,
+						Settings.Armor.nincodiumDurability,
+						new int[] {
+								Settings.Armor.nincodiumHelmetDamageReduction,
+								Settings.Armor.nincodiumChestplateDamageReduction,
+								Settings.Armor.nincodiumLeggingsDamageReduction,
+								Settings.Armor.nincodiumBootsDamageReduction },
+						Settings.Armor.nincodiumEnchantability);
 	}
 }
