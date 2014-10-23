@@ -19,4 +19,10 @@ public class Settings {
 		public static int nincodiumHelmetDamageReduction;
 
 	}
+	
+	public static class Silly{
+
+		public static String[] thunderList;
+		
+	}
 }

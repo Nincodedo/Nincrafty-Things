@@ -78,6 +78,11 @@ public class ConfigurationHandler {
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
 				1, 20, "");
 
+		// Silly configs
+		Settings.Silly.thunderList = configuration.getStringList("thunderList",
+				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
+						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
+
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
