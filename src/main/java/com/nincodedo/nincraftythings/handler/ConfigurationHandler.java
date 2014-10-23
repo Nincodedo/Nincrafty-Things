@@ -7,7 +7,6 @@ import net.minecraftforge.common.config.Configuration;
 import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.reference.Settings.Armor;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;

@@ -1,13 +1,12 @@
 package com.nincodedo.nincraftythings.handler;
 
-import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.utility.LogHelper;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+
+import com.nincodedo.nincraftythings.reference.Settings;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ThunderJoinHandler {
