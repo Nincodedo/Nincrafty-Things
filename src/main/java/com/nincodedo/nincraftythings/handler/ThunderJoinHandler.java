@@ -3,6 +3,7 @@ package com.nincodedo.nincraftythings.handler;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
@@ -18,7 +19,7 @@ public class ThunderJoinHandler {
 			World world = event.world;
 			if (isPlayerThundertastic(player)) {
 				world.spawnEntityInWorld(new EntityLightningBolt(world,
-						player.posX, player.posY + 1, player.posZ));
+						player.posX, 257, player.posZ));
 			}
 		}
 	}
