@@ -12,7 +12,6 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -34,7 +33,8 @@ public class ArmorSetBonusHandler {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
 
-				if (closestPlayer != null && event.entityLiving.getHealth() > 0 && closestPlayer.getHealth() < 20) {
+				if (closestPlayer != null && event.entityLiving.getHealth() > 0
+						&& closestPlayer.getHealth() < 20) {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));

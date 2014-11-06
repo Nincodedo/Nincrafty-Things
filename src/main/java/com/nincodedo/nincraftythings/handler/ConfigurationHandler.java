@@ -7,7 +7,6 @@ import net.minecraftforge.common.config.Configuration;
 import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.reference.Settings.Armor;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -77,6 +76,11 @@ public class ConfigurationHandler {
 				"boots",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
 				1, 20, "");
+
+		// Silly configs
+		Settings.Silly.thunderList = configuration.getStringList("thunderList",
+				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
+						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
 
 		if (configuration.hasChanged()) {
 			configuration.save();
