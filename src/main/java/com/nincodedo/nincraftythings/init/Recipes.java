@@ -12,8 +12,7 @@ public class Recipes {
 	public static void init() {
 
 		if (Settings.Items.enableNincodiumIngot) {
-			GameRegistry.addSmelting(Items.diamond, new ItemStack(
-					ModItems.nincodiumIngot), 1);
+			
 		}
 
 		if (Settings.Items.enableNincodiumTools) {
