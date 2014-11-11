@@ -57,25 +57,6 @@ public class ConfigurationHandler {
 				"nincodiumDurability",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,
 				"Nincodium armor durability");
-		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
-				"helmet",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
-				1, 20, "");
-
-		Settings.Armor.nincodiumChestplateDamageReduction = configuration
-				.getInt("chestplate",
-						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION,
-						9, 1, 20, "");
-
-		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
-				"leggings",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 7,
-				1, 20, "");
-
-		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
-				"boots",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
-				1, 20, "");
 
 		// Silly configs
 		Settings.Silly.thunderList = configuration.getStringList("thunderList",

@@ -1,6 +1,5 @@
 package com.nincodedo.nincraftythings.init;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -12,7 +11,7 @@ public class Recipes {
 	public static void init() {
 
 		if (Settings.Items.enableNincodiumIngot) {
-			
+
 		}
 
 		if (Settings.Items.enableNincodiumTools) {

@@ -30,9 +30,9 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
 		MinecraftForge.EVENT_BUS.register(new ThunderJoinHandler());
-		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		ModItems.init();
 
 		LogHelper.info("Pre Init Complete");
@@ -41,6 +41,7 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		Recipes.init();
+
 		LogHelper.info("Init Complete");
 	}
 
