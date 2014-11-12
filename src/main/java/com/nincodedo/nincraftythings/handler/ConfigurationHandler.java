@@ -21,14 +21,6 @@ public class ConfigurationHandler {
 		}
 	}
 
-	@SubscribeEvent
-	public void onConfigurationChangedEvent(
-			ConfigChangedEvent.OnConfigChangedEvent event) {
-		if (event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
-			loadConfiguration();
-		}
-	}
-
 	private static void loadConfiguration() {
 
 		// General
@@ -58,6 +50,26 @@ public class ConfigurationHandler {
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,
 				"Nincodium armor durability");
 
+		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
+				"nincodiumHelmetDamageReduction",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				1, 11, "");
+
+		Settings.Armor.nincodiumChestplateDamageReduction = configuration
+				.getInt("nincodiumChestplateDamageReduction",
+						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION,
+						9, 1, 16, "");
+
+		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
+				"nincodiumLeggingsDamageReduction",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 7,
+				1, 15, "");
+
+		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
+				"nincodiumBootsDamageReduction",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				1, 13, "");
+
 		// Silly configs
 		Settings.Silly.thunderList = configuration.getStringList("thunderList",
 				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
@@ -65,6 +77,14 @@ public class ConfigurationHandler {
 
 		if (configuration.hasChanged()) {
 			configuration.save();
+		}
+	}
+
+	@SubscribeEvent
+	public void onConfigurationChangedEvent(
+			ConfigChangedEvent.OnConfigChangedEvent event) {
+		if (event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
+			loadConfiguration();
 		}
 	}
 

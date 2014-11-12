@@ -15,17 +15,13 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 
 	private Item repairIngot;
 
-	public Item getRepairIngot() {
-		return repairIngot;
-	}
-
-	public void setRepairIngot(Item repairIngot) {
-		this.repairIngot = repairIngot;
-	}
-
 	protected ItemPickaxeNincrafty(ToolMaterial toolMaterial) {
 		super(toolMaterial);
 		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
+	}
+
+	public Item getRepairIngot() {
+		return repairIngot;
 	}
 
 	@Override
@@ -40,6 +36,10 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
+	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {
@@ -47,8 +47,8 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 				.substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	public void setRepairIngot(Item repairIngot) {
+		this.repairIngot = repairIngot;
 	}
 
 }

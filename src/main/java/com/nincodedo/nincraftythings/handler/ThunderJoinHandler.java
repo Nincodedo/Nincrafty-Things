@@ -11,18 +11,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ThunderJoinHandler {
 
-	@SubscribeEvent
-	public void onPlayerJoin(EntityJoinWorldEvent event) {
-		if (event.entity instanceof EntityPlayerMP) {
-			EntityPlayerMP player = (EntityPlayerMP) event.entity;
-			World world = event.world;
-			if (isPlayerThundertastic(player)) {
-				world.spawnEntityInWorld(new EntityLightningBolt(world,
-						player.posX, 257, player.posZ));
-			}
-		}
-	}
-
 	private boolean isPlayerThundertastic(EntityPlayerMP player) {
 
 		boolean thundery = false;
@@ -33,6 +21,18 @@ public class ThunderJoinHandler {
 			}
 		}
 		return thundery;
+	}
+
+	@SubscribeEvent
+	public void onPlayerJoin(EntityJoinWorldEvent event) {
+		if (event.entity instanceof EntityPlayerMP) {
+			EntityPlayerMP player = (EntityPlayerMP) event.entity;
+			World world = event.world;
+			if (isPlayerThundertastic(player)) {
+				world.spawnEntityInWorld(new EntityLightningBolt(world,
+						player.posX, 257, player.posZ));
+			}
+		}
 	}
 
 }

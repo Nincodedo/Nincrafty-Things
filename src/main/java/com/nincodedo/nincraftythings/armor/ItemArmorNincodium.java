@@ -17,6 +17,7 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 
 	public ItemArmorNincodium(int armorType) {
 		this(Material.Armor.NINCODIUM, 0, armorType);
+
 		switch (armorType) {
 		case 0:
 			this.setUnlocalizedName(Names.Items.NINCODIUM_HELMET);
@@ -34,12 +35,6 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 	}
 
 	@Override
-	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
-		return getRepairIngot() == itemStack2.getItem() ? true : super
-				.getIsRepairable(itemStack1, itemStack2);
-	}
-
-	@Override
 	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot,
 			String layer) {
 		if (armorType == 2) {
@@ -48,4 +43,9 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 		return "nincraftythings:textures/models/armor/nincodium_layer_1.png";
 	}
 
+	@Override
+	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
+		return getRepairIngot() == itemStack2.getItem() ? true : super
+				.getIsRepairable(itemStack1, itemStack2);
+	}
 }

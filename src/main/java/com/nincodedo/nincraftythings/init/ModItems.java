@@ -12,18 +12,21 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems {
-	public static final ItemNincrafty nincodiumIngot = new ItemNincodiumIngot();
-	public static final ItemPickaxeNincrafty nincodiumPickaxe = new ItemNincodiumPickaxe();
-	public static final ItemArmorNincrafty nincodiumHelmet = new ItemArmorNincodium(
-			0);
-	public static final ItemArmorNincrafty nincodiumChestplate = new ItemArmorNincodium(
-			1);
-	public static final ItemArmorNincrafty nincodiumLeggings = new ItemArmorNincodium(
-			2);
-	public static final ItemArmorNincrafty nincodiumBoots = new ItemArmorNincodium(
-			3);
+	public static ItemNincrafty nincodiumIngot;
+	public static ItemPickaxeNincrafty nincodiumPickaxe;
+	public static ItemArmorNincrafty nincodiumHelmet;
+	public static ItemArmorNincrafty nincodiumChestplate;
+	public static ItemArmorNincrafty nincodiumLeggings;
+	public static ItemArmorNincrafty nincodiumBoots;
 
 	public static void init() {
+		nincodiumIngot = new ItemNincodiumIngot();
+		nincodiumPickaxe = new ItemNincodiumPickaxe();
+		nincodiumHelmet = new ItemArmorNincodium(0);
+		nincodiumChestplate = new ItemArmorNincodium(1);
+		nincodiumLeggings = new ItemArmorNincodium(2);
+		nincodiumBoots = new ItemArmorNincodium(3);
+
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");
