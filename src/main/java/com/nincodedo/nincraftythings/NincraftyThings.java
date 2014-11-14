@@ -28,17 +28,6 @@ public class NincraftyThings {
 	public static IProxy proxy;
 
 	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
-		MinecraftForge.EVENT_BUS.register(new ThunderJoinHandler());
-		ModItems.init();
-
-		LogHelper.info("Pre Init Complete");
-	}
-
-	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		Recipes.init();
 
@@ -49,5 +38,15 @@ public class NincraftyThings {
 	public void postInit(FMLPostInitializationEvent event) {
 
 		LogHelper.info("Post Init Complete");
+	}
+
+	@Mod.EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
+		MinecraftForge.EVENT_BUS.register(new ThunderJoinHandler());
+		ModItems.init();
+		LogHelper.info("Pre Init Complete");
 	}
 }

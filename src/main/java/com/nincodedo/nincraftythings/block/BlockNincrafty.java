@@ -11,12 +11,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockNincrafty extends Block {
 
-	public BlockNincrafty(Material material) {
-		super(material);
-	}
-
 	public BlockNincrafty() {
 		this(Material.rock);
+	}
+
+	public BlockNincrafty(Material material) {
+		super(material);
 	}
 
 	@Override
@@ -25,15 +25,15 @@ public class BlockNincrafty extends Block {
 				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
+	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon(String.format("%s",
 				getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
-	}
-
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 
 }
