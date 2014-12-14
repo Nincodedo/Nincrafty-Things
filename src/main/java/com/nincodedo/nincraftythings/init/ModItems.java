@@ -2,12 +2,17 @@ package com.nincodedo.nincraftythings.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
+import com.nincodedo.nincraftythings.item.ItemBucketNincrafty;
+import com.nincodedo.nincraftythings.item.ItemMoltenNincodiumBucket;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
 import com.nincodedo.nincraftythings.item.ItemNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
@@ -26,6 +31,7 @@ public class ModItems {
 	public static ItemArmorNincrafty nincodiumBoots;
 	public static Fluid moltenNincodium;
 	public static Block moltenNincodiumBlock;
+	public static ItemBucketNincrafty bucketNincodium;
 
 	public static void init() {
 		nincodiumIngot = new ItemNincodiumIngot();
@@ -36,10 +42,15 @@ public class ModItems {
 		nincodiumBoots = new ItemArmorNincodium(3);
 		moltenNincodium = new Fluid("moltenNincodium");
 		
+		
+		
 		FluidRegistry.registerFluid(moltenNincodium);
 		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium, Material.lava).setBlockName("moltenNincodium");
 		GameRegistry.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
+		bucketNincodium = new ItemMoltenNincodiumBucket(moltenNincodiumBlock);
+		FluidContainerRegistry.registerFluidContainer(moltenNincodium, new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
 		
+		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");

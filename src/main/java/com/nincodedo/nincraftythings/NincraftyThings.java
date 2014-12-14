@@ -3,6 +3,7 @@ package com.nincodedo.nincraftythings;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.nincodedo.nincraftythings.handler.ArmorSetBonusHandler;
+import com.nincodedo.nincraftythings.handler.BucketHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.handler.ThunderJoinHandler;
 import com.nincodedo.nincraftythings.init.ModItems;
@@ -47,6 +48,8 @@ public class NincraftyThings {
 		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
 		MinecraftForge.EVENT_BUS.register(new ThunderJoinHandler());
 		ModItems.init();
+		BucketHandler.INSTANCE.buckets.put(ModItems.moltenNincodiumBlock, ModItems.bucketNincodium);
+		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("Pre Init Complete");
 	}
 }
