@@ -35,9 +35,9 @@ public class MoltenNincodium extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister register) {
-		stillIcon = register.registerIcon(Reference.MOD_ID
+		stillIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
 				+ ":moltenNincodiumStill");
-		flowingIcon = register.registerIcon(Reference.MOD_ID
+		flowingIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
 				+ ":moltenNincodiumFlowing");
 	}
 
