@@ -1,5 +1,8 @@
 package com.nincodedo.nincraftythings.init;
 
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
@@ -18,6 +21,7 @@ public class ModItems {
 	public static ItemArmorNincrafty nincodiumChestplate;
 	public static ItemArmorNincrafty nincodiumLeggings;
 	public static ItemArmorNincrafty nincodiumBoots;
+	public static Fluid moltenNincodium;
 
 	public static void init() {
 		nincodiumIngot = new ItemNincodiumIngot();
@@ -26,7 +30,9 @@ public class ModItems {
 		nincodiumChestplate = new ItemArmorNincodium(1);
 		nincodiumLeggings = new ItemArmorNincodium(2);
 		nincodiumBoots = new ItemArmorNincodium(3);
-
+		moltenNincodium = new Fluid("moltenNincodium");
+		
+		FluidRegistry.registerFluid(moltenNincodium);
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");
