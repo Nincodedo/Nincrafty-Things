@@ -37,7 +37,7 @@ public class ModItems {
 		moltenNincodium = new Fluid("moltenNincodium");
 		
 		FluidRegistry.registerFluid(moltenNincodium);
-		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium, Material.water).setBlockName("moltenNincodium");
+		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium, Material.lava).setBlockName("moltenNincodium");
 		GameRegistry.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
