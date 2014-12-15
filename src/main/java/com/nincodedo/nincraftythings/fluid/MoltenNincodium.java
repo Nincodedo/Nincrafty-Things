@@ -33,7 +33,7 @@ public class MoltenNincodium extends BlockFluidClassicNincrafty {
 	@Override
 	public void registerBlockIcons(IIconRegister register) {
 		stillIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
-				+ ":"+Names.Blocks.MOLTEN_NINCODIUM_STILL);
+				+ ":"+Names.Blocks.MOLTEN_NINCODIUM);
 		flowingIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
 				+ ":"+Names.Blocks.MOLTEN_NINCODIUM_FLOWING);
 	}
