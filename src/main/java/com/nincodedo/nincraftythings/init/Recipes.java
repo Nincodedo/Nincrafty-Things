@@ -18,6 +18,9 @@ public class Recipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
 					ModItems.nincodiumPickaxe), "iii", " s ", " s ", 's',
 					"stickWood", 'i', new ItemStack(ModItems.nincodiumIngot)));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
+					ModItems.nincodiumSword), "i", "i", "s", 's', "stickWood",
+					'i', new ItemStack(ModItems.nincodiumIngot)));
 		}
 		if (Settings.Armor.enableNincodiumArmor) {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumBoots),
