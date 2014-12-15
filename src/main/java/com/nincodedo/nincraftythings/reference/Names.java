@@ -8,6 +8,7 @@ public class Names {
 		public static final String NINCODIUM_LEGGINGS = "nincodiumLeggings";
 		public static final String NINCODIUM_BOOTS = "nincodiumBoots";
 		public static final String BUCKET_NINCODIUM = "bucketNincodium";
+		public static final String NINCODIUM_SWORD = "nincodiumSword";
 	}
 
 	public static final class Materials {

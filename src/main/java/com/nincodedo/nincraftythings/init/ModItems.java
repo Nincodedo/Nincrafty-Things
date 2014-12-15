@@ -17,9 +17,10 @@ import com.nincodedo.nincraftythings.item.ItemBucketNincrafty;
 import com.nincodedo.nincraftythings.item.ItemMoltenNincodiumBucket;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
 import com.nincodedo.nincraftythings.item.ItemNincrafty;
+import com.nincodedo.nincraftythings.item.sword.ItemSwordNincodiumSword;
+import com.nincodedo.nincraftythings.item.tool.ItemNincodiumPickaxe;
+import com.nincodedo.nincraftythings.item.tool.ItemPickaxeNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
-import com.nincodedo.nincraftythings.tool.ItemNincodiumPickaxe;
-import com.nincodedo.nincraftythings.tool.ItemPickaxeNincrafty;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -34,6 +35,7 @@ public class ModItems {
 	public static Fluid moltenNincodium;
 	public static Block moltenNincodiumBlock;
 	public static ItemBucketNincrafty bucketNincodium;
+	public static ItemSwordNincodiumSword nincodiumSword;
 
 	public static void init() {
 		nincodiumIngot = new ItemNincodiumIngot();
@@ -43,7 +45,7 @@ public class ModItems {
 		nincodiumLeggings = new ItemArmorNincodium(2);
 		nincodiumBoots = new ItemArmorNincodium(3);
 		moltenNincodium = new Fluid("moltenNincodium");
-		
+		nincodiumSword = new ItemSwordNincodiumSword();
 		
 		
 		FluidRegistry.registerFluid(moltenNincodium);
@@ -52,6 +54,7 @@ public class ModItems {
 		bucketNincodium = new ItemMoltenNincodiumBucket(moltenNincodiumBlock);
 		FluidContainerRegistry.registerFluidContainer(moltenNincodium, new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
 		
+		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
 		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
