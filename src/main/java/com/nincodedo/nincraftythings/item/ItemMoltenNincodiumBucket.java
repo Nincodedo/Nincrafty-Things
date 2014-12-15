@@ -6,8 +6,8 @@ import com.nincodedo.nincraftythings.reference.Names;
 
 public class ItemMoltenNincodiumBucket extends ItemBucketNincrafty {
 
-	public ItemMoltenNincodiumBucket(Block p_i45331_1_) {
-		super(p_i45331_1_);
+	public ItemMoltenNincodiumBucket(Block fluidBlock) {
+		super(fluidBlock);
 		this.setUnlocalizedName(Names.Items.BUCKET_NINCODIUM);
 	}
 
