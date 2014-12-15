@@ -15,10 +15,8 @@ import net.minecraftforge.fluids.Fluid;
 
 public class BlockFluidClassicNincrafty extends BlockFluidClassic {
 
-	@SideOnly(Side.CLIENT)
-	protected IIcon stillIcon;
-	@SideOnly(Side.CLIENT)
-	protected IIcon flowingIcon;
+	public IIcon stillIcon;
+	public IIcon flowingIcon;
 
 	
 	public BlockFluidClassicNincrafty(Fluid fluid, Material material) {
@@ -28,6 +26,7 @@ public class BlockFluidClassicNincrafty extends BlockFluidClassic {
 
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return (side == 0 || side == 1) ? stillIcon : flowingIcon;
 	}
