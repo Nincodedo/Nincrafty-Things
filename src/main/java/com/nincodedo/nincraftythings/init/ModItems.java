@@ -10,6 +10,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
+import com.nincodedo.nincraftythings.block.BlockFluidClassicNincrafty;
+import com.nincodedo.nincraftythings.block.BlockNincrafty;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.item.ItemBucketNincrafty;
 import com.nincodedo.nincraftythings.item.ItemMoltenNincodiumBucket;
@@ -45,7 +47,7 @@ public class ModItems {
 		
 		
 		FluidRegistry.registerFluid(moltenNincodium);
-		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium, Material.lava).setBlockName("moltenNincodium");
+		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium);
 		GameRegistry.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		bucketNincodium = new ItemMoltenNincodiumBucket(moltenNincodiumBlock);
 		FluidContainerRegistry.registerFluidContainer(moltenNincodium, new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
