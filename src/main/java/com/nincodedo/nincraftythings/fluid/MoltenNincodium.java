@@ -3,6 +3,7 @@ package com.nincodedo.nincraftythings.fluid;
 import com.nincodedo.nincraftythings.NincraftyThings;
 import com.nincodedo.nincraftythings.block.BlockFluidClassicNincrafty;
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
+import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Reference;
 
@@ -32,9 +33,11 @@ public class MoltenNincodium extends BlockFluidClassicNincrafty {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister register) {
-		stillIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
-				+ ":"+Names.Blocks.MOLTEN_NINCODIUM_STILL);
-		flowingIcon = register.registerIcon(Reference.MOD_ID.toLowerCase()
+		stillIcon = register.registerIcon(Reference.MOD_ID
+				+ ":"+Names.Blocks.MOLTEN_NINCODIUM);
+		flowingIcon = register.registerIcon(Reference.MOD_ID
 				+ ":"+Names.Blocks.MOLTEN_NINCODIUM_FLOWING);
+		ModItems.moltenNincodium.setStillIcon(stillIcon);
+		ModItems.moltenNincodium.setFlowingIcon(flowingIcon);
 	}
 }
