@@ -23,6 +23,4 @@ public class ItemSwordNincodiumSword extends ItemSwordNincrafty {
 		this(Material.Tools.NINCODIUM);
 	}
 
-	
-
 }
