@@ -11,6 +11,13 @@ public class Names {
 		public static final String NINCODIUM_SWORD = "nincodiumSword";
 	}
 
+	public static final class Blocks {
+		public static final String MOLTEN_NINCODIUM_BLOCK = "moltenNincodiumBlock";
+		public static final String MOLTEN_NINCODIUM_STILL = "moltenNincodiumStill";
+		public static final String MOLTEN_NINCODIUM_FLOWING = "moltenNincodiumFlowing";
+
+	}
+
 	public static final class Materials {
 		public static final String NINCODIUM = "NINCODIUM";
 	}
