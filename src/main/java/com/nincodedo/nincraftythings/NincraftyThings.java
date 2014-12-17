@@ -50,6 +50,8 @@ public class NincraftyThings {
 		ModItems.init();
 		BucketHandler.INSTANCE.buckets.put(ModItems.moltenNincodiumBlock,
 				ModItems.bucketNincodium);
+		BucketHandler.INSTANCE.buckets.put(ModItems.moltenLapisBlock,
+				ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("Pre Init Complete");
 	}
