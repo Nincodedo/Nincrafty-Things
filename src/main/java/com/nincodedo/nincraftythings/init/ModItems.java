@@ -12,6 +12,7 @@ import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.block.BlockFluidClassicNincrafty;
 import com.nincodedo.nincraftythings.block.BlockNincrafty;
+import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.item.ItemBucketNincrafty;
 import com.nincodedo.nincraftythings.item.ItemMoltenNincodiumBucket;
@@ -36,6 +37,7 @@ public class ModItems {
 	public static Block moltenNincodiumBlock;
 	public static ItemBucketNincrafty bucketNincodium;
 	public static ItemSwordNincodiumSword nincodiumSword;
+	public static BlockNincodium nincodiumBlock;
 
 	public static void init() {
 		nincodiumIngot = new ItemNincodiumIngot();
@@ -46,18 +48,22 @@ public class ModItems {
 		nincodiumBoots = new ItemArmorNincodium(3);
 		moltenNincodium = new Fluid("moltenNincodium");
 		nincodiumSword = new ItemSwordNincodiumSword();
-		
-		
+		nincodiumBlock = new BlockNincodium();
+
 		FluidRegistry.registerFluid(moltenNincodium);
 		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium);
-		GameRegistry.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		bucketNincodium = new ItemMoltenNincodiumBucket(moltenNincodiumBlock);
-		FluidContainerRegistry.registerFluidContainer(moltenNincodium, new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
-		
+
+		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
+		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
+		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
 		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
-		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
-		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
+		FluidContainerRegistry.registerFluidContainer(moltenNincodium,
+				new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
+
+		GameRegistry
+				.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");
 		GameRegistry.registerItem(nincodiumChestplate, "nincodiumChestplate");
 		GameRegistry.registerItem(nincodiumLeggings, "nincodiumLeggings");

@@ -10,5 +10,6 @@ item.nincraftythings:bucketNincodium.name=Nincodium Bucket
 item.nincraftythings:nincodiumSword.name=Nincodium Sword
 
 tile.moltenNincodiumBlock.name=Molten Nincodium
+tile.nincraftythings:nincodiumBlock.name=Block of Nincodium
 
 fluid.moltenNincodium=Molten Nincodium
