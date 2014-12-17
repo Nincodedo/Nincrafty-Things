@@ -1,4 +1,4 @@
-package com.nincodedo.nincraftythings.item;
+package com.nincodedo.nincraftythings.item.bucket;
 
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;

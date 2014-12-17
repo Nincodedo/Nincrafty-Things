@@ -1,4 +1,4 @@
-package com.nincodedo.nincraftythings.item;
+package com.nincodedo.nincraftythings.item.bucket;
 
 import net.minecraft.block.Block;
 
@@ -8,7 +8,7 @@ public class ItemMoltenNincodiumBucket extends ItemBucketNincrafty {
 
 	public ItemMoltenNincodiumBucket(Block fluidBlock) {
 		super(fluidBlock);
-		this.setUnlocalizedName(Names.Items.BUCKET_NINCODIUM);
+		setUnlocalizedName(Names.Items.BUCKET_NINCODIUM);
 	}
 
 }
