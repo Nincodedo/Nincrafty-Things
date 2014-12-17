@@ -11,13 +11,20 @@ public class Recipes {
 	public static void init() {
 
 		if (Settings.Items.enableNincodiumIngot) {
-
+			GameRegistry.addShapedRecipe(
+					new ItemStack(ModItems.nincodiumBlock), "iii", "iii",
+					"iii", 'i', new ItemStack(ModItems.nincodiumIngot));
+			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumIngot, 9),
+					"b", 'b', new ItemStack(ModItems.nincodiumBlock));
 		}
 
 		if (Settings.Items.enableNincodiumTools) {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
 					ModItems.nincodiumPickaxe), "iii", " s ", " s ", 's',
 					"stickWood", 'i', new ItemStack(ModItems.nincodiumIngot)));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
+					ModItems.nincodiumSword), "i", "i", "s", 's', "stickWood",
+					'i', new ItemStack(ModItems.nincodiumIngot)));
 		}
 		if (Settings.Armor.enableNincodiumArmor) {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumBoots),

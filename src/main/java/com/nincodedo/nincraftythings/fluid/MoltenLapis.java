@@ -18,26 +18,26 @@ import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MoltenNincodium extends BlockFluidClassicNincrafty {
+public class MoltenLapis extends BlockFluidClassicNincrafty {
 
-	public MoltenNincodium(Fluid fluid, Material material) {
+	public MoltenLapis(Fluid fluid, Material material) {
 		super(fluid, material);
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-		setBlockName(Names.Blocks.MOLTEN_NINCODIUM_BLOCK);
+		setBlockName(Names.Blocks.MOLTEN_LAPIS_BLOCK);
 	}
 
-	public MoltenNincodium(Fluid moltenNincodium) {
-		this(moltenNincodium, Material.lava);
+	public MoltenLapis(Fluid moltenLapis) {
+		this(moltenLapis, Material.lava);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister register) {
 		stillIcon = register.registerIcon(Reference.MOD_ID
-				+ ":"+Names.Blocks.MOLTEN_NINCODIUM);
+				+ ":"+Names.Blocks.MOLTEN_LAPIS);
 		flowingIcon = register.registerIcon(Reference.MOD_ID
-				+ ":"+Names.Blocks.MOLTEN_NINCODIUM_FLOWING);
-		ModItems.moltenNincodium.setStillIcon(stillIcon);
-		ModItems.moltenNincodium.setFlowingIcon(flowingIcon);
+				+ ":"+Names.Blocks.MOLTEN_LAPIS_FLOWING);
+		ModItems.moltenLapis.setStillIcon(stillIcon);
+		ModItems.moltenLapis.setFlowingIcon(flowingIcon);
 	}
 }

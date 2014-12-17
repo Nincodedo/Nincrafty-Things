@@ -7,5 +7,12 @@ item.nincraftythings:nincodiumChestplate.name=Nincodium Chestplate
 item.nincraftythings:nincodiumLeggings.name=Nincodium Leggings
 item.nincraftythings:nincodiumBoots.name=Nincodium Boots
 item.nincraftythings:bucketNincodium.name=Nincodium Bucket
+item.nincraftythings:bucketLapis.name=Lapis Bucket
+item.nincraftythings:nincodiumSword.name=Nincodium Sword
 
-tile.moltenNincodium.name=Molten Nincodium
+tile.moltenNincodiumBlock.name=Molten Nincodium
+tile.nincraftythings:nincodiumBlock.name=Block of Nincodium
+tile.moltenLapisBlock.name=Molten Lapis
+
+fluid.moltenNincodium=Molten Nincodium
+fluid.moltenLapis=Molten Lapis
