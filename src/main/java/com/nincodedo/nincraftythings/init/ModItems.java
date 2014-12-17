@@ -83,8 +83,6 @@ public class ModItems {
 		FluidContainerRegistry.registerFluidContainer(moltenNincodium,
 				new ItemStack(bucketNincodium), new ItemStack(Items.bucket));
 
-		GameRegistry
-				.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");
 		GameRegistry.registerItem(nincodiumChestplate, "nincodiumChestplate");
 		GameRegistry.registerItem(nincodiumLeggings, "nincodiumLeggings");
