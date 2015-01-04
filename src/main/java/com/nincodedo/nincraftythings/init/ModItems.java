@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
@@ -76,6 +77,7 @@ public class ModItems {
 		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
 		GameRegistry.registerItem(bucketLapis, "bucketLapis");
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
+		OreDictionary.registerOre("ingotNincodium", nincodiumIngot);
 		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
