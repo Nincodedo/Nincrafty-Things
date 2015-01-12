@@ -45,6 +45,10 @@ public class ConfigurationHandler {
 				"nincodiumArmorHealingRadius",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 5, 1, 10,
 				"Radius of healing set bonus of Nincodium armor");
+		Settings.Armor.nincodiumArmorHealingChance = configuration.getFloat(
+				"nincodiumArmorHealingChance",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 0.25F, 0F, 1F,
+				"Percent chance the armor set bonus has to heal you");
 		Settings.Armor.nincodiumDurability = configuration.getInt(
 				"nincodiumDurability",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,

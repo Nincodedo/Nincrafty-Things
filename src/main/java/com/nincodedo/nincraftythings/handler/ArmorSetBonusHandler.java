@@ -2,6 +2,7 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +26,7 @@ public class ArmorSetBonusHandler {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
-					&& isWearingNincodiumArmorSet(player)) {
+					&& isWearingNincodiumArmorSet(player) && isHealingChanceSuccessful()) {
 
 				List players = MinecraftServer.getServer().worldServers[event.source
 						.getEntity().dimension].playerEntities;
@@ -45,6 +46,12 @@ public class ArmorSetBonusHandler {
 				}
 			}
 		}
+	}
+
+	private boolean isHealingChanceSuccessful() {
+		float chance = Settings.Armor.nincodiumArmorHealingChance;
+		Random rand = new Random();
+		return rand.nextFloat() < chance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
