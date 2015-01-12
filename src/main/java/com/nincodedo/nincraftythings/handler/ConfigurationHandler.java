@@ -50,6 +50,11 @@ public class ConfigurationHandler {
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,
 				"Nincodium armor durability");
 
+		Settings.Armor.nincodiumEnchantability = configuration.getInt(
+				"nincodiumEnchantability",
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 12, 1, 25,
+				"Enchantability of armor");
+
 		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
 				"nincodiumHelmetDamageReduction",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
