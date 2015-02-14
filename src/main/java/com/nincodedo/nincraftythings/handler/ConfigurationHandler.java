@@ -23,15 +23,23 @@ public class ConfigurationHandler {
 
 	private static void loadConfiguration() {
 
-		// General
-		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
-				"enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true,
-				"Nincodium ingot recipe");
-		Settings.Items.enableNincodiumTools = configuration.getBoolean(
-				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
-				"Nincodium tool recipes");
+		loadGeneralConfigs();
+		loadNincodiumArmorConfigs();
+		loadSillyConfigs();
+		
+		if (configuration.hasChanged()) {
+			configuration.save();
+		}
+	}
 
-		// Nincodium Armor
+	private static void loadSillyConfigs() {
+		Settings.Silly.thunderList = configuration.getStringList("thunderList",
+				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
+						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
+		
+	}
+
+	private static void loadNincodiumArmorConfigs() {
 		Settings.Armor.enableNincodiumArmor = configuration.getBoolean(
 				"enableNincodiumArmor",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, true,
@@ -78,15 +86,15 @@ public class ConfigurationHandler {
 				"nincodiumBootsDamageReduction",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
 				1, 13, "");
+	}
 
-		// Silly configs
-		Settings.Silly.thunderList = configuration.getStringList("thunderList",
-				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
-						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
-
-		if (configuration.hasChanged()) {
-			configuration.save();
-		}
+	private static void loadGeneralConfigs() {
+		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
+				"enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true,
+				"Nincodium ingot recipe");
+		Settings.Items.enableNincodiumTools = configuration.getBoolean(
+				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
+				"Nincodium tool recipes");
 	}
 
 	@SubscribeEvent
