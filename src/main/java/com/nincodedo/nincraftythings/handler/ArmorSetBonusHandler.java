@@ -32,7 +32,7 @@ public class ArmorSetBonusHandler {
 						player, healRadius);
 
 				if (closestPlayer != null && event.entityLiving.getHealth() > 0
-						&& closestPlayer.getHealth() < 20) {
+						&& closestPlayer.getHealth() < closestPlayer.getMaxHealth()) {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
