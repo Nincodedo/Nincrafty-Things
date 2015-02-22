@@ -12,6 +12,7 @@ public class Settings {
 		public static int nincodiumChestplateDamageReduction;
 		public static int nincodiumHelmetDamageReduction;
 		public static float nincodiumArmorHealingChance;
+		public static boolean canHealSelf;
 
 	}
 

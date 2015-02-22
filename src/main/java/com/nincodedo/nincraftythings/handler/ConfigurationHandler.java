@@ -26,7 +26,7 @@ public class ConfigurationHandler {
 		loadGeneralConfigs();
 		loadNincodiumArmorConfigs();
 		loadSillyConfigs();
-		
+
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
@@ -36,7 +36,7 @@ public class ConfigurationHandler {
 		Settings.Silly.thunderList = configuration.getStringList("thunderList",
 				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
 						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
-		
+
 	}
 
 	private static void loadNincodiumArmorConfigs() {
@@ -66,6 +66,11 @@ public class ConfigurationHandler {
 				"nincodiumEnchantability",
 				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 12, 1, 25,
 				"Enchantability of armor");
+
+		Settings.Armor.canHealSelf = configuration
+				.getBoolean("canHealSelf",
+						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, false,
+						"Armor set bonus can helf self, if false can only heal other players");
 
 		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
 				"nincodiumHelmetDamageReduction",
