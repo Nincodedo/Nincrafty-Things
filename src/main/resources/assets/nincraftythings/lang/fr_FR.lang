@@ -1,0 +1,18 @@
+itemGroup.nincraftythings=Nincrafty Things
+
+item.nincraftythings:nincodiumIngot.name=Lingot de nincodium
+item.nincraftythings:nincodiumPickaxe.name=Pioche en nincodium
+item.nincraftythings:nincodiumHelmet.name=Casque en nincodium
+item.nincraftythings:nincodiumChestplate.name=Plastron en nincodium
+item.nincraftythings:nincodiumLeggings.name=Jambières en nincodium
+item.nincraftythings:nincodiumBoots.name=Bottes en nincodium
+item.nincraftythings:bucketNincodium.name=Sceau de nincodium
+item.nincraftythings:bucketLapis.name=Sceau de lapis
+item.nincraftythings:nincodiumSword.name=Épée en nincodium
+
+tile.moltenNincodiumBlock.name=Nincodium fondu
+tile.nincraftythings:nincodiumBlock.name=Bloc de nincodium
+tile.moltenLapisBlock.name=Lapis fondu
+
+fluid.moltenNincodium=Nincodium liquide
+fluid.moltenLapis=Lapis liquide

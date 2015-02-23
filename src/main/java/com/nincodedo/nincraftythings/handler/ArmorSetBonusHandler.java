@@ -36,10 +36,6 @@ public class ArmorSetBonusHandler {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
-					EntityPlayer close = Minecraft.getMinecraft().theWorld
-							.getPlayerEntityByName(closestPlayer
-									.getDisplayName());
-					close.playSound("random.levelup", 1, 2);
 				}
 			}
 		}
