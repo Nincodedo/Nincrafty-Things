@@ -33,12 +33,6 @@ public class ArmorSetBonusHandler {
 						player, healRadius);
 
 				if (closestPlayer != null
-						&& !Settings.Armor.canHealSelf
-						&& (closestPlayer.getUniqueID().equals(player
-								.getUniqueID()))) {
-					return;
-				}
-				if (closestPlayer != null
 						&& event.entityLiving.getHealth() > 0
 						&& closestPlayer.getHealth() < closestPlayer
 								.getMaxHealth()) {
@@ -87,6 +81,10 @@ public class ArmorSetBonusHandler {
 				d4 = d5;
 				playersNear.add(entityplayer1);
 			}
+		}
+
+		if (!Settings.Armor.canHealSelf && playersNear.contains(player)) {
+			playersNear.remove(player);
 		}
 		entityplayer = getLowestHPOfEntities(playersNear);
 
