@@ -27,12 +27,15 @@ public class ArmorSetBonusHandler {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
-					&& isWearingNincodiumArmorSet(player) && isHealingChanceSuccessful()) {
+					&& isWearingNincodiumArmorSet(player)
+					&& isHealingChanceSuccessful()) {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
 
-				if (closestPlayer != null && event.entityLiving.getHealth() > 0
-						&& closestPlayer.getHealth() < 20) {
+				if (closestPlayer != null
+						&& event.entityLiving.getHealth() > 0
+						&& closestPlayer.getHealth() < closestPlayer
+								.getMaxHealth()) {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
@@ -61,15 +64,16 @@ public class ArmorSetBonusHandler {
 		List playersNear = new ArrayList();
 		List playersInDimension = null;
 		WorldServer[] worlds = MinecraftServer.getServer().worldServers;
-		
-		for(int i = 0; i < worlds.length; i++){
-			if(worlds[i].provider.dimensionId == player.dimension){
+
+		for (int i = 0; i < worlds.length; i++) {
+			if (worlds[i].provider.dimensionId == player.dimension) {
 				playersInDimension = worlds[i].playerEntities;
 			}
 		}
 
 		for (int i = 0; i < playersInDimension.size(); ++i) {
-			EntityPlayer entityplayer1 = (EntityPlayer) playersInDimension.get(i);
+			EntityPlayer entityplayer1 = (EntityPlayer) playersInDimension
+					.get(i);
 			double d5 = entityplayer1.getDistanceSq(p_72977_1_, p_72977_3_,
 					p_72977_5_);
 			if ((p_72977_7_ < 0.0D || d5 < p_72977_7_ * p_72977_7_)
@@ -77,6 +81,10 @@ public class ArmorSetBonusHandler {
 				d4 = d5;
 				playersNear.add(entityplayer1);
 			}
+		}
+
+		if (!Settings.Armor.canHealSelf && playersNear.contains(player)) {
+			playersNear.remove(player);
 		}
 		entityplayer = getLowestHPOfEntities(playersNear);
 
