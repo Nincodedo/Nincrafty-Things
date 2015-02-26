@@ -59,7 +59,7 @@ public class ConfigurationHandler {
 				"Percent chance the armor set bonus has to heal you");
 		Settings.Armor.nincodiumDurability = configuration.getInt(
 				"nincodiumDurability",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 1900, 1, 5000,
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 650, 1, 5000,
 				"Nincodium armor durability");
 
 		Settings.Armor.nincodiumEnchantability = configuration.getInt(
@@ -74,22 +74,22 @@ public class ConfigurationHandler {
 
 		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
 				"nincodiumHelmetDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 3,
 				1, 11, "");
 
 		Settings.Armor.nincodiumChestplateDamageReduction = configuration
 				.getInt("nincodiumChestplateDamageReduction",
 						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION,
-						9, 1, 16, "");
+						8, 1, 16, "");
 
 		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
 				"nincodiumLeggingsDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 7,
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 6,
 				1, 15, "");
 
 		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
 				"nincodiumBootsDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 4,
+				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 3,
 				1, 13, "");
 	}
 
