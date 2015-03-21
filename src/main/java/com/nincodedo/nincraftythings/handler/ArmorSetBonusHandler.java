@@ -22,7 +22,7 @@ public class ArmorSetBonusHandler {
 	private float healPercentage = Settings.Armor.nincodiumArmorHealingPercentage;
 	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
 	private float healingChance = Settings.Armor.nincodiumArmorHealingChance;
-	private float canHealSelf = Settings.Armor.canHealSelf;
+	private boolean canHealSelf = Settings.Armor.canHealSelf;
 
 
 	@SubscribeEvent
