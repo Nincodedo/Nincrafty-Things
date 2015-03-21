@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -23,7 +22,6 @@ public class ArmorSetBonusHandler {
 	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
 	private float healingChance = Settings.Armor.nincodiumArmorHealingChance;
 	private boolean canHealSelf = Settings.Armor.canHealSelf;
-
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {

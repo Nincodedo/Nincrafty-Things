@@ -3,7 +3,7 @@ package com.nincodedo.nincraftythings.item.sword;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
-public class ItemSwordJimmysSword extends ItemSwordNincrafty{
+public class ItemSwordJimmysSword extends ItemSwordNincrafty {
 
 	public ItemSwordJimmysSword(ToolMaterial material) {
 		super(material);

@@ -1,7 +1,6 @@
 package com.nincodedo.nincraftythings.init;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -11,8 +10,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
-import com.nincodedo.nincraftythings.block.BlockFluidClassicNincrafty;
-import com.nincodedo.nincraftythings.block.BlockNincrafty;
 import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;

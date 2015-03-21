@@ -1,25 +1,24 @@
 package com.nincodedo.nincraftythings.handler;
 
-import com.nincodedo.nincraftythings.init.ModItems;
-import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.utility.LogHelper;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+
+import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.reference.Settings;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ProcHandler {
 
 	@SubscribeEvent
 	public void procOnDeath(LivingDeathEvent event) {
-		if (Settings.Abilities.canProc && event.source.getEntity() instanceof EntityPlayerMP) {
+		if (Settings.Abilities.canProc
+				&& event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (!player.isEntityEqual(event.entity) && isUsingJimmysSword(player)) {
+			if (!player.isEntityEqual(event.entity)
+					&& isUsingJimmysSword(player)) {
 				/*
 				 * player.worldObj.spawnParticle("happyVillager", player.posX,
 				 * player.posY + 1.4, player.posZ, 0.3, 0.3, 0.3);

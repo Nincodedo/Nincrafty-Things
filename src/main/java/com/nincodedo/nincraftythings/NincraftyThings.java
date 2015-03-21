@@ -1,7 +1,5 @@
 package com.nincodedo.nincraftythings;
 
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.DungeonHooks;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.nincodedo.nincraftythings.handler.ArmorSetBonusHandler;

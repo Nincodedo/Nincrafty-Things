@@ -28,9 +28,9 @@ public class Settings {
 
 	}
 
-	public static class Abilities{
+	public static class Abilities {
 
 		public static boolean canProc;
-		
+
 	}
 }
