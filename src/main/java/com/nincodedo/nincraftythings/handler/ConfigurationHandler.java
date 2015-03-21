@@ -34,7 +34,6 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadAbilityConfigs() {
-		// TODO Auto-generated method stub
 		Settings.Abilities.canProc = configuration
 				.getBoolean(
 						"canProc",
