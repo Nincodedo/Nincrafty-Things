@@ -21,6 +21,9 @@ public class ArmorSetBonusHandler {
 
 	private float healPercentage = Settings.Armor.nincodiumArmorHealingPercentage;
 	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
+	private float healingChance = Settings.Armor.nincodiumArmorHealingChance;
+	private boolean canHealSelf = Settings.Armor.canHealSelf;
+
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
@@ -45,9 +48,8 @@ public class ArmorSetBonusHandler {
 	}
 
 	private boolean isHealingChanceSuccessful() {
-		float chance = Settings.Armor.nincodiumArmorHealingChance;
 		Random rand = new Random();
-		return rand.nextFloat() < chance;
+		return rand.nextFloat() < healingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
@@ -83,7 +85,7 @@ public class ArmorSetBonusHandler {
 			}
 		}
 
-		if (!Settings.Armor.canHealSelf && playersNear.contains(player)) {
+		if (!canHealSelf && playersNear.contains(player)) {
 			playersNear.remove(player);
 		}
 		entityplayer = getLowestHPOfEntities(playersNear);
