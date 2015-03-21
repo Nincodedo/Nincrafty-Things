@@ -1,0 +1,41 @@
+package com.nincodedo.nincraftythings.handler;
+
+import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincodedo.nincraftythings.utility.LogHelper;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
+public class ProcHandler {
+
+	@SubscribeEvent
+	public void procOnDeath(LivingDeathEvent event) {
+		if (Settings.Abilities.canProc && event.source.getEntity() instanceof EntityPlayerMP) {
+			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
+			if (!player.isEntityEqual(event.entity) && isUsingJimmysSword(player)) {
+				/*
+				 * player.worldObj.spawnParticle("happyVillager", player.posX,
+				 * player.posY + 1.4, player.posZ, 0.3, 0.3, 0.3);
+				 */
+				if (!player.worldObj.isRemote) {
+					player.worldObj.playSoundEffect(player.posX, player.posY,
+							player.posZ, "mob.wither.hurt", 1, 1);
+					player.addPotionEffect(new PotionEffect(5, 100, 9));
+					player.addPotionEffect(new PotionEffect(1, 100, 2));
+				}
+			}
+		}
+	}
+
+	private boolean isUsingJimmysSword(EntityPlayer player) {
+		return player.getCurrentEquippedItem().getItem()
+				.equals(ModItems.jimmysSword);
+	}
+}

@@ -27,4 +27,10 @@ public class Settings {
 		public static String[] thunderList;
 
 	}
+
+	public static class Abilities{
+
+		public static boolean canProc;
+		
+	}
 }

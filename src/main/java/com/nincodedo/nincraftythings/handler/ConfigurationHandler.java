@@ -25,11 +25,22 @@ public class ConfigurationHandler {
 
 		loadGeneralConfigs();
 		loadNincodiumArmorConfigs();
+		loadAbilityConfigs();
 		loadSillyConfigs();
 
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
+	}
+
+	private static void loadAbilityConfigs() {
+		// TODO Auto-generated method stub
+		Settings.Abilities.canProc = configuration
+				.getBoolean(
+						"canProc",
+						ConfigurationNincrafty.CATEGORY_ABILITIES,
+						true,
+						"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
 	}
 
 	private static void loadSillyConfigs() {
