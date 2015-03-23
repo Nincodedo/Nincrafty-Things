@@ -27,9 +27,8 @@ public class ThunderJoinHandler {
 	public void onPlayerJoin(EntityJoinWorldEvent event) {
 		if (event.entity instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.entity;
-			World world = event.world;
 			if (isPlayerThundertastic(player)) {
-				world.spawnEntityInWorld(new EntityLightningBolt(world,
+				event.world.spawnEntityInWorld(new EntityLightningBolt(event.world,
 						player.posX, 257, player.posZ));
 			}
 		}
