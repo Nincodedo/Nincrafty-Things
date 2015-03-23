@@ -40,6 +40,9 @@ public class ArmorSetBonusHandler {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
+					if(!closestPlayer.worldObj.isRemote) {
+						closestPlayer.worldObj.playSoundEffect(closestPlayer.posX, closestPlayer.posY, closestPlayer.posZ, "random.levelup", 1, 2);
+					}
 				}
 			}
 		}
