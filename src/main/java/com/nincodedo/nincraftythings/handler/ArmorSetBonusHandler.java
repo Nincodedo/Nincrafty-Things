@@ -29,7 +29,7 @@ public class ArmorSetBonusHandler {
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
 					&& isWearingNincodiumArmorSet(player)
-					&& isHealingChanceSuccessful()) {
+					&& isHealingChanceSuccessful(player)) {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
 
@@ -48,9 +48,8 @@ public class ArmorSetBonusHandler {
 		}
 	}
 
-	private boolean isHealingChanceSuccessful() {
-		Random rand = new Random();
-		return rand.nextFloat() < healingChance;
+	private boolean isHealingChanceSuccessful(EntityPlayer player) {
+		return player.rand.nextFloat() < healingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
