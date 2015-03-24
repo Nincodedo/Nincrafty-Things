@@ -49,7 +49,7 @@ public class ArmorSetBonusHandler {
 	}
 
 	private boolean isHealingChanceSuccessful(EntityPlayer player) {
-		return player.rand.nextFloat() < healingChance;
+		return player.getRNG().nextFloat() < healingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
