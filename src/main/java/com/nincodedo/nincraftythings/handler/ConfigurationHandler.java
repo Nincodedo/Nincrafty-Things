@@ -46,7 +46,7 @@ public class ConfigurationHandler {
 		Settings.Silly.thunderList = configuration.getStringList("thunderList",
 				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
 						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
-
+		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean("moonPhasesOPPlzNerf", ConfigurationNincrafty.CATEGORY_SILLY, true, "Moon phases cause shenanigans");
 	}
 
 	private static void loadNincodiumArmorConfigs() {
