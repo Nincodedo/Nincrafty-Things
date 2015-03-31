@@ -17,3 +17,6 @@ tile.moltenLapisBlock.name=Molten Lapis
 
 fluid.moltenNincodium=Molten Nincodium
 fluid.moltenLapis=Molten Lapis
+
+# Death Messages
+death.attack.moonModifier=%s was killed by tidal forces
