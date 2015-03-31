@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.handler;
 
 import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
 import com.sun.org.apache.xpath.internal.operations.Mod;
@@ -16,7 +17,8 @@ public class DamageModifierHandler {
 	@SubscribeEvent
 	public void attackedEntity(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP
-				&& event.source.damageType.equals("player")) {
+				&& event.source.damageType.equals("player")
+				&& Settings.Silly.moonPhasesOPPlzNerf) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (player.getHeldItem() != null
 					&& player.getHeldItem().getItem()
