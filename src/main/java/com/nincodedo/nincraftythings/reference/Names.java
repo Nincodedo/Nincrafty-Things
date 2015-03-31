@@ -10,6 +10,7 @@ public class Names {
 		public static final String BUCKET_NINCODIUM = "bucketNincodium";
 		public static final String NINCODIUM_SWORD = "nincodiumSword";
 		public static final String BUCKET_LAPIS = "bucketLapis";
+		public static final String JIMMYS_SWORD = "jimmysSword";
 	}
 
 	public static final class Blocks {
@@ -25,6 +26,7 @@ public class Names {
 
 	public static final class Materials {
 		public static final String NINCODIUM = "NINCODIUM";
+		public static final String JIMMYDRITE = "JIMMYDRITE";
 	}
 
 	public static final class Tools {

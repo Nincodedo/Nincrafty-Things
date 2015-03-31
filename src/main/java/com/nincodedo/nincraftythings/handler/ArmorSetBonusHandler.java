@@ -2,9 +2,7 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -21,6 +19,8 @@ public class ArmorSetBonusHandler {
 
 	private float healPercentage = Settings.Armor.nincodiumArmorHealingPercentage;
 	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
+	private float healingChance = Settings.Armor.nincodiumArmorHealingChance;
+	private boolean canHealSelf = Settings.Armor.canHealSelf;
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
@@ -28,7 +28,7 @@ public class ArmorSetBonusHandler {
 			EntityPlayer player = (EntityPlayer) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
 					&& isWearingNincodiumArmorSet(player)
-					&& isHealingChanceSuccessful()) {
+					&& isHealingChanceSuccessful(player)) {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
 						player, healRadius);
 
@@ -39,15 +39,18 @@ public class ArmorSetBonusHandler {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
+					if (!closestPlayer.worldObj.isRemote) {
+						closestPlayer.worldObj.playSoundEffect(
+								closestPlayer.posX, closestPlayer.posY,
+								closestPlayer.posZ, "random.levelup", 1, 2);
+					}
 				}
 			}
 		}
 	}
 
-	private boolean isHealingChanceSuccessful() {
-		float chance = Settings.Armor.nincodiumArmorHealingChance;
-		Random rand = new Random();
-		return rand.nextFloat() < chance;
+	private boolean isHealingChanceSuccessful(EntityPlayer player) {
+		return player.getRNG().nextFloat() < healingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
@@ -83,7 +86,7 @@ public class ArmorSetBonusHandler {
 			}
 		}
 
-		if (!Settings.Armor.canHealSelf && playersNear.contains(player)) {
+		if (!canHealSelf && playersNear.contains(player)) {
 			playersNear.remove(player);
 		}
 		entityplayer = getLowestHPOfEntities(playersNear);

@@ -25,6 +25,13 @@ public class Settings {
 	public static class Silly {
 
 		public static String[] thunderList;
+		public static boolean moonPhasesOPPlzNerf;
+
+	}
+
+	public static class Abilities {
+
+		public static boolean canProc;
 
 	}
 }
