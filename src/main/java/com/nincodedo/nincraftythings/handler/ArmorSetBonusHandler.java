@@ -2,7 +2,6 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -40,8 +39,10 @@ public class ArmorSetBonusHandler {
 					float healed = event.ammount * healPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
-					if(!closestPlayer.worldObj.isRemote) {
-						closestPlayer.worldObj.playSoundEffect(closestPlayer.posX, closestPlayer.posY, closestPlayer.posZ, "random.levelup", 1, 2);
+					if (!closestPlayer.worldObj.isRemote) {
+						closestPlayer.worldObj.playSoundEffect(
+								closestPlayer.posX, closestPlayer.posY,
+								closestPlayer.posZ, "random.levelup", 1, 2);
 					}
 				}
 			}

@@ -1,15 +1,12 @@
 package com.nincodedo.nincraftythings.handler;
 
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
-import com.nincodedo.nincraftythings.utility.LogHelper;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class DamageModifierHandler {
