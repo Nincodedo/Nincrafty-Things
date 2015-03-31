@@ -23,94 +23,83 @@ public class ConfigurationHandler {
 
 	private static void loadConfiguration() {
 
-		loadGeneralConfigs();
-		loadNincodiumArmorConfigs();
-		loadAbilityConfigs();
-		loadSillyConfigs();
+		loadGeneralConfigs(Configuration.CATEGORY_GENERAL);
+		loadNincodiumArmorConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR);
+		loadNincodiumArmorReductionConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION);
+		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
+		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
 	}
 
-	private static void loadAbilityConfigs() {
+	private static void loadNincodiumArmorReductionConfigs(String category) {
+		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
+				"nincodiumHelmetDamageReduction", category, 3, 1, 11, "");
+
+		Settings.Armor.nincodiumChestplateDamageReduction = configuration
+				.getInt("nincodiumChestplateDamageReduction", category, 8, 1,
+						16, "");
+
+		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
+				"nincodiumLeggingsDamageReduction", category, 6, 1, 15, "");
+
+		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
+				"nincodiumBootsDamageReduction", category, 3, 1, 13, "");
+	}
+
+	private static void loadAbilityConfigs(String category) {
 		Settings.Abilities.canProc = configuration
 				.getBoolean(
 						"canProc",
-						ConfigurationNincrafty.CATEGORY_ABILITIES,
+						category,
 						true,
 						"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
 	}
 
-	private static void loadSillyConfigs() {
+	private static void loadSillyConfigs(String category) {
 		Settings.Silly.thunderList = configuration.getStringList("thunderList",
-				ConfigurationNincrafty.CATEGORY_SILLY, new String[] {
-						"Nincodedo", "Undead_Zeratul" }, "Thundertastic");
+				category, new String[] { "Nincodedo", "Undead_Zeratul" },
+				"Thundertastic");
 		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean(
-				"moonPhasesOPPlzNerf", ConfigurationNincrafty.CATEGORY_SILLY,
-				true, "Moon phases cause shenanigans");
+				"moonPhasesOPPlzNerf", category, true,
+				"Moon phases cause shenanigans");
 	}
 
-	private static void loadNincodiumArmorConfigs() {
+	private static void loadNincodiumArmorConfigs(String category) {
 		Settings.Armor.enableNincodiumArmor = configuration.getBoolean(
-				"enableNincodiumArmor",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, true,
+				"enableNincodiumArmor", category, true,
 				"Nincodium armor recipes");
 		Settings.Armor.nincodiumArmorHealingPercentage = configuration
-				.getFloat("nincodiumArmorHealingPercentage",
-						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 0.14F,
+				.getFloat("nincodiumArmorHealingPercentage", category, 0.14F,
 						0F, 1F,
 						"Percent of damage dealt healing set bonus of Nincodium armor");
 		Settings.Armor.nincodiumArmorHealingRadius = configuration.getFloat(
-				"nincodiumArmorHealingRadius",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 5, 1, 10,
+				"nincodiumArmorHealingRadius", category, 5, 1, 10,
 				"Radius of healing set bonus of Nincodium armor");
 		Settings.Armor.nincodiumArmorHealingChance = configuration.getFloat(
-				"nincodiumArmorHealingChance",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 0.25F, 0F, 1F,
+				"nincodiumArmorHealingChance", category, 0.25F, 0F, 1F,
 				"Percent chance the armor set bonus has to heal you");
 		Settings.Armor.nincodiumDurability = configuration.getInt(
-				"nincodiumDurability",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 650, 1, 5000,
+				"nincodiumDurability", category, 650, 1, 5000,
 				"Nincodium armor durability");
 
 		Settings.Armor.nincodiumEnchantability = configuration.getInt(
-				"nincodiumEnchantability",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, 12, 1, 25,
+				"nincodiumEnchantability", category, 12, 1, 25,
 				"Enchantability of armor");
 
 		Settings.Armor.canHealSelf = configuration
-				.getBoolean("canHealSelf",
-						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR, false,
+				.getBoolean("canHealSelf", category, false,
 						"Armor set bonus can helf self, if false can only heal other players");
-
-		Settings.Armor.nincodiumHelmetDamageReduction = configuration.getInt(
-				"nincodiumHelmetDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 3,
-				1, 11, "");
-
-		Settings.Armor.nincodiumChestplateDamageReduction = configuration
-				.getInt("nincodiumChestplateDamageReduction",
-						ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION,
-						8, 1, 16, "");
-
-		Settings.Armor.nincodiumLeggingsDamageReduction = configuration.getInt(
-				"nincodiumLeggingsDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 6,
-				1, 15, "");
-
-		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt(
-				"nincodiumBootsDamageReduction",
-				ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION, 3,
-				1, 13, "");
 	}
 
-	private static void loadGeneralConfigs() {
+	private static void loadGeneralConfigs(String category) {
 		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
-				"enableNincodiumIngot", Configuration.CATEGORY_GENERAL, true,
+				"enableNincodiumIngot", category, true,
 				"Nincodium ingot recipe");
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
-				"enableNincodiumTools", Configuration.CATEGORY_GENERAL, true,
+				"enableNincodiumTools", category, true,
 				"Nincodium tool recipes");
 	}
 
