@@ -18,6 +18,7 @@ public class ProcHandler {
 				&& event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
+					&& player.getHeldItem() != null
 					&& isUsingJimmysSword(player)) {
 				if (!player.worldObj.isRemote) {
 					player.worldObj.playSoundEffect(player.posX, player.posY,
