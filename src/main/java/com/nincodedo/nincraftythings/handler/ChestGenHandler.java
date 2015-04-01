@@ -9,7 +9,9 @@ import com.nincodedo.nincraftythings.init.ModItems;
 public class ChestGenHandler {
 	public static void init() {
 		String c = ChestGenHooks.DUNGEON_CHEST;
+		if(Settings.Items.enableJimmysSword){
 		ChestGenHooks.addItem(c, new WeightedRandomChestContent(new ItemStack(
 				ModItems.jimmysSword), 1, 1, 3));
+		}
 	}
 }

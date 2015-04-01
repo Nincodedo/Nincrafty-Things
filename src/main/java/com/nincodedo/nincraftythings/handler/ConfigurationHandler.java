@@ -65,6 +65,7 @@ public class ConfigurationHandler {
 		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean(
 				"moonPhasesOPPlzNerf", category, true,
 				"Moon phases cause shenanigans");
+		Settings.Silly.moonModifiers = configuration.
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
@@ -101,6 +102,7 @@ public class ConfigurationHandler {
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
 				"enableNincodiumTools", category, true,
 				"Nincodium tool recipes");
+		Settings.Items.enableJimmysSword = configuration.getBoolean("enableJimmysSword", category, true, "Jimmy's Sword can be found in chests");
 	}
 
 	@SubscribeEvent

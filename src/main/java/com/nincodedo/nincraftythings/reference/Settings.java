@@ -13,25 +13,20 @@ public class Settings {
 		public static int nincodiumHelmetDamageReduction;
 		public static float nincodiumArmorHealingChance;
 		public static boolean canHealSelf;
-
 	}
 
 	public static class Items {
 		public static boolean enableNincodiumTools;
 		public static boolean enableNincodiumIngot;
-
+		public static boolean enableJimmysSword;
 	}
 
 	public static class Silly {
-
 		public static String[] thunderList;
 		public static boolean moonPhasesOPPlzNerf;
-
 	}
 
 	public static class Abilities {
-
 		public static boolean canProc;
-
 	}
 }
