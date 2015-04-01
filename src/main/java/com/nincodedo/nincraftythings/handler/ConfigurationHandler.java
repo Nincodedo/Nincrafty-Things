@@ -65,7 +65,6 @@ public class ConfigurationHandler {
 		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean(
 				"moonPhasesOPPlzNerf", category, true,
 				"Moon phases cause shenanigans");
-		Settings.Silly.moonModifiers = configuration.
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
