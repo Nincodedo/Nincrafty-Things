@@ -14,24 +14,17 @@ public class ProcHandler {
 
 	@SubscribeEvent
 	public void procOnDeath(LivingDeathEvent event) {
-		if (Settings.Abilities.canProc
-				&& event.source.getEntity() instanceof EntityPlayerMP) {
+		if (Settings.Abilities.canProc && event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (!player.isEntityEqual(event.entity)
-					&& player.getHeldItem() != null
-					&& isUsingJimmysSword(player)) {
-				if (!player.worldObj.isRemote) {
-					player.worldObj.playSoundEffect(player.posX, player.posY,
-							player.posZ, "mob.wither.hurt", 1, 1);
-					player.addPotionEffect(new PotionEffect(5, 100, 9));
-					player.addPotionEffect(new PotionEffect(1, 100, 2));
-				}
+			if (!player.isEntityEqual(event.entity)	&& isUsingJimmysSword(player) && !player.worldObj.isRemote) {
+				player.worldObj.playSoundEffect(player.posX, player.posY, player.posZ, "mob.wither.hurt", 1, 1);
+				player.addPotionEffect(new PotionEffect(5, 100, 9));
+				player.addPotionEffect(new PotionEffect(1, 100, 2));
 			}
 		}
 	}
 
 	private boolean isUsingJimmysSword(EntityPlayer player) {
-		return player.getCurrentEquippedItem().getItem()
-				.equals(ModItems.jimmysSword);
+		return ModItems.jimmysSword.equals(player.getCurrentEquippedItem().getItem());
 	}
 }
