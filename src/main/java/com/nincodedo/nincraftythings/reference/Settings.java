@@ -19,6 +19,7 @@ public class Settings {
 		public static boolean enableNincodiumTools;
 		public static boolean enableNincodiumIngot;
 		public static boolean enableJimmysSword;
+		public static int jimmysSwordChestRarity;
 	}
 
 	public static class Silly {

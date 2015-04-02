@@ -102,6 +102,7 @@ public class ConfigurationHandler {
 				"enableNincodiumTools", category, true,
 				"Nincodium tool recipes");
 		Settings.Items.enableJimmysSword = configuration.getBoolean("enableJimmysSword", category, true, "Jimmy's Sword can be found in chests");
+		Settings.Items.jimmysSwordChestRarity = configuration.getInt("jimmysSwordChestRarity", category, 3, 1, 100, "Dungeon chest rarity of Jimmy's Sword");
 	}
 
 	@SubscribeEvent

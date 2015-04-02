@@ -11,7 +11,7 @@ public class ChestGenHandler {
 		String c = ChestGenHooks.DUNGEON_CHEST;
 		if(Settings.Items.enableJimmysSword){
 		ChestGenHooks.addItem(c, new WeightedRandomChestContent(new ItemStack(
-				ModItems.jimmysSword), 1, 1, 3));
+				ModItems.jimmysSword), 1, 1, Settings.Items.jimmysSwordChestRarity));
 		}
 	}
 }
