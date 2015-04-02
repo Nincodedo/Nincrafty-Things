@@ -13,8 +13,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBucketNincrafty extends ItemBucket {
 
-	public ItemBucketNincrafty(Block p_i45331_1_) {
-		super(p_i45331_1_);
+	public ItemBucketNincrafty(Block fluidBlock) {
+		super(fluidBlock);
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
