@@ -56,6 +56,7 @@ public class ConfigurationHandler {
 						category,
 						true,
 						"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
+		Settings.Abilities.canJimmyPvP = configuration.getBoolean("canJimmyPvP", category, false, "Allows Jimmy's Sword to attack other players");
 	}
 
 	private static void loadSillyConfigs(String category) {

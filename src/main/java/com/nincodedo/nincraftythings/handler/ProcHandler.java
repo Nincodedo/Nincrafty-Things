@@ -26,6 +26,15 @@ public class ProcHandler {
 			}
 		}
 	}
+	
+	@SubscribeEvent
+	public void jimmysSwordPvP(LivingAttackEvent event){
+		if(event.source.getEntity() instanceof EntityPlayerMP && event.entity instanceof EntityPlayerMP
+		&& isUsingJimmysSword(event.source.getEntity()) && !Settings.Abilities.canJimmyPvP){
+			event.setCanceled(true);
+			//TODO chat message to the player?
+		}
+	}
 
 	private boolean isUsingJimmysSword(EntityPlayer player) {
 		return ModItems.jimmysSword.equals(player.getCurrentEquippedItem()
