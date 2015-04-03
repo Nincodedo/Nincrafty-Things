@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
