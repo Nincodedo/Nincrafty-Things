@@ -1,9 +1,6 @@
 language: java
 notifications:
   email: false
-branches:
-  except:
-    - /^feature.*$/
 before_install: chmod +x gradlew
 install: ./gradlew setupCIWorkspace -S
 matrix:
