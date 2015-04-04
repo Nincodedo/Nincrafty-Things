@@ -56,6 +56,7 @@ public class ConfigurationHandler {
 						category,
 						true,
 						"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
+		Settings.Abilities.canJimmyPvP = configuration.getBoolean("canJimmyPvP", category, false, "Allows Jimmy's Sword to attack other players");
 	}
 
 	private static void loadSillyConfigs(String category) {
@@ -101,6 +102,12 @@ public class ConfigurationHandler {
 		Settings.Items.enableNincodiumTools = configuration.getBoolean(
 				"enableNincodiumTools", category, true,
 				"Nincodium tool recipes");
+		Settings.Items.enableJimmysSword = configuration.getBoolean(
+				"enableJimmysSword", category, true,
+				"Jimmy's Sword can be found in chests");
+		Settings.Items.jimmysSwordChestRarity = configuration.getInt(
+				"jimmysSwordChestRarity", category, 3, 1, 100,
+				"Dungeon chest rarity of Jimmy's Sword");
 	}
 
 	@SubscribeEvent
