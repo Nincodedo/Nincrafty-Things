@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
@@ -18,20 +19,26 @@ public class ProcHandler {
 				&& event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
-					&& player.getHeldItem() != null
-					&& isUsingJimmysSword(player)) {
-				if (!player.worldObj.isRemote) {
-					player.worldObj.playSoundEffect(player.posX, player.posY,
-							player.posZ, "mob.wither.hurt", 1, 1);
-					player.addPotionEffect(new PotionEffect(5, 100, 9));
-					player.addPotionEffect(new PotionEffect(1, 100, 2));
-				}
+					&& isUsingJimmysSword(player) && !player.worldObj.isRemote) {
+				player.worldObj.playSoundEffect(player.posX, player.posY,
+						player.posZ, "mob.wither.hurt", 1, 1);
+				player.addPotionEffect(new PotionEffect(5, 100, 9));
+				player.addPotionEffect(new PotionEffect(1, 100, 2));
 			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void jimmysSwordPvP(LivingAttackEvent event){
+		if(event.source.getEntity() instanceof EntityPlayerMP && event.entity instanceof EntityPlayerMP
+		&& isUsingJimmysSword((EntityPlayerMP)event.source.getEntity()) && !Settings.Abilities.canJimmyPvP){
+			event.setCanceled(true);
+			//TODO chat message to the player?
 		}
 	}
 
 	private boolean isUsingJimmysSword(EntityPlayer player) {
-		return player.getCurrentEquippedItem().getItem()
-				.equals(ModItems.jimmysSword);
+		return ModItems.jimmysSword.equals(player.getCurrentEquippedItem()
+				.getItem());
 	}
 }
