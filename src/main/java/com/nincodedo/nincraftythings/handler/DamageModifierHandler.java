@@ -4,7 +4,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.init.ModItems;
-import com.nincodedo.nincraftythings.item.sword.ItemSwordNincodiumSword;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
 
