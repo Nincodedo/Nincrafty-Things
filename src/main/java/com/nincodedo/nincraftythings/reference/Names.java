@@ -18,6 +18,7 @@ public class Names {
 		public static final String MOLTEN_NINCODIUM = "moltennincodium";
 		public static final String MOLTEN_NINCODIUM_FLOWING = "moltenNincodiumFlowing";
 		public static final String NINCODIUM_BLOCK = "nincodiumBlock";
+		public static final String NINCODIUM_ORE = "nincodiumOre";
 
 		public static final String MOLTEN_LAPIS_BLOCK = "moltenLapisBlock";
 		public static final String MOLTEN_LAPIS = "moltenlapis";
