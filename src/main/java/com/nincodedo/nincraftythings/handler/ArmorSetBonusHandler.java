@@ -25,7 +25,7 @@ public class ArmorSetBonusHandler {
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
-			EntityPlayer player = (EntityPlayer) event.source.getEntity();
+			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
 					&& isWearingNincodiumArmorSet(player)
 					&& isHealingChanceSuccessful(player)) {
@@ -49,19 +49,19 @@ public class ArmorSetBonusHandler {
 		}
 	}
 
-	private boolean isHealingChanceSuccessful(EntityPlayer player) {
+	private boolean isHealingChanceSuccessful(EntityPlayerMP player) {
 		return player.getRNG().nextFloat() < healingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
-			EntityPlayer player, double healRadius2) {
+			EntityPlayerMP player, double healRadius2) {
 		return getClosestPlayerWithLeastHealth(player, player.posX,
 				player.posY, player.posZ, healRadius2);
 	}
 
-	private EntityPlayerMP getClosestPlayerWithLeastHealth(EntityPlayer player,
-			double p_72977_1_, double p_72977_3_, double p_72977_5_,
-			double p_72977_7_) {
+	private EntityPlayerMP getClosestPlayerWithLeastHealth(EntityPlayerMP player,
+			double posX, double posY, double posZ,
+			double radius) {
 		double d4 = -1.0D;
 		EntityPlayerMP entityplayer = null;
 		List playersNear = new ArrayList();
@@ -77,9 +77,9 @@ public class ArmorSetBonusHandler {
 		for (int i = 0; i < playersInDimension.size(); ++i) {
 			EntityPlayer entityplayer1 = (EntityPlayer) playersInDimension
 					.get(i);
-			double d5 = entityplayer1.getDistanceSq(p_72977_1_, p_72977_3_,
-					p_72977_5_);
-			if ((p_72977_7_ < 0.0D || d5 < p_72977_7_ * p_72977_7_)
+			double d5 = entityplayer1.getDistanceSq(posX, posY,
+					posZ);
+			if ((radius < 0.0D || d5 < radius * radius)
 					&& (d4 == -1.0D || d5 < d4)) {
 				d4 = d5;
 				playersNear.add(entityplayer1);
@@ -108,7 +108,7 @@ public class ArmorSetBonusHandler {
 		return lowestPlayer;
 	}
 
-	private boolean isWearingNincodiumArmorSet(EntityPlayer player) {
+	private boolean isWearingNincodiumArmorSet(EntityPlayerMP player) {
 		boolean armor = true;
 		ArrayList<ItemStack> armorSet = new ArrayList();
 		armorSet.add(new ItemStack(ModItems.nincodiumBoots));
