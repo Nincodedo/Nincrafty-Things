@@ -1,5 +1,8 @@
 package com.nincodedo.nincraftythings.item.sword;
 
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.ItemStack;
+
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
@@ -14,4 +17,8 @@ public class ItemSwordJimmysSword extends ItemSwordNincrafty {
 		this(Material.Tools.JIMMYDRITE);
 	}
 
+	@Override
+	public EnumRarity getRarity(ItemStack stack) {
+		return EnumRarity.rare;
+	}
 }
