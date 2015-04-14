@@ -48,4 +48,25 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 		return getRepairIngot() == itemStack2.getItem() ? true : super
 				.getIsRepairable(itemStack1, itemStack2);
 	}
+	
+	@Override
+	public boolean hasArmorSetItem(EntityPlayer player, int i){
+		ItemStack stack = player.inventory.armorInventory[3 - i];
+		if(stack == null){
+			return false;
+		}
+		
+		switch(i){
+			case 0:
+				return ModItems.nincodiumHelmet == stack.getItem();
+			case 1:
+				return ModItems.nincodiumChestplate == stack.getItem();
+			case 2:
+				return ModItems.nincodiumLeggings == stack.getItem();
+			case 3:
+				return ModItems.nincodiumBoots == stack.getItem();
+			default:
+				return false;
+		}
+	}
 }

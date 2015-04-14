@@ -109,23 +109,13 @@ public class ArmorSetBonusHandler {
 	}
 
 	private boolean isWearingNincodiumArmorSet(EntityPlayer player) {
-		boolean armor = true;
-		ArrayList<ItemStack> armorSet = new ArrayList();
-		armorSet.add(new ItemStack(ModItems.nincodiumBoots));
-		armorSet.add(new ItemStack(ModItems.nincodiumLeggings));
-		armorSet.add(new ItemStack(ModItems.nincodiumChestplate));
-		armorSet.add(new ItemStack(ModItems.nincodiumHelmet));
-		for (int i = 1; i <= 4; i++) {
-			try {
-				if (!player.getEquipmentInSlot(i).getItem()
-						.equals(armorSet.get(i - 1).getItem())) {
-					armor = false;
-				}
-			} catch (Exception e) {
-				armor = false;
+		boolean hasArmorSet = true;
+		for (int i = 0; i < 4; i++) {
+			if(!ItemArmorNincodium.hasArmorSetItem(player, i)){
+				hasArmorSetItem = false;
+				break;
 			}
-
 		}
-		return armor;
+		return hasArmorSet;
 	}
 }
