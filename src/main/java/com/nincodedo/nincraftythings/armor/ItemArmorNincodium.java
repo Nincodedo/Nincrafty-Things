@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.armor;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
 import com.nincodedo.nincraftythings.init.ModItems;
@@ -49,8 +50,7 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 				.getIsRepairable(itemStack1, itemStack2);
 	}
 	
-	@Override
-	public boolean hasArmorSetItem(EntityPlayer player, int i){
+	public static boolean hasArmorSetItem(EntityPlayer player, int i){
 		ItemStack stack = player.inventory.armorInventory[3 - i];
 		if(stack == null){
 			return false;

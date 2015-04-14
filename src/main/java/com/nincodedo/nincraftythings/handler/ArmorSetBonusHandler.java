@@ -10,6 +10,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
+import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
 
@@ -112,7 +113,7 @@ public class ArmorSetBonusHandler {
 		boolean hasArmorSet = true;
 		for (int i = 0; i < 4; i++) {
 			if(!ItemArmorNincodium.hasArmorSetItem(player, i)){
-				hasArmorSetItem = false;
+				hasArmorSet = false;
 				break;
 			}
 		}
