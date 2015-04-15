@@ -7,7 +7,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import com.nincodedo.nincraftythings.NincraftyThings;
-import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.api.item.IProcBuff;
 import com.nincodedo.nincraftythings.reference.Particles;
 import com.nincodedo.nincraftythings.reference.Settings;
 

@@ -3,7 +3,7 @@ package com.nincodedo.nincraftythings.handler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.api.item.IMoonDamage;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
 

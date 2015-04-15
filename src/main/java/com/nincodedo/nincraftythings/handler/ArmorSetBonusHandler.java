@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
-import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;

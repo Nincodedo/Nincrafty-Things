@@ -1,5 +1,8 @@
 package com.nincodedo.nincraftythings.item.sword;
 
+import net.minecraft.item.ItemStack;
+
+import com.nincodedo.nincraftythings.api.item.IMoonDamage;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
