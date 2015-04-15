@@ -21,7 +21,7 @@ public class ProcHandler {
 				&& event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity)
-					&& isUsingJimmysSword(player)) {
+					&& isUsingProcSword(player)) {
 				NincraftyThings.proxy.spawnParticle(Particles.greenSparkles,
 						player.posX, player.posY + 1.4, player.posZ, 1.3, 1.3,
 						1.3);
@@ -43,14 +43,13 @@ public class ProcHandler {
 	public void jimmysSwordPvP(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP
 				&& event.entity instanceof EntityPlayerMP
-				&& isUsingJimmysSword((EntityPlayerMP) event.source.getEntity())
+				&& isUsingProcSword((EntityPlayerMP) event.source.getEntity())
 				&& !Settings.Abilities.canJimmyPvP) {
 			event.setCanceled(true);
 		}
 	}
 
-	private boolean isUsingJimmysSword(EntityPlayer player) {
-		return ModItems.jimmysSword.equals(player.getCurrentEquippedItem()
-				.getItem());
+	private boolean isUsingProcSword(EntityPlayer player) {
+		return player.getCurrentEquippedItem().getItem() instanceof IProcBuff;
 	}
 }
