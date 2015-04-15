@@ -17,9 +17,9 @@ public class ItemToolNincrafty extends ItemTool {
 	protected ItemToolNincrafty(float damageVsEntity,
 			ToolMaterial toolMaterial, Set blocksEffectiveAgainst) {
 		super(damageVsEntity, toolMaterial, blocksEffectiveAgainst);
-		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-		this.setNoRepair();
-		this.maxStackSize = 1;
+		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
+		setNoRepair();
+		maxStackSize = 1;
 	}
 
 	@Override

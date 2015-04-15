@@ -6,14 +6,9 @@ import com.nincodedo.nincraftythings.reference.Names;
 
 public class ItemSwordNincodiumSword extends ItemSwordNincrafty {
 
-	public ItemSwordNincodiumSword(ToolMaterial material) {
-		super(material);
+	public ItemSwordNincodiumSword() {
+		super(Material.Tools.NINCODIUM);
 		setUnlocalizedName(Names.Items.NINCODIUM_SWORD);
 		setRepairIngot(ModItems.nincodiumIngot);
 	}
-
-	public ItemSwordNincodiumSword() {
-		this(Material.Tools.NINCODIUM);
-	}
-
 }
