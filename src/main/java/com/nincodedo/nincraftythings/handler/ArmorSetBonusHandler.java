@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
-import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -59,8 +57,9 @@ public class ArmorSetBonusHandler {
 				player.posY, player.posZ, healRadius2);
 	}
 
-	private EntityPlayerMP getClosestPlayerWithLeastHealth(EntityPlayerMP player,
-			double posX, double posY, double posZ, double radius) {
+	private EntityPlayerMP getClosestPlayerWithLeastHealth(
+			EntityPlayerMP player, double posX, double posY, double posZ,
+			double radius) {
 		double d4 = -1.0D;
 		EntityPlayerMP entityplayer = null;
 		List playersNear = new ArrayList();
@@ -76,8 +75,7 @@ public class ArmorSetBonusHandler {
 		for (int i = 0; i < playersInDimension.size(); ++i) {
 			EntityPlayerMP entityplayer1 = (EntityPlayerMP) playersInDimension
 					.get(i);
-			double d5 = entityplayer1.getDistanceSq(posX, posY,
-					posZ);
+			double d5 = entityplayer1.getDistanceSq(posX, posY, posZ);
 			if ((radius < 0.0D || d5 < radius * radius)
 					&& (d4 == -1.0D || d5 < d4)) {
 				d4 = d5;
@@ -110,7 +108,7 @@ public class ArmorSetBonusHandler {
 	private boolean isWearingNincodiumArmorSet(EntityPlayerMP player) {
 		boolean hasArmorSet = true;
 		for (int i = 0; i < 4; i++) {
-			if(!ItemArmorNincodium.hasArmorSetItem(player, i)){
+			if (!ItemArmorNincodium.hasArmorSetItem(player, i)) {
 				hasArmorSet = false;
 				break;
 			}

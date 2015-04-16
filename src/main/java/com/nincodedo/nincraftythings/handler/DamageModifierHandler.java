@@ -10,7 +10,7 @@ import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class DamageModifierHandler {
-	
+
 	float minMoonDamage = Settings.Silly.minMoonDamage;
 	float maxMoonDamage = Settings.Silly.maxMoonDamage;
 
@@ -35,7 +35,7 @@ public class DamageModifierHandler {
 	}
 
 	private float getMoonDamage(int moonPhase, float damage) {
-		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5)-3.5)) * ((maxMoonDamage-minMoonDamage)/3))+minMoonDamage));
+		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5) - 3.5)) * ((maxMoonDamage - minMoonDamage) / 3)) + minMoonDamage));
 	}
 
 }
