@@ -11,6 +11,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.block.BlockNincodium;
+import com.nincodedo.nincraftythings.block.BlockNincodiumOre;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
@@ -39,6 +40,7 @@ public class ModItems {
 	public static ItemBucketNincrafty bucketNincodium;
 	public static ItemSwordNincodiumSword nincodiumSword;
 	public static BlockNincodium nincodiumBlock;
+	public static BlockNincodiumOre nincodiumOre;
 	public static Fluid moltenLapis;
 	public static ItemBucketNincrafty bucketLapis;
 	public static Block moltenLapisBlock;
@@ -54,6 +56,7 @@ public class ModItems {
 		moltenNincodium = new Fluid("moltenNincodium");
 		nincodiumSword = new ItemSwordNincodiumSword();
 		nincodiumBlock = new BlockNincodium();
+		nincodiumOre = new BlockNincodiumOre();
 		jimmysSword = new ItemSwordJimmysSword();
 		moltenLapis = new Fluid("moltenLapis");
 
@@ -79,6 +82,7 @@ public class ModItems {
 		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
 		OreDictionary.registerOre("ingotNincodium", nincodiumIngot);
 		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
+		GameRegistry.registerBlock(nincodiumOre, "nincodiumOre");
 		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
 		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
 		GameRegistry.registerItem(jimmysSword, "jimmysSword");

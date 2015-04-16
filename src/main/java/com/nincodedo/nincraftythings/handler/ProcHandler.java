@@ -9,6 +9,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import com.nincodedo.nincraftythings.NincraftyThings;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Particles;
+import com.nincodedo.nincraftythings.reference.Sounds;
 import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -30,7 +31,7 @@ public class ProcHandler {
 						0.3);
 				if (!player.worldObj.isRemote) {
 					player.worldObj.playSoundEffect(player.posX, player.posY,
-							player.posZ, "mob.wither.hurt", 1, 1);
+							player.posZ, Sounds.procAttack, 1, 1);
 					player.addPotionEffect(new PotionEffect(5, 100, 9));
 					player.addPotionEffect(new PotionEffect(1, 100, 2));
 				}
