@@ -34,20 +34,26 @@ public class DamageModifierHandler {
 	private float getMoonDamage(int moonPhase, float damage) {
 		switch (moonPhase) {
 		case 0:
-		case 1:
 			damage = damage * 0.7F;
 			break;
-		case 2:
-		case 3:
+		case 1:
 			damage = damage * 0.85F;
 			break;
+		case 2:
+			// no change in damage
+			break;
+		case 3:
 		case 4:
+			damage = damage * 1.15F;
+			break;
 		case 5:
 			// no change in damage
 			break;
 		case 6:
+			damage = damage * 0.85F;
+			break;
 		case 7:
-			damage = damage * 1.15F;
+			damage = damage * 0.7F;
 			break;
 		}
 		return damage;
