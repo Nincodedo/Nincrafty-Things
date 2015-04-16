@@ -35,7 +35,7 @@ public class DamageModifierHandler {
 	}
 
 	private float getMoonDamage(int moonPhase, float damage) {
-		return Math.abs(Math.abs(moonPhase - 3.5)-3.5)*((maxMoonDamage-minMoonDamage)/3)+minMoonDamage;
+		return damage * Math.abs(Math.abs(moonPhase - 3.5)-3.5)*((maxMoonDamage-minMoonDamage)/3)+minMoonDamage;
 	}
 
 }
