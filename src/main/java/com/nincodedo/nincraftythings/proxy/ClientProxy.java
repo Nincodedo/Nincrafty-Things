@@ -1,7 +1,5 @@
 package com.nincodedo.nincraftythings.proxy;
 
-import com.nincodedo.nincraftythings.utility.LogHelper;
-
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.client.FMLClientHandler;
