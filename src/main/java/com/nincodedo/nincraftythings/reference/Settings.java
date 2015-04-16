@@ -25,6 +25,8 @@ public class Settings {
 	public static class Silly {
 		public static String[] thunderList;
 		public static boolean moonPhasesOPPlzNerf;
+		public static float minMoonDamage;
+		public static float maxMoonDamage;
 	}
 
 	public static class Abilities {
