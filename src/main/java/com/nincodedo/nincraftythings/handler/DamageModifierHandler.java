@@ -3,7 +3,7 @@ package com.nincodedo.nincraftythings.handler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import com.nincodedo.nincraftythings.init.ModItems;
+import com.nincodedo.nincraftythings.api.item.IMoonDamage;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
 
@@ -20,7 +20,7 @@ public class DamageModifierHandler {
 				&& event.source.damageType.equals("player")
 				&& Settings.Silly.moonPhasesOPPlzNerf) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (ModItems.nincodiumSword.equals(player.getHeldItem().getItem())
+			if (player.getHeldItem().getItem() instanceof IMoonDamage
 					&& event.entityLiving.getHealth() > 0) {
 				event.setCanceled(true);
 				event.entity.attackEntityFrom(
