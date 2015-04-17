@@ -44,4 +44,12 @@ public class Names {
 		public static final String JIMMYS_SWORD = "jimmysSword";
 	}
 
+	public static final class Particles {
+		public static final String greenSparkles = "happyVillager";
+	}
+	
+	public static final class Sounds {
+		public static final String procAttack = "mob.wither.hurt";
+		public static String healing = "random.levelup";
+	}
 }
