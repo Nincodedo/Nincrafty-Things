@@ -7,7 +7,8 @@ import com.nincodedo.nincraftythings.api.item.IProcBuff;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
-public class ItemSwordJimmysSword extends ItemSwordNincrafty implements IProcBuff{
+public class ItemSwordJimmysSword extends ItemSwordNincrafty implements
+		IProcBuff {
 
 	public ItemSwordJimmysSword() {
 		super(Material.Tools.JIMMYDRITE);
@@ -18,8 +19,8 @@ public class ItemSwordJimmysSword extends ItemSwordNincrafty implements IProcBuf
 	public EnumRarity getRarity(ItemStack stack) {
 		return EnumRarity.rare;
 	}
-	
-	public boolean canProc(ItemStack stack){
+
+	public boolean canProc(ItemStack stack) {
 		return true;
 	}
 }

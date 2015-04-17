@@ -10,6 +10,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincodedo.nincraftythings.reference.Sounds;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -40,7 +41,7 @@ public class ArmorSetBonusHandler {
 					if (!closestPlayer.worldObj.isRemote) {
 						closestPlayer.worldObj.playSoundEffect(
 								closestPlayer.posX, closestPlayer.posY,
-								closestPlayer.posZ, "random.levelup", 1, 2);
+								closestPlayer.posZ, Sounds.healing, 1, 2);
 					}
 				}
 			}

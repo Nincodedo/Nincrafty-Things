@@ -12,10 +12,10 @@ public class Recipes {
 
 		if (Settings.Items.enableNincodiumIngot) {
 			GameRegistry.addShapedRecipe(
-					new ItemStack(ModItems.nincodiumBlock), "iii", "iii",
+					new ItemStack(ModBlocks.nincodiumBlock), "iii", "iii",
 					"iii", 'i', new ItemStack(ModItems.nincodiumIngot));
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumIngot, 9),
-					"b", 'b', new ItemStack(ModItems.nincodiumBlock));
+					"b", 'b', new ItemStack(ModBlocks.nincodiumBlock));
 		}
 
 		if (Settings.Items.enableNincodiumTools) {

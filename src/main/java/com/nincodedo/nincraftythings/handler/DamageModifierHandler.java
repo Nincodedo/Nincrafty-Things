@@ -20,7 +20,8 @@ public class DamageModifierHandler {
 				&& event.source.damageType.equals("player")
 				&& Settings.Silly.moonPhasesOPPlzNerf) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (player.getHeldItem().getItem() instanceof IMoonDamage
+			if (player.getHeldItem() != null
+					&& player.getHeldItem().getItem() instanceof IMoonDamage
 					&& event.entityLiving.getHealth() > 0) {
 				event.setCanceled(true);
 				event.entity.attackEntityFrom(

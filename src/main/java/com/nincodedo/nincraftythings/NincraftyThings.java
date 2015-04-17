@@ -5,6 +5,7 @@ import net.minecraftforge.common.MinecraftForge;
 import com.nincodedo.nincraftythings.handler.BucketHandler;
 import com.nincodedo.nincraftythings.handler.ChestGenHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
+import com.nincodedo.nincraftythings.init.ModBlocks;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
@@ -43,11 +44,12 @@ public class NincraftyThings {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		proxy.registerEventHandlers();
+		ModBlocks.init();
 		ModItems.init();
 		ChestGenHandler.init();
-		BucketHandler.INSTANCE.buckets.put(ModItems.moltenNincodiumBlock,
+		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock,
 				ModItems.bucketNincodium);
-		BucketHandler.INSTANCE.buckets.put(ModItems.moltenLapisBlock,
+		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock,
 				ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("Pre Init Complete");
