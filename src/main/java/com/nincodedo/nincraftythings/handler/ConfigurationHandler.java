@@ -69,9 +69,9 @@ public class ConfigurationHandler {
 				"moonPhasesOPPlzNerf", category, true,
 				"Moon phases cause shenanigans");
 		Settings.Silly.minMoonDamage = configuration.getFloat("minMoonDamage",
-				category, 0.7F, 0F, 10F, "Minimum moon damage modifier");
+				category, 0.7F, 0F, 10F, "Minimum moon damage multiplier");
 		Settings.Silly.maxMoonDamage = configuration.getFloat("maxMoonDamage",
-				category, 1.15F, 0F, 10F, "Maximum moon damage modifier");
+				category, 1.15F, 0F, 10F, "Maximum moon damage multiplier");
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
