@@ -1,16 +1,21 @@
 package com.nincodedo.nincraftythings.reference;
 
 public class Names {
-	public static final class Items {
-		public static final String NINCODIUM_INGOT = "nincodiumIngot";
+	public static final class Armor {
 		public static final String NINCODIUM_HELMET = "nincodiumHelmet";
 		public static final String NINCODIUM_CHESTPLATE = "nincodiumChestplate";
 		public static final String NINCODIUM_LEGGINGS = "nincodiumLeggings";
 		public static final String NINCODIUM_BOOTS = "nincodiumBoots";
+	}
+	
+	public static final class Items {
+		public static final String NINCODIUM_INGOT = "nincodiumIngot";
 		public static final String BUCKET_NINCODIUM = "bucketNincodium";
-		public static final String NINCODIUM_SWORD = "nincodiumSword";
 		public static final String BUCKET_LAPIS = "bucketLapis";
-		public static final String JIMMYS_SWORD = "jimmysSword";
+	}
+	
+	public static final class OreDictionary{
+		public static final String NINCODIUM_INGOT = "ingotNincodium";
 	}
 
 	public static final class Blocks {
@@ -33,4 +38,10 @@ public class Names {
 	public static final class Tools {
 		public static final String NINCODIUM_PICKAXE = "nincodiumPickaxe";
 	}
+	
+	public static final class Weapons {
+		public static final String NINCODIUM_SWORD = "nincodiumSword";
+		public static final String JIMMYS_SWORD = "jimmysSword";
+	}
+
 }

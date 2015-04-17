@@ -58,19 +58,17 @@ public class ModItems {
 				ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
 				new ItemStack(Items.bucket));
 
-		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
-		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
-		GameRegistry.registerItem(bucketLapis, "bucketLapis");
-		GameRegistry.registerItem(nincodiumIngot, "nincodiumIngot");
-		OreDictionary.registerOre("ingotNincodium", nincodiumIngot);
-		GameRegistry.registerItem(nincodiumPickaxe, "nincodiumPickaxe");
-		GameRegistry.registerItem(nincodiumSword, "nincodiumSword");
-		GameRegistry.registerItem(jimmysSword, "jimmysSword");
-		GameRegistry.registerItem(bucketNincodium, "bucketNincodium");
+		GameRegistry.registerItem(bucketNincodium, Names.Items.BUCKET_NINCODIUM);
+		GameRegistry.registerItem(bucketLapis, Names.Items.BUCKET_LAPIS);
+		GameRegistry.registerItem(nincodiumIngot, Names.Items.NINCODIUM_INGOT);
+		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT, nincodiumIngot);
+		GameRegistry.registerItem(nincodiumPickaxe, Names.Tools.NINCODIUM_PICKAXE);
+		GameRegistry.registerItem(nincodiumSword, Names.Weapons.NINCODIUM_SWORD);
+		GameRegistry.registerItem(jimmysSword, Names.Weapons.JIMMYS_SWORD);
 
-		GameRegistry.registerItem(nincodiumHelmet, "nincodiumHelmet");
-		GameRegistry.registerItem(nincodiumChestplate, "nincodiumChestplate");
-		GameRegistry.registerItem(nincodiumLeggings, "nincodiumLeggings");
-		GameRegistry.registerItem(nincodiumBoots, "nincodiumBoots");
+		GameRegistry.registerItem(nincodiumHelmet, Names.Armor.NINCODIUM_HELMET);
+		GameRegistry.registerItem(nincodiumChestplate, Names.Armor.NINCODIUM_CHESTPLATE);
+		GameRegistry.registerItem(nincodiumLeggings, Names.Armor.NINCODIUM_LEGGINGS);
+		GameRegistry.registerItem(nincodiumBoots, Names.Armor.NINCODIUM_BOOTS);
 	}
 }
