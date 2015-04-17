@@ -9,8 +9,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
-import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.reference.Names;
+import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 

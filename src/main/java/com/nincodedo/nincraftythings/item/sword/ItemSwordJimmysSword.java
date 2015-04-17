@@ -12,7 +12,7 @@ public class ItemSwordJimmysSword extends ItemSwordNincrafty implements
 
 	public ItemSwordJimmysSword() {
 		super(Material.Tools.JIMMYDRITE);
-		setUnlocalizedName(Names.Items.JIMMYS_SWORD);
+		setUnlocalizedName(Names.Weapons.JIMMYS_SWORD);
 	}
 
 	@Override

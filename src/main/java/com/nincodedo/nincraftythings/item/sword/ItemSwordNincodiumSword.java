@@ -12,7 +12,7 @@ public class ItemSwordNincodiumSword extends ItemSwordNincrafty implements
 
 	public ItemSwordNincodiumSword() {
 		super(Material.Tools.NINCODIUM);
-		setUnlocalizedName(Names.Items.NINCODIUM_SWORD);
+		setUnlocalizedName(Names.Weapons.NINCODIUM_SWORD);
 		setRepairIngot(ModItems.nincodiumIngot);
 	}
 

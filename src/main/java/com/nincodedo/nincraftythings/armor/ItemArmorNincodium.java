@@ -21,16 +21,16 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 
 		switch (armorType) {
 		case 0:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_HELMET);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_HELMET);
 			break;
 		case 1:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_CHESTPLATE);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_CHESTPLATE);
 			break;
 		case 2:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_LEGGINGS);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_LEGGINGS);
 			break;
 		case 3:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_BOOTS);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_BOOTS);
 			break;
 		}
 	}

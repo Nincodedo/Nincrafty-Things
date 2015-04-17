@@ -7,14 +7,14 @@ public class Names {
 		public static final String NINCODIUM_LEGGINGS = "nincodiumLeggings";
 		public static final String NINCODIUM_BOOTS = "nincodiumBoots";
 	}
-	
+
 	public static final class Items {
 		public static final String NINCODIUM_INGOT = "nincodiumIngot";
 		public static final String BUCKET_NINCODIUM = "bucketNincodium";
 		public static final String BUCKET_LAPIS = "bucketLapis";
 	}
-	
-	public static final class OreDictionary{
+
+	public static final class OreDictionary {
 		public static final String NINCODIUM_INGOT = "ingotNincodium";
 	}
 
@@ -38,7 +38,7 @@ public class Names {
 	public static final class Tools {
 		public static final String NINCODIUM_PICKAXE = "nincodiumPickaxe";
 	}
-	
+
 	public static final class Weapons {
 		public static final String NINCODIUM_SWORD = "nincodiumSword";
 		public static final String JIMMYS_SWORD = "jimmysSword";
@@ -47,7 +47,7 @@ public class Names {
 	public static final class Particles {
 		public static final String greenSparkles = "happyVillager";
 	}
-	
+
 	public static final class Sounds {
 		public static final String procAttack = "mob.wither.hurt";
 		public static String healing = "random.levelup";
