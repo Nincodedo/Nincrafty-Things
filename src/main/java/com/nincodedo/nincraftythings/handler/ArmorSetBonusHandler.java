@@ -41,7 +41,7 @@ public class ArmorSetBonusHandler {
 					if (!closestPlayer.worldObj.isRemote) {
 						closestPlayer.worldObj.playSoundEffect(
 								closestPlayer.posX, closestPlayer.posY,
-								closestPlayer.posZ, Names.Sounds.healing, 1, 2);
+								closestPlayer.posZ, Names.Sounds.HEALING, 1, 2);
 					}
 				}
 			}
