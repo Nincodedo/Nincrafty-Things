@@ -10,7 +10,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Recipes {
 	public static void init() {
 
+		if (Settings.Blocks.enableNincodiumOreSmelting) {
+			GameRegistry.addSmelting(ModBlocks.nincodiumOre, new ItemStack(ModItems.nincodiumIngot), 0.5F);
+		}
+		
 		if (Settings.Items.enableNincodiumIngot) {
+			
 			GameRegistry.addShapedRecipe(
 					new ItemStack(ModBlocks.nincodiumBlock), "iii", "iii",
 					"iii", 'i', new ItemStack(ModItems.nincodiumIngot));
@@ -26,6 +31,7 @@ public class Recipes {
 					ModItems.nincodiumSword), "i", "i", "s", 's', "stickWood",
 					'i', new ItemStack(ModItems.nincodiumIngot)));
 		}
+		
 		if (Settings.Armor.enableNincodiumArmor) {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumBoots),
 					"i i", "i i", 'i', new ItemStack(ModItems.nincodiumIngot));

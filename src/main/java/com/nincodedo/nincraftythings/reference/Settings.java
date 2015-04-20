@@ -14,6 +14,10 @@ public class Settings {
 		public static float nincodiumArmorHealingChance;
 		public static boolean canHealSelf;
 	}
+	
+	public static class Blocks {
+		public static boolean enableNincodiumOreSmelting;
+	}
 
 	public static class Items {
 		public static boolean enableNincodiumTools;
