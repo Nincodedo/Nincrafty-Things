@@ -35,6 +35,12 @@ public class DamageModifierHandler {
 		}
 	}
 
+	/**
+	 * Returns the new damage amount after going through this formula (assuming default configs) http://i.imgur.com/VjDFzQG.png
+	 * This formula essentially makes moon phases 0 and 7 equal to the minumum config value, and phases 3 and 4 equal to the maxinum config value.
+	 * The values inbetween increase/decrease linearly. This means if you wanted moon phases 0 and 7 to actually be the highest
+	 * and 3 and 4 the lowest, just swap the min and max in the configs.
+	**/
 	private float getMoonDamage(int moonPhase, float damage) {
 		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5) - 3.5)) * ((maxMoonDamage - minMoonDamage) / 3)) + minMoonDamage));
 	}
