@@ -12,6 +12,7 @@ item.nincraftythings:nincodiumSword.name=Épée en nincodium
 
 tile.moltenNincodiumBlock.name=Nincodium fondu
 tile.nincraftythings:nincodiumBlock.name=Bloc de nincodium
+tile.nincraftythings:nincodiumOre.name=Minerai de nincodium
 tile.moltenLapisBlock.name=Lapis fondu
 
 fluid.moltenNincodium=Nincodium liquide

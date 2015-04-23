@@ -17,7 +17,7 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 
 	protected ItemPickaxeNincrafty(ToolMaterial toolMaterial) {
 		super(toolMaterial);
-		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
+		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
 	public Item getRepairIngot() {

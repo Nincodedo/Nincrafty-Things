@@ -56,7 +56,9 @@ public class ConfigurationHandler {
 						category,
 						true,
 						"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
-		Settings.Abilities.canJimmyPvP = configuration.getBoolean("canJimmyPvP", category, false, "Allows Jimmy's Sword to attack other players");
+		Settings.Abilities.canJimmyPvP = configuration.getBoolean(
+				"canJimmyPvP", category, false,
+				"Allows Jimmy's Sword to attack other players");
 	}
 
 	private static void loadSillyConfigs(String category) {
@@ -66,6 +68,10 @@ public class ConfigurationHandler {
 		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean(
 				"moonPhasesOPPlzNerf", category, true,
 				"Moon phases cause shenanigans");
+		Settings.Silly.minMoonDamage = configuration.getFloat("minMoonDamage",
+				category, 0.7F, 0F, 10F, "Minimum moon damage multiplier");
+		Settings.Silly.maxMoonDamage = configuration.getFloat("maxMoonDamage",
+				category, 1.15F, 0F, 10F, "Maximum moon damage multiplier");
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
@@ -96,6 +102,9 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadGeneralConfigs(String category) {
+		Settings.Blocks.enableNincodiumOreSmelting = configuration.getBoolean(
+				"enableNincodiumOreSmelting", category, true,
+				"Smelting recipe for Nincodium Ore to ingots");
 		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
 				"enableNincodiumIngot", category, true,
 				"Nincodium ingot recipe");

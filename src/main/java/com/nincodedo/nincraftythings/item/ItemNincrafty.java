@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemNincrafty extends Item {
 	public ItemNincrafty() {
 		super();
-		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
+		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
 	@Override
