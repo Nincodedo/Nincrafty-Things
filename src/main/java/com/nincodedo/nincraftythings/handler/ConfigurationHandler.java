@@ -102,6 +102,9 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadGeneralConfigs(String category) {
+		Settings.Blocks.enableNincodiumOreSmelting = configuration.getBoolean(
+				"enableNincodiumOreSmelting", category, true,
+				"Smelting recipe for Nincodium Ore to ingots");
 		Settings.Items.enableNincodiumIngot = configuration.getBoolean(
 				"enableNincodiumIngot", category, true,
 				"Nincodium ingot recipe");
