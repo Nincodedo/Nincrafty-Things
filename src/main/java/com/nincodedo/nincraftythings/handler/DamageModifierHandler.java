@@ -11,9 +11,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class DamageModifierHandler {
 
-	float minMoonDamage = Settings.Silly.minMoonDamage;
-	float maxMoonDamage = Settings.Silly.maxMoonDamage;
-
 	@SubscribeEvent
 	public void attackedEntity(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP
@@ -42,7 +39,7 @@ public class DamageModifierHandler {
 	 * and 3 and 4 the lowest, just swap the min and max in the configs.
 	**/
 	private float getMoonDamage(int moonPhase, float damage) {
-		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5) - 3.5)) * ((maxMoonDamage - minMoonDamage) / 3)) + minMoonDamage));
+		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5) - 3.5)) * ((Settings.Silly.maxMoonDamage - Settings.Silly.minMoonDamage) / 3)) + Settings.Silly.minMoonDamage));
 	}
 
 }

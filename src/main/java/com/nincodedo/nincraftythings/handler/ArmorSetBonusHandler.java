@@ -16,11 +16,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ArmorSetBonusHandler {
 
-	private float healPercentage = Settings.Armor.nincodiumArmorHealingPercentage;
-	private float healRadius = Settings.Armor.nincodiumArmorHealingRadius;
-	private float healingChance = Settings.Armor.nincodiumArmorHealingChance;
-	private boolean canHealSelf = Settings.Armor.canHealSelf;
-
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
@@ -29,13 +24,13 @@ public class ArmorSetBonusHandler {
 					&& isWearingNincodiumArmorSet(player)
 					&& isHealingChanceSuccessful(player)) {
 				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
-						player, healRadius);
+						player, Settings.Armor.nincodiumArmorHealingRadius);
 
 				if (closestPlayer != null
 						&& event.entityLiving.getHealth() > 0
 						&& closestPlayer.getHealth() < closestPlayer
 								.getMaxHealth()) {
-					float healed = event.ammount * healPercentage;
+					float healed = event.ammount * Settings.Armor.nincodiumArmorHealingPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth()
 							+ (healed));
 					if (!closestPlayer.worldObj.isRemote) {
@@ -49,7 +44,7 @@ public class ArmorSetBonusHandler {
 	}
 
 	private boolean isHealingChanceSuccessful(EntityPlayerMP player) {
-		return player.getRNG().nextFloat() < healingChance;
+		return player.getRNG().nextFloat() < Settings.Armor.nincodiumArmorHealingChance;
 	}
 
 	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
@@ -84,7 +79,7 @@ public class ArmorSetBonusHandler {
 			}
 		}
 
-		if (!canHealSelf && playersNear.contains(player)) {
+		if (!Settings.Armor.canHealSelf && playersNear.contains(player)) {
 			playersNear.remove(player);
 		}
 		entityplayer = getLowestHPOfEntities(playersNear);
