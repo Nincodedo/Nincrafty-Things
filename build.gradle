@@ -22,7 +22,7 @@ group= "com.nincodedo.nincraftythings" // http://maven.apache.org/guides/mini/gu
 archivesBaseName = "NincraftyThings"
 
 minecraft {
-    version = "1.7.10-10.13.3.1389-1710ls"
+    version = "1.7.10-10.13.3.1399-1.7.10"
 }
 
 dependencies {
