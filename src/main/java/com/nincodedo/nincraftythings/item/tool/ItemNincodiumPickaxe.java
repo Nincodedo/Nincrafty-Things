@@ -10,8 +10,8 @@ public class ItemNincodiumPickaxe extends ItemPickaxeNincrafty {
 
 	public ItemNincodiumPickaxe() {
 		super(Material.Tools.NINCODIUM);
-		this.setUnlocalizedName(Names.Tools.NINCODIUM_PICKAXE);
-		this.setRepairIngot(ModItems.nincodiumIngot);
+		setUnlocalizedName(Names.Tools.NINCODIUM_PICKAXE);
+		setRepairIngot(ModItems.nincodiumIngot);
 	}
 
 	@Override

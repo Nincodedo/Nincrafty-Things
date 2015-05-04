@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.armor;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
 import com.nincodedo.nincraftythings.init.ModItems;
@@ -20,16 +21,16 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 
 		switch (armorType) {
 		case 0:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_HELMET);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_HELMET);
 			break;
 		case 1:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_CHESTPLATE);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_CHESTPLATE);
 			break;
 		case 2:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_LEGGINGS);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_LEGGINGS);
 			break;
 		case 3:
-			this.setUnlocalizedName(Names.Items.NINCODIUM_BOOTS);
+			this.setUnlocalizedName(Names.Armor.NINCODIUM_BOOTS);
 			break;
 		}
 	}
@@ -47,5 +48,25 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
 		return getRepairIngot() == itemStack2.getItem() ? true : super
 				.getIsRepairable(itemStack1, itemStack2);
+	}
+
+	public static boolean hasArmorSetItem(EntityPlayer player, int i) {
+		ItemStack stack = player.inventory.armorInventory[3 - i];
+		if (stack == null) {
+			return false;
+		}
+
+		switch (i) {
+		case 0:
+			return ModItems.nincodiumHelmet == stack.getItem();
+		case 1:
+			return ModItems.nincodiumChestplate == stack.getItem();
+		case 2:
+			return ModItems.nincodiumLeggings == stack.getItem();
+		case 3:
+			return ModItems.nincodiumBoots == stack.getItem();
+		default:
+			return false;
+		}
 	}
 }

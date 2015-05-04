@@ -2,20 +2,16 @@ package com.nincodedo.nincraftythings;
 
 import net.minecraftforge.common.MinecraftForge;
 
-import com.nincodedo.nincraftythings.handler.ArmorSetBonusHandler;
 import com.nincodedo.nincraftythings.handler.BucketHandler;
 import com.nincodedo.nincraftythings.handler.ChestGenHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
-import com.nincodedo.nincraftythings.handler.DamageModifierHandler;
-import com.nincodedo.nincraftythings.handler.ProcHandler;
-import com.nincodedo.nincraftythings.handler.ThunderJoinHandler;
+import com.nincodedo.nincraftythings.init.ModBlocks;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -47,16 +43,13 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		MinecraftForge.EVENT_BUS.register(new ArmorSetBonusHandler());
-		MinecraftForge.EVENT_BUS.register(new ThunderJoinHandler());
-		MinecraftForge.EVENT_BUS.register(new ProcHandler());
-		MinecraftForge.EVENT_BUS.register(new DamageModifierHandler());
+		proxy.registerEventHandlers();
+		ModBlocks.init();
 		ModItems.init();
 		ChestGenHandler.init();
-		BucketHandler.INSTANCE.buckets.put(ModItems.moltenNincodiumBlock,
+		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock,
 				ModItems.bucketNincodium);
-		BucketHandler.INSTANCE.buckets.put(ModItems.moltenLapisBlock,
+		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock,
 				ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("Pre Init Complete");

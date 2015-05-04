@@ -15,6 +15,10 @@ public class Settings {
 		public static boolean canHealSelf;
 	}
 
+	public static class Blocks {
+		public static boolean enableNincodiumOreSmelting;
+	}
+
 	public static class Items {
 		public static boolean enableNincodiumTools;
 		public static boolean enableNincodiumIngot;
@@ -25,6 +29,8 @@ public class Settings {
 	public static class Silly {
 		public static String[] thunderList;
 		public static boolean moonPhasesOPPlzNerf;
+		public static float minMoonDamage;
+		public static float maxMoonDamage;
 	}
 
 	public static class Abilities {
