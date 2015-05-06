@@ -12,14 +12,12 @@ public class ThunderJoinHandler {
 
 	private boolean isPlayerThundertastic(EntityPlayerMP player) {
 
-		boolean thundery = false;
-
 		for (int i = 0; i < Settings.Silly.thunderList.length; i++) {
 			if (Settings.Silly.thunderList[i].equals(player.getDisplayName())) {
-				thundery = true;
+				return true;
 			}
 		}
-		return thundery;
+		return false;
 	}
 
 	@SubscribeEvent
