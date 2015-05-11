@@ -16,6 +16,7 @@ public class Names {
 
 	public static final class OreDictionary {
 		public static final String NINCODIUM_INGOT = "ingotNincodium";
+		public static final String NINCODIUM_ORE = "oreNincodium";
 	}
 
 	public static final class Blocks {
