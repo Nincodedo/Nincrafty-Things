@@ -3,12 +3,14 @@ package com.nincodedo.nincraftythings.init;
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.block.BlockNincodiumOre;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.reference.Reference;
+import com.nincodedo.nincraftythings.reference.Names;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -36,7 +38,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(moltenLapisBlock, "moltenLapisBlock");
 		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
 		GameRegistry.registerBlock(nincodiumOre, "nincodiumOre");
-
+		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_ORE,
+				nincodiumOre);
 	}
 
 }
