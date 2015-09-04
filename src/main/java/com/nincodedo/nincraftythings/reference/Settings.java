@@ -37,4 +37,8 @@ public class Settings {
 		public static boolean canProc;
 		public static boolean canJimmyPvP;
 	}
+	
+	public static class Tweaks{
+		public static boolean enableEE3Tweaks;
+	}
 }

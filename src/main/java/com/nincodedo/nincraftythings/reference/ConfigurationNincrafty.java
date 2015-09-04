@@ -9,4 +9,6 @@ public class ConfigurationNincrafty {
 	public static final String CATEGORY_SILLY = "general.silly";
 
 	public static final String CATEGORY_ABILITIES = "general.abilities";
+
+	public static final String CATEGORY_TWEAKS = "general.tweaks";
 }
