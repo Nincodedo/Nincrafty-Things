@@ -10,6 +10,7 @@ import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
+import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.Mod;
@@ -53,6 +54,8 @@ public class NincraftyThings {
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock, ModItems.bucketNincodium);
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock, ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
+		OreDictionaryRegister.init();
+		
 		LogHelper.info("Pre Init Complete");
 	}
 }

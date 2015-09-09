@@ -40,5 +40,6 @@ public class Settings {
 	
 	public static class Tweaks{
 		public static boolean enableEE3Tweaks;
+		public static String[] oreDictionaryAdditions;
 	}
 }
