@@ -15,30 +15,33 @@ buildscript {
     }
 }
 
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    // Load config.  It shall from now be referenced as simple config or poject.config
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
 apply plugin: 'forge'
 
-version = "1.7.10-1.5.1-alpha"
+version = config.mod_version
 group= "com.nincodedo.nincraftythings" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "NincraftyThings"
 
 minecraft {
-    version = "1.7.10-10.13.3.1403-1.7.10"
+    version = config.minecraft_version + "-" + config.forge_version
+    
+    replaceIn "reference/Reference.java"
+    replace "@MINECRAFT_VERSION@", "${config.minecraft_version}"
+    replace "@MOD_VERSION@", "${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}"
 }
 
+version = "${config.minecraft_version}-${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}"
+
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+    compile fileTree(dir: 'lib', include: '*.jar')
 }
 
 processResources
