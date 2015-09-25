@@ -102,13 +102,11 @@ public class ArmorSetBonusHandler {
 	}
 
 	private boolean isWearingNincodiumArmorSet(EntityPlayerMP player) {
-		boolean hasArmorSet = true;
 		for (int i = 0; i < 4; i++) {
 			if (!ItemArmorNincodium.hasArmorSetItem(player, i)) {
-				hasArmorSet = false;
-				break;
+				return false;
 			}
 		}
-		return hasArmorSet;
+		return true;
 	}
 }
