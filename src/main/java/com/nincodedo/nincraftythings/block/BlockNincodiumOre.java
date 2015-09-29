@@ -9,6 +9,5 @@ public class BlockNincodiumOre extends BlockNincrafty {
 		setResistance(5.0F);
 		setBlockName(Names.Blocks.NINCODIUM_ORE);
 		setHarvestLevel("pickaxe", 3);
-		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 }

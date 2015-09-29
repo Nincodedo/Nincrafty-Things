@@ -17,6 +17,7 @@ public class Names {
 	public static final class OreDictionary {
 		public static final String NINCODIUM_INGOT = "ingotNincodium";
 		public static final String NINCODIUM_ORE = "oreNincodium";
+		public static final String QUARTZ_ORE = "gemQuartz";
 	}
 
 	public static final class Blocks {
@@ -29,6 +30,7 @@ public class Names {
 		public static final String MOLTEN_LAPIS_BLOCK = "moltenLapisBlock";
 		public static final String MOLTEN_LAPIS = "moltenlapis";
 		public static final String MOLTEN_LAPIS_FLOWING = "moltenLapisFlowing";
+		public static final String QUARTZ_ORE = "quartzOre";
 	}
 
 	public static final class Materials {

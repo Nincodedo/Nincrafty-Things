@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
+import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -13,6 +14,7 @@ public class BlockNincrafty extends Block {
 
 	public BlockNincrafty() {
 		this(Material.rock);
+		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
 	public BlockNincrafty(Material material) {

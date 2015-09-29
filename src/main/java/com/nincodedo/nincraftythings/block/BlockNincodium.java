@@ -8,7 +8,6 @@ import com.nincodedo.nincraftythings.reference.Names;
 public class BlockNincodium extends BlockNincrafty {
 	public BlockNincodium() {
 		setBlockName(Names.Blocks.NINCODIUM_BLOCK);
-		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
 	@Override

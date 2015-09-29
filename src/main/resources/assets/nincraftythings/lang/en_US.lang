@@ -14,6 +14,7 @@ item.nincraftythings:jimmysSword.name=Jimmy's Sword
 tile.moltenNincodiumBlock.name=Molten Nincodium
 tile.nincraftythings:nincodiumBlock.name=Block of Nincodium
 tile.nincraftythings:nincodiumOre.name=Nincodium Ore
+tile.nincraftythings:quartzOre.name=Quartz Ore
 tile.moltenLapisBlock.name=Molten Lapis
 
 fluid.moltenNincodium=Molten Nincodium
