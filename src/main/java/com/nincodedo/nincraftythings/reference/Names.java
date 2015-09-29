@@ -57,4 +57,9 @@ public class Names {
 		public static final String PROC_ATTACK = "mob.wither.hurt";
 		public static final String HEALING = "random.levelup";
 	}
+	
+	public static final class Mods {
+		public static String atgModId = "ATG";
+		public static String ee3ModId = "EE3";
+	}
 }

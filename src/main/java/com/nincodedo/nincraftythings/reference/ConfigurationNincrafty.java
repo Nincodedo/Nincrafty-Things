@@ -15,4 +15,6 @@ public class ConfigurationNincrafty {
 	public static final String CATEGORY_NINCODIUM_TOOLS = "general.tools.nincodium";
 
 	public static final String CATEGORY_JIMMYDRITE_TOOLS = "general.tools.jimmydrite";
+
+	public static final String CATEGORY_ATG_FLATLANDS = "general.atg.flatlands";
 }

@@ -30,6 +30,7 @@ public class ConfigurationHandler {
 		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
 		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
+		loadATGFlatlandsConfigs(ConfigurationNincrafty.CATEGORY_ATG_FLATLANDS);
 
 		if (configuration.hasChanged()) {
 			configuration.save();
@@ -61,9 +62,16 @@ public class ConfigurationHandler {
 		Settings.Tools.jimmydriteEnchantability = configuration.getInt("jimmydriteEnchantability",
 				categoryJimmydriteTools, 10, 1, 10, "");
 	}
+	
+	private static void loadATGFlatlandsConfigs(String category) {
+		Settings.Flatlands.maxHeight = configuration.getInt("maxHeight", category, 68, 0, 255, "");
+		Settings.Flatlands.heightRange = configuration.getInt("heightRange", category, 5, 0, 10, "");
+		Settings.Flatlands.noiseFactor = configuration.getFloat("noiseFactor", category, 0, 0, 20, "");
+	}
 
 	private static void loadTweakConfigs(String category) {
 		Settings.Tweaks.enableEE3Tweaks = configuration.getBoolean("enableEE3Tweaks", category, true, "");
+		Settings.Tweaks.enableATGTweaks = configuration.getBoolean("enableATGTweaks", category, true, "");
 		Settings.Tweaks.oreDictionaryAdditions = configuration.getStringList("oreDictionaryAdditions", category,
 				new String[] {}, "Add items to the ore dictionary formatted as modID|itemName|oreDictionaryName");
 	}

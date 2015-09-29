@@ -9,6 +9,7 @@ import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincodedo.nincraftythings.tweaks.NincraftyATGTweaks;
 import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
 import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
 import com.nincodedo.nincraftythings.utility.LogHelper;
@@ -40,6 +41,9 @@ public class NincraftyThings {
 	public void postInit(FMLPostInitializationEvent event) {
 		if (Settings.Tweaks.enableEE3Tweaks) {
 			NincraftyEE3Tweaks.init();
+		}
+		if(Settings.Tweaks.enableATGTweaks){
+			NincraftyATGTweaks.init();
 		}
 		LogHelper.info("Post Init Complete");
 	}
