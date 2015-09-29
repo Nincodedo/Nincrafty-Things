@@ -12,12 +12,14 @@ public class Names {
 		public static final String NINCODIUM_INGOT = "nincodiumIngot";
 		public static final String BUCKET_NINCODIUM = "bucketNincodium";
 		public static final String BUCKET_LAPIS = "bucketLapis";
+		public static final String QUARTZ = "quartz";
 	}
 
 	public static final class OreDictionary {
 		public static final String NINCODIUM_INGOT = "ingotNincodium";
 		public static final String NINCODIUM_ORE = "oreNincodium";
-		public static final String QUARTZ_ORE = "gemQuartz";
+		public static final String QUARTZ_ORE = "oreQuartz";
+		public static final String QUARTZ_GEM = "gemQuartz";
 	}
 
 	public static final class Blocks {

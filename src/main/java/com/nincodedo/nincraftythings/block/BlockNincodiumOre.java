@@ -3,7 +3,7 @@ package com.nincodedo.nincraftythings.block;
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Names;
 
-public class BlockNincodiumOre extends BlockNincrafty {
+public class BlockNincodiumOre extends BlockOreNincrafty {
 	public BlockNincodiumOre() {
 		setHardness(3.0F);
 		setResistance(5.0F);
