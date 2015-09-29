@@ -11,4 +11,6 @@ public class ConfigurationNincrafty {
 	public static final String CATEGORY_ABILITIES = "general.abilities";
 
 	public static final String CATEGORY_TWEAKS = "general.tweaks";
+
+	public static final String CATEGORY_ATG_FLATLANDS = "general.atg.flatlands";
 }

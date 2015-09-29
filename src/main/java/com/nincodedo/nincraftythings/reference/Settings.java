@@ -41,5 +41,12 @@ public class Settings {
 	public static class Tweaks{
 		public static boolean enableEE3Tweaks;
 		public static String[] oreDictionaryAdditions;
+		public static boolean enableATGTweaks;
+	}
+	
+	public static class Flatlands{
+		public static int maxHeight;
+		public static double noiseFactor;
+		public static int heightRange;
 	}
 }
