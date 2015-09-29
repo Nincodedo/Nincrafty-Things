@@ -1,24 +1,16 @@
 package com.nincodedo.nincraftythings.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.BlockOre;
+import net.minecraft.client.renderer.texture.IIconRegister;
 
-public class BlockNincrafty extends Block {
-
-	public BlockNincrafty() {
-		this(Material.rock);
+public class BlockOreNincrafty extends BlockOre {
+	public BlockOreNincrafty() {
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-	}
-
-	public BlockNincrafty(Material material) {
-		super(material);
 	}
 
 	@Override
@@ -34,8 +26,7 @@ public class BlockNincrafty extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon = iconRegister.registerIcon(String.format("%s",
-				getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
+		blockIcon = iconRegister
+				.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
 	}
-
 }

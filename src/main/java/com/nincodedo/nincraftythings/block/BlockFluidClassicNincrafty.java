@@ -19,7 +19,6 @@ public class BlockFluidClassicNincrafty extends BlockFluidClassic {
 
 	public BlockFluidClassicNincrafty(Fluid fluid, Material material) {
 		super(fluid, material);
-		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
 import com.nincodedo.nincraftythings.item.ItemNincrafty;
+import com.nincodedo.nincraftythings.item.ItemQuartz;
 import com.nincodedo.nincraftythings.item.bucket.ItemBucketNincrafty;
 import com.nincodedo.nincraftythings.item.bucket.ItemMoltenLapisBucket;
 import com.nincodedo.nincraftythings.item.bucket.ItemMoltenNincodiumBucket;
@@ -24,6 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems {
 	public static ItemNincrafty nincodiumIngot;
+	public static ItemNincrafty quartz;
 	public static ItemPickaxeNincrafty nincodiumPickaxe;
 	public static ItemArmorNincrafty nincodiumHelmet;
 	public static ItemArmorNincrafty nincodiumChestplate;
@@ -36,6 +38,7 @@ public class ModItems {
 
 	public static void init() {
 		nincodiumIngot = new ItemNincodiumIngot();
+		quartz = new ItemQuartz();
 		nincodiumPickaxe = new ItemNincodiumPickaxe();
 		nincodiumHelmet = new ItemArmorNincodium(0);
 		nincodiumChestplate = new ItemArmorNincodium(1);
@@ -63,6 +66,7 @@ public class ModItems {
 				.registerItem(bucketNincodium, Names.Items.BUCKET_NINCODIUM);
 		GameRegistry.registerItem(bucketLapis, Names.Items.BUCKET_LAPIS);
 		GameRegistry.registerItem(nincodiumIngot, Names.Items.NINCODIUM_INGOT);
+		GameRegistry.registerItem(quartz, Names.Items.QUARTZ);
 		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT,
 				nincodiumIngot);
 		GameRegistry.registerItem(nincodiumPickaxe,
@@ -78,5 +82,7 @@ public class ModItems {
 		GameRegistry.registerItem(nincodiumLeggings,
 				Names.Armor.NINCODIUM_LEGGINGS);
 		GameRegistry.registerItem(nincodiumBoots, Names.Armor.NINCODIUM_BOOTS);
+		
+		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_GEM, quartz);
 	}
 }
