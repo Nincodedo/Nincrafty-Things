@@ -1,15 +1,14 @@
 package com.nincodedo.nincraftythings.item.sword;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 
 public class ItemSwordNincrafty extends ItemSword {
 
@@ -24,8 +23,7 @@ public class ItemSwordNincrafty extends ItemSword {
 
 	@Override
 	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
-		return getRepairIngot() == itemStack2.getItem() ? true : super
-				.getIsRepairable(itemStack1, itemStack2);
+		return getRepairIngot() == itemStack2.getItem() ? true : super.getIsRepairable(itemStack1, itemStack2);
 	}
 
 	public Item getRepairIngot() {
@@ -51,8 +49,8 @@ public class ItemSwordNincrafty extends ItemSword {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon(this.getUnlocalizedName()
-				.substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister
+				.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 
 	public void setRepairIngot(Item repairIngot) {

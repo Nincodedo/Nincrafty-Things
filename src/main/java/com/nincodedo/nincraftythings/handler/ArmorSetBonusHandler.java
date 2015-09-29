@@ -3,16 +3,15 @@ package com.nincodedo.nincraftythings.handler;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.WorldServer;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 public class ArmorSetBonusHandler {
 
@@ -20,22 +19,17 @@ public class ArmorSetBonusHandler {
 	public void entityAttacked(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (!player.isEntityEqual(event.entity)
-					&& isWearingNincodiumArmorSet(player)
+			if (!player.isEntityEqual(event.entity) && isWearingNincodiumArmorSet(player)
 					&& isHealingChanceSuccessful(player)) {
-				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(
-						player, Settings.Armor.nincodiumArmorHealingRadius);
+				EntityPlayerMP closestPlayer = getClosestPlayerToEntityWithLeastHealth(player,
+						Settings.Armor.nincodiumArmorHealingRadius);
 
-				if (closestPlayer != null
-						&& event.entityLiving.getHealth() > 0
-						&& closestPlayer.getHealth() < closestPlayer
-								.getMaxHealth()) {
+				if (closestPlayer != null && event.entityLiving.getHealth() > 0
+						&& closestPlayer.getHealth() < closestPlayer.getMaxHealth()) {
 					float healed = event.ammount * Settings.Armor.nincodiumArmorHealingPercentage;
-					closestPlayer.setHealth(closestPlayer.getHealth()
-							+ (healed));
+					closestPlayer.setHealth(closestPlayer.getHealth() + (healed));
 					if (!closestPlayer.worldObj.isRemote) {
-						closestPlayer.worldObj.playSoundEffect(
-								closestPlayer.posX, closestPlayer.posY,
+						closestPlayer.worldObj.playSoundEffect(closestPlayer.posX, closestPlayer.posY,
 								closestPlayer.posZ, Names.Sounds.HEALING, 1, 2);
 					}
 				}
@@ -47,14 +41,11 @@ public class ArmorSetBonusHandler {
 		return player.getRNG().nextFloat() < Settings.Armor.nincodiumArmorHealingChance;
 	}
 
-	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(
-			EntityPlayerMP player, double healRadius2) {
-		return getClosestPlayerWithLeastHealth(player, player.posX,
-				player.posY, player.posZ, healRadius2);
+	private EntityPlayerMP getClosestPlayerToEntityWithLeastHealth(EntityPlayerMP player, double healRadius2) {
+		return getClosestPlayerWithLeastHealth(player, player.posX, player.posY, player.posZ, healRadius2);
 	}
 
-	private EntityPlayerMP getClosestPlayerWithLeastHealth(
-			EntityPlayerMP player, double posX, double posY, double posZ,
+	private EntityPlayerMP getClosestPlayerWithLeastHealth(EntityPlayerMP player, double posX, double posY, double posZ,
 			double radius) {
 		double d4 = -1.0D;
 		EntityPlayerMP entityplayer = null;
@@ -69,11 +60,9 @@ public class ArmorSetBonusHandler {
 		}
 
 		for (int i = 0; i < playersInDimension.size(); ++i) {
-			EntityPlayerMP entityplayer1 = (EntityPlayerMP) playersInDimension
-					.get(i);
+			EntityPlayerMP entityplayer1 = (EntityPlayerMP) playersInDimension.get(i);
 			double d5 = entityplayer1.getDistanceSq(posX, posY, posZ);
-			if ((radius < 0.0D || d5 < radius * radius)
-					&& (d4 == -1.0D || d5 < d4)) {
+			if ((radius < 0.0D || d5 < radius * radius) && (d4 == -1.0D || d5 < d4)) {
 				d4 = d5;
 				playersNear.add(entityplayer1);
 			}
@@ -87,8 +76,7 @@ public class ArmorSetBonusHandler {
 		return entityplayer;
 	}
 
-	private EntityPlayerMP getLowestHPOfEntities(
-			List<EntityPlayerMP> playersNear) {
+	private EntityPlayerMP getLowestHPOfEntities(List<EntityPlayerMP> playersNear) {
 		float lowestHP = Float.MAX_VALUE;
 
 		EntityPlayerMP lowestPlayer = null;

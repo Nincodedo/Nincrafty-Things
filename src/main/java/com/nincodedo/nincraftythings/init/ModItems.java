@@ -1,10 +1,5 @@
 package com.nincodedo.nincraftythings.init;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincrafty;
 import com.nincodedo.nincraftythings.item.ItemNincodiumIngot;
@@ -21,6 +16,10 @@ import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems {
@@ -47,42 +46,31 @@ public class ModItems {
 		nincodiumSword = new ItemSwordNincodiumSword();
 		jimmysSword = new ItemSwordJimmysSword();
 
-		bucketNincodium = new ItemMoltenNincodiumBucket(
-				ModBlocks.moltenNincodiumBlock);
+		bucketNincodium = new ItemMoltenNincodiumBucket(ModBlocks.moltenNincodiumBlock);
 
-		bucketNincodium = new ItemMoltenNincodiumBucket(
-				ModBlocks.moltenNincodiumBlock);
+		bucketNincodium = new ItemMoltenNincodiumBucket(ModBlocks.moltenNincodiumBlock);
 		bucketLapis = new ItemMoltenLapisBucket(ModBlocks.moltenLapisBlock);
-		FluidContainerRegistry.registerFluidContainer(
-				ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
+		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
 				new ItemStack(Items.bucket));
-		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenLapis,
-				new ItemStack(bucketLapis), new ItemStack(Items.bucket));
-		FluidContainerRegistry.registerFluidContainer(
-				ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
+		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenLapis, new ItemStack(bucketLapis),
+				new ItemStack(Items.bucket));
+		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
 				new ItemStack(Items.bucket));
 
-		GameRegistry
-				.registerItem(bucketNincodium, Names.Items.BUCKET_NINCODIUM);
+		GameRegistry.registerItem(bucketNincodium, Names.Items.BUCKET_NINCODIUM);
 		GameRegistry.registerItem(bucketLapis, Names.Items.BUCKET_LAPIS);
 		GameRegistry.registerItem(nincodiumIngot, Names.Items.NINCODIUM_INGOT);
 		GameRegistry.registerItem(quartz, Names.Items.QUARTZ);
-		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT,
-				nincodiumIngot);
-		GameRegistry.registerItem(nincodiumPickaxe,
-				Names.Tools.NINCODIUM_PICKAXE);
-		GameRegistry
-				.registerItem(nincodiumSword, Names.Weapons.NINCODIUM_SWORD);
+		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT, nincodiumIngot);
+		GameRegistry.registerItem(nincodiumPickaxe, Names.Tools.NINCODIUM_PICKAXE);
+		GameRegistry.registerItem(nincodiumSword, Names.Weapons.NINCODIUM_SWORD);
 		GameRegistry.registerItem(jimmysSword, Names.Weapons.JIMMYS_SWORD);
 
-		GameRegistry
-				.registerItem(nincodiumHelmet, Names.Armor.NINCODIUM_HELMET);
-		GameRegistry.registerItem(nincodiumChestplate,
-				Names.Armor.NINCODIUM_CHESTPLATE);
-		GameRegistry.registerItem(nincodiumLeggings,
-				Names.Armor.NINCODIUM_LEGGINGS);
+		GameRegistry.registerItem(nincodiumHelmet, Names.Armor.NINCODIUM_HELMET);
+		GameRegistry.registerItem(nincodiumChestplate, Names.Armor.NINCODIUM_CHESTPLATE);
+		GameRegistry.registerItem(nincodiumLeggings, Names.Armor.NINCODIUM_LEGGINGS);
 		GameRegistry.registerItem(nincodiumBoots, Names.Armor.NINCODIUM_BOOTS);
-		
+
 		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_GEM, quartz);
 	}
 }

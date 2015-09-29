@@ -1,14 +1,13 @@
 package com.nincodedo.nincraftythings.item.sword;
 
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemStack;
-
 import com.nincodedo.nincraftythings.api.item.IProcBuff;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
-public class ItemSwordJimmysSword extends ItemSwordNincrafty implements
-		IProcBuff {
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.ItemStack;
+
+public class ItemSwordJimmysSword extends ItemSwordNincrafty implements IProcBuff {
 
 	public ItemSwordJimmysSword() {
 		super(Material.Tools.JIMMYDRITE);
@@ -20,6 +19,7 @@ public class ItemSwordJimmysSword extends ItemSwordNincrafty implements
 		return EnumRarity.rare;
 	}
 
+	@Override
 	public boolean canProc(ItemStack stack) {
 		return true;
 	}

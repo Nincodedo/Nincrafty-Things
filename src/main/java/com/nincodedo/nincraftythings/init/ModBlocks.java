@@ -1,19 +1,18 @@
 package com.nincodedo.nincraftythings.init;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.block.BlockNincodiumOre;
 import com.nincodedo.nincraftythings.block.BlockQuartzOre;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
-import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Names;
+import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModBlocks {
@@ -36,17 +35,15 @@ public class ModBlocks {
 		FluidRegistry.registerFluid(moltenLapis);
 		moltenNincodiumBlock = new MoltenNincodium(moltenNincodium);
 		moltenLapisBlock = new MoltenLapis(moltenLapis);
-		
-		GameRegistry
-				.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
+
+		GameRegistry.registerBlock(moltenNincodiumBlock, "moltenNincodiumBlock");
 		GameRegistry.registerBlock(moltenLapisBlock, "moltenLapisBlock");
 		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
 		GameRegistry.registerBlock(nincodiumOre, "nincodiumOre");
 		GameRegistry.registerBlock(quartzOre, "quartzOre");
-		
+
 		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_ORE, quartzOre);
-		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_ORE,
-				nincodiumOre);
+		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_ORE, nincodiumOre);
 	}
 
 }

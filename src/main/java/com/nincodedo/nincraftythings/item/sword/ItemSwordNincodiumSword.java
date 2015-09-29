@@ -1,14 +1,13 @@
 package com.nincodedo.nincraftythings.item.sword;
 
-import net.minecraft.item.ItemStack;
-
 import com.nincodedo.nincraftythings.api.item.IMoonDamage;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
-public class ItemSwordNincodiumSword extends ItemSwordNincrafty implements
-		IMoonDamage {
+import net.minecraft.item.ItemStack;
+
+public class ItemSwordNincodiumSword extends ItemSwordNincrafty implements IMoonDamage {
 
 	public ItemSwordNincodiumSword() {
 		super(Material.Tools.NINCODIUM);
@@ -16,6 +15,7 @@ public class ItemSwordNincodiumSword extends ItemSwordNincrafty implements
 		setRepairIngot(ModItems.nincodiumIngot);
 	}
 
+	@Override
 	public boolean isDamageMoonModified(ItemStack stack) {
 		return true;
 	}

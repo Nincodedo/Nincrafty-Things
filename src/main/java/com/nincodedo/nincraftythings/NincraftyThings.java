@@ -38,7 +38,7 @@ public class NincraftyThings {
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		if(Settings.Tweaks.enableEE3Tweaks){
+		if (Settings.Tweaks.enableEE3Tweaks) {
 			NincraftyEE3Tweaks.init();
 		}
 		LogHelper.info("Post Init Complete");
@@ -55,7 +55,7 @@ public class NincraftyThings {
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock, ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		OreDictionaryRegister.init();
-		
+
 		LogHelper.info("Pre Init Complete");
 	}
 }
