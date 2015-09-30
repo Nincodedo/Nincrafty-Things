@@ -9,6 +9,7 @@ import com.nincodedo.nincraftythings.init.ModBlocks;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
+import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
@@ -23,7 +24,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS, dependencies = "required-after:"+Reference.REQUIRED_MODS)
 public class NincraftyThings {
 
 	@Mod.Instance(Reference.MOD_ID)

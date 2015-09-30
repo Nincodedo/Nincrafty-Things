@@ -1,9 +1,9 @@
 package com.nincodedo.nincraftythings.handler;
 
 import com.nincodedo.nincraftythings.NincraftyThings;
-import com.nincodedo.nincraftythings.api.item.IProcBuff;
 import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Settings;
+import com.nincraft.nincraftlib.api.item.IProcBuff;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,8 +1,8 @@
 package com.nincodedo.nincraftythings.handler;
 
-import com.nincodedo.nincraftythings.api.item.IMoonDamage;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.MoonModifierDamageSource;
+import com.nincraft.nincraftlib.api.item.IMoonDamage;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayerMP;
