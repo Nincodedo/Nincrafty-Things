@@ -1,8 +1,8 @@
 package com.nincodedo.nincraftythings.item.bucket;
 
-import net.minecraft.block.Block;
-
 import com.nincodedo.nincraftythings.reference.Names;
+
+import net.minecraft.block.Block;
 
 public class ItemMoltenNincodiumBucket extends ItemBucketNincrafty {
 

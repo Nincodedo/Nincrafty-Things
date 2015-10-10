@@ -3,7 +3,7 @@
   "modid": "NincraftyThings",
   "name": "Nincrafty Things",
   "description": "Random things added/modified for the Nincraft server.",
-  "version": "${mcversion}-${version}",
+  "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "http://nincraft.com",
   "updateUrl": "",

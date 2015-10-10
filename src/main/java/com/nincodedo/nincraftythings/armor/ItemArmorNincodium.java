@@ -1,17 +1,16 @@
 package com.nincodedo.nincraftythings.armor;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+
 public class ItemArmorNincodium extends ItemArmorNincrafty {
 
-	public ItemArmorNincodium(ArmorMaterial armorMaterial, int renderIndex,
-			int armorType) {
+	public ItemArmorNincodium(ArmorMaterial armorMaterial, int renderIndex, int armorType) {
 		super(armorMaterial, 0, armorType);
 		this.setRepairIngot(ModItems.nincodiumIngot);
 	}
@@ -36,8 +35,7 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot,
-			String layer) {
+	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String layer) {
 		if (armorType == 2) {
 			return "nincraftythings:textures/models/armor/nincodium_layer_2.png";
 		}
@@ -46,8 +44,7 @@ public class ItemArmorNincodium extends ItemArmorNincrafty {
 
 	@Override
 	public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
-		return getRepairIngot() == itemStack2.getItem() ? true : super
-				.getIsRepairable(itemStack1, itemStack2);
+		return getRepairIngot() == itemStack2.getItem() ? true : super.getIsRepairable(itemStack1, itemStack2);
 	}
 
 	public static boolean hasArmorSetItem(EntityPlayer player, int i) {
