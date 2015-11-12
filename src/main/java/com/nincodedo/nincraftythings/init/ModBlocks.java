@@ -2,6 +2,7 @@ package com.nincodedo.nincraftythings.init;
 
 import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.block.BlockNincodiumOre;
+import com.nincodedo.nincraftythings.block.BlockNincrafty;
 import com.nincodedo.nincraftythings.block.BlockQuartzOre;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
@@ -18,12 +19,12 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModBlocks {
 
 	public static Fluid moltenNincodium;
-	public static Block moltenNincodiumBlock;
+	public static MoltenNincodium moltenNincodiumBlock;
 	public static BlockNincodium nincodiumBlock;
 	public static BlockNincodiumOre nincodiumOre;
 	public static Fluid moltenLapis;
-	public static Block moltenLapisBlock;
-	public static Block quartzOre;
+	public static MoltenLapis moltenLapisBlock;
+	public static BlockQuartzOre quartzOre;
 
 	public static void init() {
 		moltenNincodium = new Fluid("moltenNincodium");
