@@ -42,4 +42,17 @@ public class Settings {
 		public static boolean enableEE3Tweaks;
 		public static String[] oreDictionaryAdditions;
 	}
+
+	public static class Tools {
+		public static int nincodiumHarvestLevel;
+		public static int nincodiumDurability;
+		public static float nincodiumEfficiency;
+		public static float nincodiumDamage;
+		public static int nincodiumEnchantability;
+		public static int jimmydriteHarvestLevel;
+		public static int jimmydriteDurability;
+		public static float jimmydriteEfficiency;
+		public static float jimmydriteDamage;
+		public static int jimmydriteEnchantability;
+	}
 }

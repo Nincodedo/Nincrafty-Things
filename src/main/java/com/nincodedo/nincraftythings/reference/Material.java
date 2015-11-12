@@ -15,9 +15,13 @@ public class Material {
 	}
 
 	public static final class Tools {
-		public static final Item.ToolMaterial NINCODIUM = EnumHelper.addToolMaterial(Names.Materials.NINCODIUM, 5, 1989,
-				12, 3, 10);
-		public static final Item.ToolMaterial JIMMYDRITE = EnumHelper.addToolMaterial(Names.Materials.JIMMYDRITE, 5, 50,
-				7, 3, 7);
+		public static final Item.ToolMaterial NINCODIUM = EnumHelper.addToolMaterial(Names.Materials.NINCODIUM,
+				Settings.Tools.nincodiumHarvestLevel, Settings.Tools.nincodiumDurability,
+				Settings.Tools.nincodiumEfficiency, Settings.Tools.nincodiumDamage,
+				Settings.Tools.nincodiumEnchantability);
+		public static final Item.ToolMaterial JIMMYDRITE = EnumHelper.addToolMaterial(Names.Materials.JIMMYDRITE,
+				Settings.Tools.jimmydriteHarvestLevel, Settings.Tools.jimmydriteDurability,
+				Settings.Tools.jimmydriteEfficiency, Settings.Tools.jimmydriteDamage,
+				Settings.Tools.jimmydriteEnchantability);
 	}
 }

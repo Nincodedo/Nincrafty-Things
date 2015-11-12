@@ -25,6 +25,8 @@ public class ConfigurationHandler {
 		loadGeneralConfigs(Configuration.CATEGORY_GENERAL);
 		loadNincodiumArmorConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR);
 		loadNincodiumArmorReductionConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION);
+		loadNincodiumToolsConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_TOOLS);
+		loadJimmydriteToolsConfigs(ConfigurationNincrafty.CATEGORY_JIMMYDRITE_TOOLS);
 		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
 		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
@@ -32,6 +34,32 @@ public class ConfigurationHandler {
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
+	}
+
+	private static void loadNincodiumToolsConfigs(String categoryNincodiumTools) {
+		Settings.Tools.nincodiumHarvestLevel = configuration.getInt("nincodiumHarvestLevel", categoryNincodiumTools, 5,
+				1, 10, "");
+		Settings.Tools.nincodiumDurability = configuration.getInt("nincodiumDurability", categoryNincodiumTools, 1989,
+				1, 2000, "");
+		Settings.Tools.nincodiumEfficiency = configuration.getFloat("nincodiumEfficiency", categoryNincodiumTools, 12,
+				1, 15, "");
+		Settings.Tools.nincodiumDamage = configuration.getFloat("nincodiumDamage", categoryNincodiumTools, 3, 1, 10,
+				"");
+		Settings.Tools.nincodiumEnchantability = configuration.getInt("nincodiumEnchantability", categoryNincodiumTools,
+				10, 1, 10, "");
+	}
+
+	private static void loadJimmydriteToolsConfigs(String categoryJimmydriteTools) {
+		Settings.Tools.jimmydriteHarvestLevel = configuration.getInt("jimmydriteHarvestLevel", categoryJimmydriteTools,
+				5, 1, 10, "");
+		Settings.Tools.jimmydriteDurability = configuration.getInt("jimmydriteDurability", categoryJimmydriteTools,
+				1989, 1, 2000, "");
+		Settings.Tools.jimmydriteEfficiency = configuration.getFloat("jimmydriteEfficiency", categoryJimmydriteTools,
+				12, 1, 15, "");
+		Settings.Tools.jimmydriteDamage = configuration.getFloat("jimmydriteDamage", categoryJimmydriteTools, 3, 1, 10,
+				"");
+		Settings.Tools.jimmydriteEnchantability = configuration.getInt("jimmydriteEnchantability",
+				categoryJimmydriteTools, 10, 1, 10, "");
 	}
 
 	private static void loadTweakConfigs(String category) {
