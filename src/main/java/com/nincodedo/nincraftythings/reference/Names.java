@@ -33,6 +33,7 @@ public class Names {
 		public static final String MOLTEN_LAPIS = "moltenlapis";
 		public static final String MOLTEN_LAPIS_FLOWING = "moltenLapisFlowing";
 		public static final String QUARTZ_ORE = "quartzOre";
+		public static final String SUBTILE_ORECHID_MYSTIC = "orechidMystic";
 	}
 
 	public static final class Materials {

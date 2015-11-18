@@ -1,10 +1,15 @@
 package com.nincodedo.nincraftythings.init;
 
+import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Settings;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import vazkii.botania.api.BotaniaAPI;
+import vazkii.botania.common.crafting.ModPetalRecipes;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 public class Recipes {
 	public static void init() {
@@ -38,5 +43,8 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumLeggings), "iii", "i i", "i i", 'i',
 					new ItemStack(ModItems.nincodiumIngot));
 		}
+
+		BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTIC),
+				ModPetalRecipes.lightBlueMana, ModPetalRecipes.lightBlueMana);
 	}
 }
