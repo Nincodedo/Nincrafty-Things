@@ -15,6 +15,29 @@ buildscript {
     }
 }
 
+repositories {
+    maven { // The repo from which to get waila
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven { // the repo from which to get NEI and stuff 
+        name 'CB Repo'
+        url "http://chickenbones.net/maven/"
+    }
+    maven {
+        name = "IGW"
+        url = "http://maven.k-4u.nl/"
+    }
+    maven {
+        name 'OpenComputers'
+        url = "http://maven.cil.li/"
+    }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+}
+
 ext.configFile = file "build.properties"
 
 configFile.withReader {
@@ -32,6 +55,7 @@ archivesBaseName = "NincraftyThings"
 
 minecraft {
     version = config.minecraft_version + "-" + config.forge_version
+    runDir = "eclipse"
     
     replaceIn "reference/Reference.java"
     replace "@MINECRAFT_VERSION@", "${config.minecraft_version}"
@@ -41,7 +65,25 @@ minecraft {
 version = "${config.minecraft_version}-${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}"
 
 dependencies {
+    // you may put jars on which you depend on in ./libs
+    // or you may define them like so..
+    //compile "some.group:artifact:version:classifier"
+    //compile "some.group:artifact:version"
+      
+    // real examples
+    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+
+    // for more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
     compile fileTree(dir: 'lib', include: '*.jar')
+    compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.cclib_version}:dev"
+    compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.cccore_version}:dev"
+    compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.nei_version}:dev"
+    compile "mcp.mobius.waila:Waila:${config.waila_version}_${config.minecraft_version}"
+    compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
 }
 
 processResources
