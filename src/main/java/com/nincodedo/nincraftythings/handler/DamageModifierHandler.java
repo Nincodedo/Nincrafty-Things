@@ -18,10 +18,12 @@ public class DamageModifierHandler {
 			if (player.getHeldItem() != null && player.getHeldItem().getItem() instanceof IMoonDamage
 					&& event.entityLiving.getHealth() > 0) {
 				event.setCanceled(true);
-				event.entity.attackEntityFrom(new MoonModifierDamageSource("moonModifier", player),
-						getMoonDamage(player.worldObj.getMoonPhase(), event.ammount));
-				int itemDamage = player.getHeldItem().getItemDamage() + 1;
-				player.getHeldItem().getItem().setDamage(player.getHeldItem(), itemDamage);
+				if (!player.worldObj.isRemote) {
+					event.entity.attackEntityFrom(new MoonModifierDamageSource("moonModifier", player),
+							getMoonDamage(player.worldObj.getCurrentMoonPhaseFactor(), event.ammount));
+					int itemDamage = player.getHeldItem().getItemDamage() + 1;
+					player.getHeldItem().getItem().setDamage(player.getHeldItem(), itemDamage);
+				}
 			}
 		}
 	}
@@ -29,15 +31,13 @@ public class DamageModifierHandler {
 	/**
 	 * Returns the new damage amount after going through this formula (assuming
 	 * default configs) http://i.imgur.com/VjDFzQG.png This formula essentially
-	 * makes moon phases 0 and 7 equal to the minumum config value, and phases 3
-	 * and 4 equal to the maxinum config value. The values inbetween
-	 * increase/decrease linearly. This means if you wanted moon phases 0 and 7
-	 * to actually be the highest and 3 and 4 the lowest, just swap the min and
-	 * max in the configs.
+	 * makes moon phase 0 equal to the minumum config value, and phase 1 equal
+	 * to the maxinum config value. The values inbetween increase/decrease
+	 * linearly.
 	 **/
-	private float getMoonDamage(int moonPhase, float damage) {
-		return (float) (damage * (((Math.abs(Math.abs(moonPhase - 3.5) - 3.5))
-				* ((Settings.Silly.maxMoonDamage - Settings.Silly.minMoonDamage) / 3)) + Settings.Silly.minMoonDamage));
+	private float getMoonDamage(float phase, float damage) {
+		return (float) (damage * ((phase * 4) * ((Settings.Silly.maxMoonDamage - Settings.Silly.minMoonDamage) / 4))
+				+ Settings.Silly.minMoonDamage);
 	}
 
 }
