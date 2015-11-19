@@ -65,7 +65,7 @@ public class ConfigurationHandler {
 	private static void loadTweakConfigs(String category) {
 		Settings.Tweaks.enableEE3Tweaks = configuration.getBoolean("enableEE3Tweaks", category, true, "");
 		Settings.Tweaks.oreDictionaryAdditions = configuration.getStringList("oreDictionaryAdditions", category,
-				new String[] {}, "Add items to the ore dictionary formatted as modID|itemName|oreDictionaryName");
+				new String[] {}, "Add items to the ore dictionary formatted as modID|itemName|Metadata|oreDictionaryName");
 	}
 
 	private static void loadNincodiumArmorReductionConfigs(String category) {
