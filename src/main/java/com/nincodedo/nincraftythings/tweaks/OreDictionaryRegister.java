@@ -42,8 +42,6 @@ public class OreDictionaryRegister {
 
 	private static void registerOre(String itemName, int metadata, String oreDictEntry) {
 		OreDictionary.registerOre(oreDictEntry, GameRegistry.makeItemStack(itemName, metadata, 0, ""));
-		
-		System.out.println(itemName + ":" + (metadata == OreDictionary.WILDCARD_VALUE ? "*" : metadata) + " was registered to Ore Dictionary Entry " + oreDictEntry);
 	}
 
 	private static int getIntSafely(String input) {
