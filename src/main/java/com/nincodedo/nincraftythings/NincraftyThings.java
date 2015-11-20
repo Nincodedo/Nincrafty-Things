@@ -1,5 +1,7 @@
 package com.nincodedo.nincraftythings;
 
+import com.nincodedo.nincraftythings.botania.common.crafting.NincraftyPetalRecipes;
+import com.nincodedo.nincraftythings.botania.common.lexicon.NincraftLexiconData;
 import com.nincodedo.nincraftythings.handler.BucketHandler;
 import com.nincodedo.nincraftythings.handler.ChestGenHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
@@ -32,7 +34,6 @@ public class NincraftyThings {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		Recipes.init();
-
 		LogHelper.info("Init Complete");
 	}
 
@@ -50,11 +51,13 @@ public class NincraftyThings {
 		proxy.registerEventHandlers();
 		ModBlocks.init();
 		ModItems.init();
+		NincraftyPetalRecipes.init();
 		ChestGenHandler.init();
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock, ModItems.bucketNincodium);
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock, ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		OreDictionaryRegister.init();
+		NincraftLexiconData.init();
 
 		LogHelper.info("Pre Init Complete");
 	}

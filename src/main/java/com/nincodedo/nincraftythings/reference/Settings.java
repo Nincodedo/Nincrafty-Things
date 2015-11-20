@@ -22,7 +22,8 @@ public class Settings {
 	}
 
 	public static class Botania {
-		public static Map<String, Integer> orechidMystic;
+		public static Map<String, Integer> orechidMystica;
+		public static Map<String, Integer> orechidFinis;
 	}
 
 	public static class Items {

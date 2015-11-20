@@ -18,6 +18,9 @@ tile.nincraftythings:nincodiumOre.name=Nincodium Ore
 tile.nincraftythings:quartzOre.name=Quartz Ore
 tile.moltenLapisBlock.name=Molten Lapis
 
+tile.botania:flower.orechidMystica.name=Orechid Mystica
+tile.botania:flower.orechidFinis.name=Orechid Finis
+
 fluid.moltenNincodium=Molten Nincodium
 fluid.moltenLapis=Molten Lapis
 

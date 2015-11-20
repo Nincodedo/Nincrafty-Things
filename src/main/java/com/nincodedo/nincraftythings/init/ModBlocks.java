@@ -1,10 +1,12 @@
 package com.nincodedo.nincraftythings.init;
 
+import java.util.Arrays;
+
 import com.nincodedo.nincraftythings.block.BlockNincodium;
 import com.nincodedo.nincraftythings.block.BlockNincodiumOre;
-import com.nincodedo.nincraftythings.block.BlockNincrafty;
 import com.nincodedo.nincraftythings.block.BlockQuartzOre;
-import com.nincodedo.nincraftythings.botania.block.subtile.functional.SubTileOrechidMystic;
+import com.nincodedo.nincraftythings.botania.block.subtile.functional.SubTileOrechidFinis;
+import com.nincodedo.nincraftythings.botania.block.subtile.functional.SubTileOrechidMystica;
 import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.reference.Names;
@@ -12,7 +14,6 @@ import com.nincodedo.nincraftythings.reference.Reference;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -46,9 +47,10 @@ public class ModBlocks {
 		GameRegistry.registerBlock(nincodiumOre, "nincodiumOre");
 		GameRegistry.registerBlock(quartzOre, "quartzOre");
 
-		if (Loader.isModLoaded("Botania")) {
-			BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_MYSTIC, SubTileOrechidMystic.class);
-		}
+		BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_MYSTICA, SubTileOrechidMystica.class);
+		BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_FINIS, SubTileOrechidFinis.class);
+		BotaniaAPI.subtilesForCreativeMenu.addAll(Arrays
+				.asList(new String[] { Names.Blocks.SUBTILE_ORECHID_MYSTICA, Names.Blocks.SUBTILE_ORECHID_FINIS }));
 
 		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_ORE, quartzOre);
 		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_ORE, nincodiumOre);
