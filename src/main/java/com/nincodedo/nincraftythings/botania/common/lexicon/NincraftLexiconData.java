@@ -13,11 +13,12 @@ public class NincraftLexiconData {
 
 	public static LexiconEntry orechidMystica;
 	public static LexiconEntry orechidFinis;
-	
-	public static void init(){
+
+	public static void init() {
 		orechidMystica = new ALexiconEntry(Names.Blocks.SUBTILE_ORECHID_MYSTICA, BotaniaAPI.categoryFunctionalFlowers);
-		orechidMystica.setLexiconPages(new PageText("0"), new PagePetalRecipe("1", NincraftyPetalRecipes.orechidMystica));
-		
+		orechidMystica.setLexiconPages(new PageText("0"),
+				new PagePetalRecipe("1", NincraftyPetalRecipes.orechidMystica));
+
 		orechidFinis = new ALexiconEntry(Names.Blocks.SUBTILE_ORECHID_FINIS, BotaniaAPI.categoryFunctionalFlowers);
 		orechidFinis.setLexiconPages(new PageText("0"), new PagePetalRecipe("1", NincraftyPetalRecipes.orechidFinis));
 	}
