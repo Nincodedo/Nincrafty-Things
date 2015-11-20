@@ -1,5 +1,7 @@
 package com.nincodedo.nincraftythings.reference;
 
+import java.util.Map;
+
 public class Settings {
 	public static class Armor {
 		public static float nincodiumArmorHealingRadius;
@@ -17,6 +19,11 @@ public class Settings {
 
 	public static class Blocks {
 		public static boolean enableNincodiumOreSmelting;
+	}
+
+	public static class Botania {
+		public static Map<String, Integer> orechidMystica;
+		public static Map<String, Integer> orechidFinis;
 	}
 
 	public static class Items {
@@ -54,5 +61,9 @@ public class Settings {
 		public static float jimmydriteEfficiency;
 		public static float jimmydriteDamage;
 		public static int jimmydriteEnchantability;
+	}
+
+	public static class World {
+		public static int twilightForestDimId;
 	}
 }

@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.handler;
 
 import java.io.File;
+import java.util.HashMap;
 
 import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
@@ -30,23 +31,36 @@ public class ConfigurationHandler {
 		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
 		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
+		loadBotaniaConfigs(ConfigurationNincrafty.CATEGORY_BOTANIA);
 
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
 	}
 
-	private static void loadNincodiumToolsConfigs(String categoryNincodiumTools) {
-		Settings.Tools.nincodiumHarvestLevel = configuration.getInt("nincodiumHarvestLevel", categoryNincodiumTools, 5,
-				1, 10, "");
-		Settings.Tools.nincodiumDurability = configuration.getInt("nincodiumDurability", categoryNincodiumTools, 1989,
-				1, 2000, "");
-		Settings.Tools.nincodiumEfficiency = configuration.getFloat("nincodiumEfficiency", categoryNincodiumTools, 12,
-				1, 15, "");
-		Settings.Tools.nincodiumDamage = configuration.getFloat("nincodiumDamage", categoryNincodiumTools, 3, 1, 10,
+	private static void loadBotaniaConfigs(String category) {
+		Settings.Botania.orechidMystica = new HashMap<String, Integer>();
+		for (String entry : configuration.getStringList("orechidMysticaOres", category, new String[] { "oreIron|100" },
+				"")) {
+			Settings.Botania.orechidMystica.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
+		}
+
+		Settings.Botania.orechidFinis = new HashMap<String, Integer>();
+		for (String entry : configuration.getStringList("orechidFinisOres", category, new String[] { "oreIron|100" },
+				"")) {
+			Settings.Botania.orechidFinis.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
+		}
+		
+		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, -7, -100, 100, "");
+	}
+
+	private static void loadNincodiumToolsConfigs(String category) {
+		Settings.Tools.nincodiumHarvestLevel = configuration.getInt("nincodiumHarvestLevel", category, 5, 1, 10, "");
+		Settings.Tools.nincodiumDurability = configuration.getInt("nincodiumDurability", category, 1989, 1, 2000, "");
+		Settings.Tools.nincodiumEfficiency = configuration.getFloat("nincodiumEfficiency", category, 12, 1, 15, "");
+		Settings.Tools.nincodiumDamage = configuration.getFloat("nincodiumDamage", category, 3, 1, 10, "");
+		Settings.Tools.nincodiumEnchantability = configuration.getInt("nincodiumEnchantability", category, 10, 1, 10,
 				"");
-		Settings.Tools.nincodiumEnchantability = configuration.getInt("nincodiumEnchantability", categoryNincodiumTools,
-				10, 1, 10, "");
 	}
 
 	private static void loadJimmydriteToolsConfigs(String categoryJimmydriteTools) {

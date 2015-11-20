@@ -18,8 +18,22 @@ tile.nincraftythings:nincodiumOre.name=Nincodium Ore
 tile.nincraftythings:quartzOre.name=Quartz Ore
 tile.moltenLapisBlock.name=Molten Lapis
 
+tile.botania:flower.orechidMystica.name=Orechid Mystica
+tile.botania:flower.orechidFinis.name=Orechid Finis
+
 fluid.moltenNincodium=Molten Nincodium
 fluid.moltenLapis=Molten Lapis
 
 # Death Messages
 death.attack.moonModifier=%s was killed by tidal forces
+
+#Lexica
+botania.entry.orechidFinis=Orechid Finis
+botania.tagline.orechidFinis=Creates End ores from end stone
+botania.page.orechidFinis0=Like the Orechid Ignem, the Orechid Finis has the ability to create ores from different dimensions. This flower must be in The End to work and it will create ores in End Stone.
+botania.page.orechidFinis1=“I'm crazy, but I think I'm OK.” 
+
+botania.entry.orechidMystica=Orechid Mystica
+botania.tagline.orechidMystica=Creates Twilight Forest ores from stone
+botania.page.orechidMystica0=The Orechid Mystica has the ability to create ores from different dimensions. This flower must be in Twilight Forest to work and it will create ores in stone.
+botania.page.orechidMystica1=Still a Better Love Story
