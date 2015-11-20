@@ -38,5 +38,6 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(ModItems.nincodiumLeggings), "iii", "i i", "i i", 'i',
 					new ItemStack(ModItems.nincodiumIngot));
 		}
+
 	}
 }
