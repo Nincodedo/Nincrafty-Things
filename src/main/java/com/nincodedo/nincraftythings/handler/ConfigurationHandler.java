@@ -2,6 +2,7 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
@@ -12,6 +13,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 
 public class ConfigurationHandler {
+	private static final String DELIMITER = "[|]";
 	public static Configuration configuration;
 
 	public static void init(File configFile) {
@@ -39,18 +41,12 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadBotaniaConfigs(String category) {
-		Settings.Botania.orechidMystica = new HashMap<String, Integer>();
-		for (String entry : configuration.getStringList("orechidMysticaOres", category, new String[] { "oreIron|100" },
-				"")) {
-			Settings.Botania.orechidMystica.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
-		}
+		Settings.Botania.enableOrechids = configuration.getBoolean("enableOrechids", category, true,
+				"Adds two new orechids: one for Twilight Forest ores, one for Ender ores.");
 
-		Settings.Botania.orechidFinis = new HashMap<String, Integer>();
-		for (String entry : configuration.getStringList("orechidFinisOres", category, new String[] { "oreIron|100" },
-				"")) {
-			Settings.Botania.orechidFinis.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
-		}
-		
+		Settings.Botania.orechidMystica = parseOrechidConfig(category, "orechidMysticaOres");
+		Settings.Botania.orechidFinis = parseOrechidConfig(category, "orechidFinisOres");
+
 		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, -7, -100, 100, "");
 	}
 
@@ -66,8 +62,8 @@ public class ConfigurationHandler {
 	private static void loadJimmydriteToolsConfigs(String categoryJimmydriteTools) {
 		Settings.Tools.jimmydriteHarvestLevel = configuration.getInt("jimmydriteHarvestLevel", categoryJimmydriteTools,
 				5, 1, 10, "");
-		Settings.Tools.jimmydriteDurability = configuration.getInt("jimmydriteDurability", categoryJimmydriteTools,
-				50, 1, 2000, "");
+		Settings.Tools.jimmydriteDurability = configuration.getInt("jimmydriteDurability", categoryJimmydriteTools, 50,
+				1, 2000, "");
 		Settings.Tools.jimmydriteEfficiency = configuration.getFloat("jimmydriteEfficiency", categoryJimmydriteTools,
 				12, 1, 15, "");
 		Settings.Tools.jimmydriteDamage = configuration.getFloat("jimmydriteDamage", categoryJimmydriteTools, 3, 1, 10,
@@ -145,6 +141,18 @@ public class ConfigurationHandler {
 				"Jimmy's Sword can be found in chests");
 		Settings.Items.jimmysSwordChestRarity = configuration.getInt("jimmysSwordChestRarity", category, 3, 1, 100,
 				"Dungeon chest rarity of Jimmy's Sword");
+	}
+
+	private static Map<String, Integer> parseOrechidConfig(String category, String configKey) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		
+		for (String entry : configuration.getStringList(configKey, category, new String[] { "oreIron|100" },
+				"")) {
+			String[] entryData = entry.split(DELIMITER);
+			map.put(entryData[0], Integer.parseInt(entryData[1]));
+		}
+		
+		return map;
 	}
 
 	@SubscribeEvent

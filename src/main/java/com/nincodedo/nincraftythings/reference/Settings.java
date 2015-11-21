@@ -22,6 +22,7 @@ public class Settings {
 	}
 
 	public static class Botania {
+		public static boolean enableOrechids;
 		public static Map<String, Integer> orechidMystica;
 		public static Map<String, Integer> orechidFinis;
 	}
