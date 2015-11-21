@@ -10,9 +10,8 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 public class ThunderJoinHandler {
 
 	private boolean isPlayerThundertastic(EntityPlayerMP player) {
-
-		for (int i = 0; i < Settings.Silly.thunderList.length; i++) {
-			if (Settings.Silly.thunderList[i].equals(player.getDisplayName())) {
+		for (String playerName : Settings.Silly.thunderList) {
+			if (playerName.equals(player.getDisplayName())) {
 				return true;
 			}
 		}
