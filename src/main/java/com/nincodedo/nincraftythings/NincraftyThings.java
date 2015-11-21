@@ -53,7 +53,7 @@ public class NincraftyThings {
 	}
 
 	private void initBotaniaCompat() {
-		if (Loader.isModLoaded("Botania")) {
+		if (Loader.isModLoaded(Settings.Mods.botaniaModId)) {
 			NincraftyPetalRecipes.init();
 			NincraftLexiconData.init();
 		}
@@ -67,7 +67,7 @@ public class NincraftyThings {
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		if (Settings.Tweaks.enableEE3Tweaks) {
+		if (Loader.isModLoaded(Settings.Mods.ee3ModId)) {
 			NincraftyEE3Tweaks.init();
 		}
 		LogHelper.info("Post Init Complete");

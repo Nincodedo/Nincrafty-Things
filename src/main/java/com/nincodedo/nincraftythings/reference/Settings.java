@@ -67,4 +67,9 @@ public class Settings {
 	public static class World {
 		public static int twilightForestDimId;
 	}
+	
+	public static final class Mods {
+		public static String botaniaModId = "Botania";
+		public static String ee3ModId = "EE3";
+	}
 }
