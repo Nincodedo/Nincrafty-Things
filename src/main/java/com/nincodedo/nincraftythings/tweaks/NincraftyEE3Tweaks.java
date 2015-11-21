@@ -1,5 +1,7 @@
 package com.nincodedo.nincraftythings.tweaks;
 
+import static com.pahimar.ee3.init.ModItems.alchemicalTome;
+
 import java.util.List;
 
 import com.pahimar.ee3.item.crafting.RecipeAludel;
@@ -14,10 +16,10 @@ public class NincraftyEE3Tweaks {
 			try {
 				List<RecipeAludel> aludelRecipeList = ReflectionHelper.getPrivateValue(AludelRecipeManager.class,
 						AludelRecipeManager.getInstance(), "aludelRecipes");
-				for (int i = 0; i < aludelRecipeList.size(); i++) {
-					if (aludelRecipeList.get(i).getRecipeOutput().getItem()
-							.equals(com.pahimar.ee3.init.ModItems.alchemicalTome)) {
-						aludelRecipeList.remove(i);
+
+				for (RecipeAludel recipe : aludelRecipeList) {
+					if (recipe.getRecipeOutput().getItem().equals(alchemicalTome)) {
+						aludelRecipeList.remove(recipe);
 						break;
 					}
 				}

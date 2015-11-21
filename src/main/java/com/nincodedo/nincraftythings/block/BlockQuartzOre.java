@@ -12,6 +12,7 @@ public class BlockQuartzOre extends BlockOreNincrafty {
 		setHardness(3.0F);
 		setResistance(5.0F);
 		setBlockName(Names.Blocks.QUARTZ_ORE);
+		setHarvestLevel("pickaxe", 2);
 	}
 
 	@Override

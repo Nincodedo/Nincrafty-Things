@@ -19,19 +19,20 @@ public class ProcHandler {
 		if (Settings.Abilities.canProc && event.source.getEntity() instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
 			if (!player.isEntityEqual(event.entity) && isUsingProcSword(player)) {
-				NincraftyThings.proxy.spawnParticle(Names.Particles.GREEN_SPARKLES, player.posX, player.posY + 1.4,
-						player.posZ, 1.3, 1.3, 1.3);
-				NincraftyThings.proxy.spawnParticle(Names.Particles.GREEN_SPARKLES, player.posX, player.posY + 1.4,
-						player.posZ, 0.3, 0.3, 0.3);
+				spawnParticle(player, 1.4, 1.3);
+				spawnParticle(player, 1.4, 0.3);
 				if (!player.worldObj.isRemote) {
-					player.worldObj.playSoundEffect(player.posX, player.posY, player.posZ, Names.Sounds.PROC_ATTACK, 1,
-							1);
+					player.worldObj.playSoundEffect(player.posX, player.posY, player.posZ, Names.Sounds.PROC_ATTACK, 1, 1);
 					player.addPotionEffect(new PotionEffect(5, 100, 9));
 					player.addPotionEffect(new PotionEffect(1, 100, 2));
 				}
 			}
-
 		}
+	}
+
+	private void spawnParticle(final EntityPlayerMP player, final double yOffset, final double velocity) {
+		NincraftyThings.proxy.spawnParticle(Names.Particles.GREEN_SPARKLES, player.posX, player.posY + yOffset,
+				player.posZ, velocity, velocity, velocity);
 	}
 
 	@SubscribeEvent
