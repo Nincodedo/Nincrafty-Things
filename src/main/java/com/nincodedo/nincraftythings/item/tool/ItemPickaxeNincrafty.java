@@ -31,7 +31,8 @@ public class ItemPickaxeNincrafty extends ItemPickaxe {
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return getUnlocalizedName();
+		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
+				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
