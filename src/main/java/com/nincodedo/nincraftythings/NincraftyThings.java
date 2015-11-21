@@ -15,6 +15,7 @@ import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
 import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -35,17 +36,27 @@ public class NincraftyThings {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		proxy.registerEventHandlers();
+
 		ModBlocks.init();
 		ModItems.init();
-		NincraftyPetalRecipes.init();
 		ChestGenHandler.init();
+
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock, ModItems.bucketNincodium);
 		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock, ModItems.bucketLapis);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
+
+		initBotaniaCompat();
+
 		OreDictionaryRegister.init();
-		NincraftLexiconData.init();
 
 		LogHelper.info("Pre Init Complete");
+	}
+
+	private void initBotaniaCompat() {
+		if (Loader.isModLoaded("Botania")) {
+			NincraftyPetalRecipes.init();
+			NincraftLexiconData.init();
+		}
 	}
 
 	@Mod.EventHandler

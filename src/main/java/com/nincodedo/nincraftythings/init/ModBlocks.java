@@ -11,6 +11,7 @@ import com.nincodedo.nincraftythings.fluid.MoltenLapis;
 import com.nincodedo.nincraftythings.fluid.MoltenNincodium;
 import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Reference;
+import com.nincodedo.nincraftythings.reference.Settings;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -70,10 +71,12 @@ public class ModBlocks {
 
 	private static void registerBotaniaBlocks() {
 		if (Loader.isModLoaded("Botania")) {
-			BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_MYSTICA, SubTileOrechidMystica.class);
-			BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_FINIS, SubTileOrechidFinis.class);
-			BotaniaAPI.subtilesForCreativeMenu.addAll(Arrays
-					.asList(new String[] { Names.Blocks.SUBTILE_ORECHID_MYSTICA, Names.Blocks.SUBTILE_ORECHID_FINIS }));
+			if (Settings.Botania.enableOrechids) {
+				BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_MYSTICA, SubTileOrechidMystica.class);
+				BotaniaAPI.registerSubTile(Names.Blocks.SUBTILE_ORECHID_FINIS, SubTileOrechidFinis.class);
+				BotaniaAPI.subtilesForCreativeMenu.addAll(Arrays.asList(
+						new String[] { Names.Blocks.SUBTILE_ORECHID_MYSTICA, Names.Blocks.SUBTILE_ORECHID_FINIS }));
+			}
 		}
 	}
 

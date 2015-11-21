@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.botania.common.crafting;
 
 import com.nincodedo.nincraftythings.reference.Names;
+import com.nincodedo.nincraftythings.reference.Settings;
 
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.recipe.RecipePetals;
@@ -36,11 +37,14 @@ public class NincraftyPetalRecipes {
 	public static final String pixieDust = LibOreDict.PIXIE_DUST;
 
 	public static void init() {
-		orechidMystica = BotaniaAPI.registerPetalRecipe(
-				ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTICA), green, greenMana, lightBlue,
-				lightBlueMana, purple, lime, runePride, runeGreed, redstoneRoot, pixieDust);
-		orechidFinis = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS),
-				purple, purpleMana, black, blackMana, white, whiteMana, runePride, runeGreed, redstoneRoot, pixieDust);
+		if (Settings.Botania.enableOrechids) {
+			orechidMystica = BotaniaAPI.registerPetalRecipe(
+					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTICA), green, greenMana, lightBlue,
+					lightBlueMana, purple, lime, runePride, runeGreed, redstoneRoot, pixieDust);
+			orechidFinis = BotaniaAPI.registerPetalRecipe(
+					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS), purple, purpleMana, black,
+					blackMana, white, whiteMana, runePride, runeGreed, redstoneRoot, pixieDust);
+		}
 	}
 
 }
