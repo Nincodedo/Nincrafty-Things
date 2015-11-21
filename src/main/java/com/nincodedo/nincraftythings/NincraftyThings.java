@@ -32,20 +32,6 @@ public class NincraftyThings {
 	public static IProxy proxy;
 
 	@Mod.EventHandler
-	public void init(FMLInitializationEvent event) {
-		Recipes.init();
-		LogHelper.info("Init Complete");
-	}
-
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		if (Settings.Tweaks.enableEE3Tweaks) {
-			NincraftyEE3Tweaks.init();
-		}
-		LogHelper.info("Post Init Complete");
-	}
-
-	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		proxy.registerEventHandlers();
@@ -60,5 +46,19 @@ public class NincraftyThings {
 		NincraftLexiconData.init();
 
 		LogHelper.info("Pre Init Complete");
+	}
+
+	@Mod.EventHandler
+	public void init(FMLInitializationEvent event) {
+		Recipes.init();
+		LogHelper.info("Init Complete");
+	}
+
+	@Mod.EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		if (Settings.Tweaks.enableEE3Tweaks) {
+			NincraftyEE3Tweaks.init();
+		}
+		LogHelper.info("Post Init Complete");
 	}
 }

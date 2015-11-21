@@ -23,6 +23,10 @@ public class ItemArmorNincrafty extends ItemArmor {
 		return repairIngot;
 	}
 
+	public void setRepairIngot(Item repairIngot) {
+		this.repairIngot = repairIngot;
+	}
+
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
@@ -43,10 +47,6 @@ public class ItemArmorNincrafty extends ItemArmor {
 	public void registerIcons(IIconRegister iconRegister) {
 		itemIcon = iconRegister
 				.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-	}
-
-	public void setRepairIngot(Item repairIngot) {
-		this.repairIngot = repairIngot;
 	}
 
 }
