@@ -38,8 +38,7 @@ public class ItemSwordNincrafty extends ItemSword {
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":",
-				getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return getUnlocalizedName();
 	}
 
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
