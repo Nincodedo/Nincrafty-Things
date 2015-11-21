@@ -23,6 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems {
+
 	public static ItemNincrafty nincodiumIngot;
 	public static ItemNincrafty quartz;
 	public static ItemPickaxeNincrafty nincodiumPickaxe;
@@ -36,6 +37,20 @@ public class ModItems {
 	public static ItemSwordJimmysSword jimmysSword;
 
 	public static void init() {
+		initItems();
+
+		registerItems();
+		registerFluidContainers();
+
+		registerOreDictionaryEntries();
+	}
+
+	private static void registerOreDictionaryEntries() {
+		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT, nincodiumIngot);
+		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_GEM, quartz);
+	}
+
+	private static void initItems() {
 		nincodiumIngot = new ItemNincodiumIngot();
 		quartz = new ItemQuartz();
 		nincodiumPickaxe = new ItemNincodiumPickaxe();
@@ -47,21 +62,21 @@ public class ModItems {
 		jimmysSword = new ItemSwordJimmysSword();
 
 		bucketNincodium = new ItemMoltenNincodiumBucket(ModBlocks.moltenNincodiumBlock);
-
-		bucketNincodium = new ItemMoltenNincodiumBucket(ModBlocks.moltenNincodiumBlock);
 		bucketLapis = new ItemMoltenLapisBucket(ModBlocks.moltenLapisBlock);
+	}
+
+	private static void registerFluidContainers() {
 		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
 				new ItemStack(Items.bucket));
 		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenLapis, new ItemStack(bucketLapis),
 				new ItemStack(Items.bucket));
-		FluidContainerRegistry.registerFluidContainer(ModBlocks.moltenNincodium, new ItemStack(bucketNincodium),
-				new ItemStack(Items.bucket));
+	}
 
+	private static void registerItems() {
 		GameRegistry.registerItem(bucketNincodium, Names.Items.BUCKET_NINCODIUM);
 		GameRegistry.registerItem(bucketLapis, Names.Items.BUCKET_LAPIS);
 		GameRegistry.registerItem(nincodiumIngot, Names.Items.NINCODIUM_INGOT);
 		GameRegistry.registerItem(quartz, Names.Items.QUARTZ);
-		OreDictionary.registerOre(Names.OreDictionary.NINCODIUM_INGOT, nincodiumIngot);
 		GameRegistry.registerItem(nincodiumPickaxe, Names.Tools.NINCODIUM_PICKAXE);
 		GameRegistry.registerItem(nincodiumSword, Names.Weapons.NINCODIUM_SWORD);
 		GameRegistry.registerItem(jimmysSword, Names.Weapons.JIMMYS_SWORD);
@@ -70,7 +85,6 @@ public class ModItems {
 		GameRegistry.registerItem(nincodiumChestplate, Names.Armor.NINCODIUM_CHESTPLATE);
 		GameRegistry.registerItem(nincodiumLeggings, Names.Armor.NINCODIUM_LEGGINGS);
 		GameRegistry.registerItem(nincodiumBoots, Names.Armor.NINCODIUM_BOOTS);
-
-		OreDictionary.registerOre(Names.OreDictionary.QUARTZ_GEM, quartz);
 	}
+
 }
