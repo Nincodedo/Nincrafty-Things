@@ -51,10 +51,6 @@ public class Names {
 		public static final String JIMMYS_SWORD = "jimmysSword";
 	}
 
-	public static final class Particles {
-		public static final String GREEN_SPARKLES = "happyVillager";
-	}
-
 	public static final class Sounds {
 		public static final String PROC_ATTACK = "mob.wither.hurt";
 		public static final String HEALING = "random.levelup";

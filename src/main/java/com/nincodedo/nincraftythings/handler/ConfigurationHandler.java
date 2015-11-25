@@ -30,8 +30,6 @@ public class ConfigurationHandler {
 		loadNincodiumArmorReductionConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION);
 		loadNincodiumToolsConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_TOOLS);
 		loadJimmydriteToolsConfigs(ConfigurationNincrafty.CATEGORY_JIMMYDRITE_TOOLS);
-		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
-		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
 		loadBotaniaConfigs(ConfigurationNincrafty.CATEGORY_BOTANIA);
 
@@ -91,24 +89,6 @@ public class ConfigurationHandler {
 
 		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt("nincodiumBootsDamageReduction", category,
 				3, 1, 13, "");
-	}
-
-	private static void loadAbilityConfigs(String category) {
-		Settings.Abilities.canProc = configuration.getBoolean("canProc", category, true,
-				"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
-		Settings.Abilities.canJimmyPvP = configuration.getBoolean("canJimmyPvP", category, false,
-				"Allows Jimmy's Sword to attack other players");
-	}
-
-	private static void loadSillyConfigs(String category) {
-		Settings.Silly.thunderList = configuration.getStringList("thunderList", category,
-				new String[] { "Nincodedo", "Undead_Zeratul" }, "Thundertastic");
-		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean("moonPhasesOPPlzNerf", category, true,
-				"Moon phases cause shenanigans");
-		Settings.Silly.minMoonDamage = configuration.getFloat("minMoonDamage", category, 0.7F, 0F, 10F,
-				"Minimum moon damage multiplier");
-		Settings.Silly.maxMoonDamage = configuration.getFloat("maxMoonDamage", category, 1.15F, 0F, 10F,
-				"Maximum moon damage multiplier");
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
