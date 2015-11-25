@@ -67,9 +67,13 @@ public class NincraftyThings {
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		initEE3Compat();
+		LogHelper.info("Post Init Complete");
+	}
+
+	private void initEE3Compat() {
 		if (Loader.isModLoaded(Settings.Mods.ee3ModId)) {
 			NincraftyEE3Tweaks.init();
 		}
-		LogHelper.info("Post Init Complete");
 	}
 }
