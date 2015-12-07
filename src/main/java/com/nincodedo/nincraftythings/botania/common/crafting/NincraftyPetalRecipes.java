@@ -35,8 +35,8 @@ public class NincraftyPetalRecipes {
 					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTICA), green, green, lightBlue,
 					lightBlue, purple, manaPowder, runePride, runeGreed, redstoneRoot, pixieDust);
 			orechidFinis = BotaniaAPI.registerPetalRecipe(
-					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS), purple, purple, black,
-					black, white, manaPowder, runePride, runeGreed, redstoneRoot, pixieDust);
+					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS), purple, purple, black, black,
+					white, manaPowder, runePride, runeGreed, redstoneRoot, pixieDust);
 		}
 	}
 
