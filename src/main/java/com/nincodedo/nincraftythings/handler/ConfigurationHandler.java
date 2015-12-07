@@ -2,6 +2,7 @@ package com.nincodedo.nincraftythings.handler;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.nincodedo.nincraftythings.reference.ConfigurationNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
@@ -12,6 +13,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 
 public class ConfigurationHandler {
+	private static final String DELIMITER = "[|]";
 	public static Configuration configuration;
 
 	public static void init(File configFile) {
@@ -28,8 +30,6 @@ public class ConfigurationHandler {
 		loadNincodiumArmorReductionConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_ARMOR_REDUCTION);
 		loadNincodiumToolsConfigs(ConfigurationNincrafty.CATEGORY_NINCODIUM_TOOLS);
 		loadJimmydriteToolsConfigs(ConfigurationNincrafty.CATEGORY_JIMMYDRITE_TOOLS);
-		loadAbilityConfigs(ConfigurationNincrafty.CATEGORY_ABILITIES);
-		loadSillyConfigs(ConfigurationNincrafty.CATEGORY_SILLY);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
 		loadBotaniaConfigs(ConfigurationNincrafty.CATEGORY_BOTANIA);
 
@@ -39,19 +39,13 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadBotaniaConfigs(String category) {
-		Settings.Botania.orechidMystica = new HashMap<String, Integer>();
-		for (String entry : configuration.getStringList("orechidMysticaOres", category, new String[] { "oreIron|100" },
-				"")) {
-			Settings.Botania.orechidMystica.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
-		}
+		Settings.Botania.enableOrechids = configuration.getBoolean("enableOrechids", category, true,
+				"Adds two new orechids: one for Twilight Forest ores, one for Ender ores.");
 
-		Settings.Botania.orechidFinis = new HashMap<String, Integer>();
-		for (String entry : configuration.getStringList("orechidFinisOres", category, new String[] { "oreIron|100" },
-				"")) {
-			Settings.Botania.orechidFinis.put(entry.split("[|]")[0], Integer.parseInt(entry.split("[|]")[1]));
-		}
-		
-		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, -7, -100, 100, "");
+		Settings.Botania.orechidMystica = parseOrechidConfig(category, "orechidMysticaOres");
+		Settings.Botania.orechidFinis = parseOrechidConfig(category, "orechidFinisOres");
+
+		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, 7, -100, 100, "");
 	}
 
 	private static void loadNincodiumToolsConfigs(String category) {
@@ -66,8 +60,8 @@ public class ConfigurationHandler {
 	private static void loadJimmydriteToolsConfigs(String categoryJimmydriteTools) {
 		Settings.Tools.jimmydriteHarvestLevel = configuration.getInt("jimmydriteHarvestLevel", categoryJimmydriteTools,
 				5, 1, 10, "");
-		Settings.Tools.jimmydriteDurability = configuration.getInt("jimmydriteDurability", categoryJimmydriteTools,
-				1989, 1, 2000, "");
+		Settings.Tools.jimmydriteDurability = configuration.getInt("jimmydriteDurability", categoryJimmydriteTools, 50,
+				1, 2000, "");
 		Settings.Tools.jimmydriteEfficiency = configuration.getFloat("jimmydriteEfficiency", categoryJimmydriteTools,
 				12, 1, 15, "");
 		Settings.Tools.jimmydriteDamage = configuration.getFloat("jimmydriteDamage", categoryJimmydriteTools, 3, 1, 10,
@@ -95,24 +89,6 @@ public class ConfigurationHandler {
 
 		Settings.Armor.nincodiumBootsDamageReduction = configuration.getInt("nincodiumBootsDamageReduction", category,
 				3, 1, 13, "");
-	}
-
-	private static void loadAbilityConfigs(String category) {
-		Settings.Abilities.canProc = configuration.getBoolean("canProc", category, true,
-				"Using Jimmy's Sword will proc. (All credit for the proc and idea goes to Rob Moran creator of Dwarves VS Zombies)");
-		Settings.Abilities.canJimmyPvP = configuration.getBoolean("canJimmyPvP", category, false,
-				"Allows Jimmy's Sword to attack other players");
-	}
-
-	private static void loadSillyConfigs(String category) {
-		Settings.Silly.thunderList = configuration.getStringList("thunderList", category,
-				new String[] { "Nincodedo", "Undead_Zeratul" }, "Thundertastic");
-		Settings.Silly.moonPhasesOPPlzNerf = configuration.getBoolean("moonPhasesOPPlzNerf", category, true,
-				"Moon phases cause shenanigans");
-		Settings.Silly.minMoonDamage = configuration.getFloat("minMoonDamage", category, 0.7F, 0F, 10F,
-				"Minimum moon damage multiplier");
-		Settings.Silly.maxMoonDamage = configuration.getFloat("maxMoonDamage", category, 1.15F, 0F, 10F,
-				"Maximum moon damage multiplier");
 	}
 
 	private static void loadNincodiumArmorConfigs(String category) {
@@ -145,6 +121,17 @@ public class ConfigurationHandler {
 				"Jimmy's Sword can be found in chests");
 		Settings.Items.jimmysSwordChestRarity = configuration.getInt("jimmysSwordChestRarity", category, 3, 1, 100,
 				"Dungeon chest rarity of Jimmy's Sword");
+	}
+
+	private static Map<String, Integer> parseOrechidConfig(String category, String configKey) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+
+		for (String entry : configuration.getStringList(configKey, category, new String[] { "oreIron|100" }, "")) {
+			String[] entryData = entry.split(DELIMITER);
+			map.put(entryData[0], Integer.parseInt(entryData[1]));
+		}
+
+		return map;
 	}
 
 	@SubscribeEvent

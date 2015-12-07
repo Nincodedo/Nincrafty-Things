@@ -22,6 +22,7 @@ public class Settings {
 	}
 
 	public static class Botania {
+		public static boolean enableOrechids;
 		public static Map<String, Integer> orechidMystica;
 		public static Map<String, Integer> orechidFinis;
 	}
@@ -31,18 +32,6 @@ public class Settings {
 		public static boolean enableNincodiumIngot;
 		public static boolean enableJimmysSword;
 		public static int jimmysSwordChestRarity;
-	}
-
-	public static class Silly {
-		public static String[] thunderList;
-		public static boolean moonPhasesOPPlzNerf;
-		public static float minMoonDamage;
-		public static float maxMoonDamage;
-	}
-
-	public static class Abilities {
-		public static boolean canProc;
-		public static boolean canJimmyPvP;
 	}
 
 	public static class Tweaks {
@@ -65,5 +54,10 @@ public class Settings {
 
 	public static class World {
 		public static int twilightForestDimId;
+	}
+
+	public static final class Mods {
+		public static String botaniaModId = "Botania";
+		public static String ee3ModId = "EE3";
 	}
 }

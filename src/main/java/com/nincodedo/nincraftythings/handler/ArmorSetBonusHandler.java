@@ -3,6 +3,7 @@ package com.nincodedo.nincraftythings.handler;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.collect.Lists;
 import com.nincodedo.nincraftythings.armor.ItemArmorNincodium;
 import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Settings;
@@ -49,22 +50,22 @@ public class ArmorSetBonusHandler {
 			double radius) {
 		double d4 = -1.0D;
 		EntityPlayerMP entityplayer = null;
-		List playersNear = new ArrayList();
-		List playersInDimension = null;
+		List<EntityPlayerMP> playersNear = Lists.newArrayList();
+		List<EntityPlayerMP> playersInDimension = null;
 		WorldServer[] worlds = MinecraftServer.getServer().worldServers;
 
-		for (int i = 0; i < worlds.length; i++) {
-			if (worlds[i].provider.dimensionId == player.dimension) {
-				playersInDimension = worlds[i].playerEntities;
+		for (WorldServer world : worlds) {
+			if (world.provider.dimensionId == player.dimension) {
+				playersInDimension = world.playerEntities;
+				break;
 			}
 		}
 
-		for (int i = 0; i < playersInDimension.size(); ++i) {
-			EntityPlayerMP entityplayer1 = (EntityPlayerMP) playersInDimension.get(i);
-			double d5 = entityplayer1.getDistanceSq(posX, posY, posZ);
+		for (EntityPlayerMP playerInDimension : playersInDimension) {
+			double d5 = playerInDimension.getDistanceSq(posX, posY, posZ);
 			if ((radius < 0.0D || d5 < radius * radius) && (d4 == -1.0D || d5 < d4)) {
 				d4 = d5;
-				playersNear.add(entityplayer1);
+				playersNear.add(playerInDimension);
 			}
 		}
 

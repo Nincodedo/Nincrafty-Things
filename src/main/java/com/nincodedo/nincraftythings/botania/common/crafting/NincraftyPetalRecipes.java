@@ -1,6 +1,7 @@
 package com.nincodedo.nincraftythings.botania.common.crafting;
 
 import com.nincodedo.nincraftythings.reference.Names;
+import com.nincodedo.nincraftythings.reference.Settings;
 
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.recipe.RecipePetals;
@@ -18,14 +19,6 @@ public class NincraftyPetalRecipes {
 			cyan = LibOreDict.PETAL[9], purple = LibOreDict.PETAL[10], blue = LibOreDict.PETAL[11],
 			brown = LibOreDict.PETAL[12], green = LibOreDict.PETAL[13], red = LibOreDict.PETAL[14],
 			black = LibOreDict.PETAL[15];
-	public static final String whiteMana = LibOreDict.MANA_PETAL[0], orangeMana = LibOreDict.MANA_PETAL[1],
-			magentaMana = LibOreDict.MANA_PETAL[2], lightBlueMana = LibOreDict.MANA_PETAL[3],
-			yellowMana = LibOreDict.MANA_PETAL[4], limeMana = LibOreDict.MANA_PETAL[5],
-			pinkMana = LibOreDict.MANA_PETAL[6], grayMana = LibOreDict.MANA_PETAL[7],
-			lightGrayMana = LibOreDict.MANA_PETAL[8], cyanMana = LibOreDict.MANA_PETAL[9],
-			purpleMana = LibOreDict.MANA_PETAL[10], blueMana = LibOreDict.MANA_PETAL[11],
-			brownMana = LibOreDict.MANA_PETAL[12], greenMana = LibOreDict.MANA_PETAL[13],
-			redMana = LibOreDict.MANA_PETAL[14], blackMana = LibOreDict.MANA_PETAL[15];
 	public static final String runeWater = LibOreDict.RUNE[0], runeFire = LibOreDict.RUNE[1],
 			runeEarth = LibOreDict.RUNE[2], runeAir = LibOreDict.RUNE[3], runeSpring = LibOreDict.RUNE[4],
 			runeSummer = LibOreDict.RUNE[5], runeAutumn = LibOreDict.RUNE[6], runeWinter = LibOreDict.RUNE[7],
@@ -34,13 +27,17 @@ public class NincraftyPetalRecipes {
 			runeEnvy = LibOreDict.RUNE[14], runePride = LibOreDict.RUNE[15];
 	public static final String redstoneRoot = LibOreDict.REDSTONE_ROOT;
 	public static final String pixieDust = LibOreDict.PIXIE_DUST;
+	public static final String manaPowder = LibOreDict.MANA_POWDER;
 
 	public static void init() {
-		orechidMystica = BotaniaAPI.registerPetalRecipe(
-				ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTICA), green, greenMana, lightBlue,
-				lightBlueMana, purple, lime, runePride, runeGreed, redstoneRoot, pixieDust);
-		orechidFinis = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS),
-				purple, purpleMana, black, blackMana, white, whiteMana, runePride, runeGreed, redstoneRoot, pixieDust);
+		if (Settings.Botania.enableOrechids) {
+			orechidMystica = BotaniaAPI.registerPetalRecipe(
+					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_MYSTICA), green, green, lightBlue,
+					lightBlue, purple, manaPowder, runePride, runeGreed, redstoneRoot, pixieDust);
+			orechidFinis = BotaniaAPI.registerPetalRecipe(
+					ItemBlockSpecialFlower.ofType(Names.Blocks.SUBTILE_ORECHID_FINIS), purple, purple, black, black,
+					white, manaPowder, runePride, runeGreed, redstoneRoot, pixieDust);
+		}
 	}
 
 }
