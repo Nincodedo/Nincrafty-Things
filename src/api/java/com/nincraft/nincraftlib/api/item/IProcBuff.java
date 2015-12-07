@@ -1,4 +1,4 @@
-package com.nincodedo.nincraftythings.api.item;
+package com.nincraft.nincraftlib.api.item;
 
 import net.minecraft.item.ItemStack;
 

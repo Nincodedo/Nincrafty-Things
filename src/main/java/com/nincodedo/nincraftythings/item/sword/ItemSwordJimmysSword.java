@@ -1,8 +1,8 @@
 package com.nincodedo.nincraftythings.item.sword;
 
-import com.nincodedo.nincraftythings.api.item.IProcBuff;
 import com.nincodedo.nincraftythings.reference.Material;
 import com.nincodedo.nincraftythings.reference.Names;
+import com.nincraft.nincraftlib.api.item.IProcBuff;
 
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;

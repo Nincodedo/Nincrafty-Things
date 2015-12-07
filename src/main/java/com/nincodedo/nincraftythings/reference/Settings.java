@@ -34,18 +34,6 @@ public class Settings {
 		public static int jimmysSwordChestRarity;
 	}
 
-	public static class Silly {
-		public static String[] thunderList;
-		public static boolean moonPhasesOPPlzNerf;
-		public static float minMoonDamage;
-		public static float maxMoonDamage;
-	}
-
-	public static class Abilities {
-		public static boolean canProc;
-		public static boolean canJimmyPvP;
-	}
-
 	public static class Tweaks {
 		public static boolean enableEE3Tweaks;
 		public static String[] oreDictionaryAdditions;

@@ -9,6 +9,7 @@ import com.nincodedo.nincraftythings.init.ModBlocks;
 import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
+import com.nincodedo.nincraftythings.reference.Names;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
