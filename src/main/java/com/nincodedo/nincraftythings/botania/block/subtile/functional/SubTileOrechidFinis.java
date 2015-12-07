@@ -28,7 +28,7 @@ public class SubTileOrechidFinis extends SubTileOrechid {
 	public int getCost() {
 		return COST;
 	}
-	
+
 	@Override
 	public Block getSourceBlock() {
 		return Blocks.end_stone;

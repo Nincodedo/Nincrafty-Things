@@ -125,13 +125,12 @@ public class ConfigurationHandler {
 
 	private static Map<String, Integer> parseOrechidConfig(String category, String configKey) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		
-		for (String entry : configuration.getStringList(configKey, category, new String[] { "oreIron|100" },
-				"")) {
+
+		for (String entry : configuration.getStringList(configKey, category, new String[] { "oreIron|100" }, "")) {
 			String[] entryData = entry.split(DELIMITER);
 			map.put(entryData[0], Integer.parseInt(entryData[1]));
 		}
-		
+
 		return map;
 	}
 
