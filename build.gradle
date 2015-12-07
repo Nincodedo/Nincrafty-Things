@@ -88,7 +88,7 @@ dependencies {
     compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.nei_version}:dev"
     compile "mcp.mobius.waila:Waila:${config.waila_version}_${config.minecraft_version}"
     compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
-    compile "com.nincraft:NincraftLib:${config.nincraftlib_version}"
+    compile "com.nincraft:NincraftLib:${config.minecraft_version}-${config.nincraftlib_version}"
 }
 
 processResources
