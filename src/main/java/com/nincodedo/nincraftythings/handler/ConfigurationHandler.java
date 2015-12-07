@@ -45,7 +45,7 @@ public class ConfigurationHandler {
 		Settings.Botania.orechidMystica = parseOrechidConfig(category, "orechidMysticaOres");
 		Settings.Botania.orechidFinis = parseOrechidConfig(category, "orechidFinisOres");
 
-		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, -7, -100, 100, "");
+		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, 7, -100, 100, "");
 	}
 
 	private static void loadNincodiumToolsConfigs(String category) {
