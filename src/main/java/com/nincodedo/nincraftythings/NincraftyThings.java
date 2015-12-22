@@ -14,6 +14,7 @@ import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.tweaks.NincraftyEE3Tweaks;
 import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
+import com.nincodedo.nincraftythings.tweaks.TConstructTweaks;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import cpw.mods.fml.common.Loader;
@@ -66,9 +67,16 @@ public class NincraftyThings {
 		LogHelper.info("Init Complete");
 	}
 
+	private void initTConstructCompat() {
+		if (Loader.isModLoaded(Settings.Mods.ticModId)) {
+			TConstructTweaks.init();
+		}
+	}
+
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		initEE3Compat();
+		initTConstructCompat();
 		LogHelper.info("Post Init Complete");
 	}
 

@@ -33,6 +33,11 @@ public class Settings {
 		public static boolean enableJimmysSword;
 		public static int jimmysSwordChestRarity;
 	}
+	
+	public static class TConstruct {
+		public static boolean enableTiCTweaks;
+		public static Map<String, Integer> meltingTemps;
+	}
 
 	public static class Tweaks {
 		public static boolean enableEE3Tweaks;
@@ -59,5 +64,6 @@ public class Settings {
 	public static final class Mods {
 		public static String botaniaModId = "Botania";
 		public static String ee3ModId = "EE3";
+		public static String ticModId = "TConstruct";
 	}
 }

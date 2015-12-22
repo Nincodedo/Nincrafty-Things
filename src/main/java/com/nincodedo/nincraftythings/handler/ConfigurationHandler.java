@@ -32,6 +32,7 @@ public class ConfigurationHandler {
 		loadJimmydriteToolsConfigs(ConfigurationNincrafty.CATEGORY_JIMMYDRITE_TOOLS);
 		loadTweakConfigs(ConfigurationNincrafty.CATEGORY_TWEAKS);
 		loadBotaniaConfigs(ConfigurationNincrafty.CATEGORY_BOTANIA);
+		loadTConstructConfigs(ConfigurationNincrafty.CATEGORY_TCONSTRUCT);
 
 		if (configuration.hasChanged()) {
 			configuration.save();
@@ -46,6 +47,11 @@ public class ConfigurationHandler {
 		Settings.Botania.orechidFinis = parseOrechidConfig(category, "orechidFinisOres");
 
 		Settings.World.twilightForestDimId = configuration.getInt("twilightForestDimId", category, 7, -100, 100, "");
+	}
+
+	private static void loadTConstructConfigs(String category) {
+		Settings.TConstruct.enableTiCTweaks = configuration.getBoolean("enableTiCTweaks", category, true, "");
+		Settings.TConstruct.meltingTemps = parseTConstructConfig(category, "meltingTemps");
 	}
 
 	private static void loadNincodiumToolsConfigs(String category) {
@@ -124,13 +130,32 @@ public class ConfigurationHandler {
 	}
 
 	private static Map<String, Integer> parseOrechidConfig(String category, String configKey) {
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		return parseKeyValuePairs(category, configKey, new String[] { "oreIron|100" }, "");
+	}
 
-		for (String entry : configuration.getStringList(configKey, category, new String[] { "oreIron|100" }, "")) {
+	private static Map<String, Integer> parseTConstructConfig(String category, String configKey) {
+		return parseKeyValuePairs(category, configKey, new String[] {
+			"tin.molten|230",
+			"emerald.liquid|650",
+			"aluminum.molten|660",
+			"aluminumbrass.molten|950",
+			"bronze.molten|950",
+			"gold.molten|1050",
+			"copper.molten|1080",
+			"iron.molten|1400",
+			"steel.molten|1500"
+		}, "");
+	}
+	
+	private static Map<String, Integer> parseKeyValuePairs(String category, String key, String[] defaultValues, String comment) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		
+		for (String entry : configuration.getStringList(key, category, defaultValues, comment))
+		{
 			String[] entryData = entry.split(DELIMITER);
 			map.put(entryData[0], Integer.parseInt(entryData[1]));
 		}
-
+		
 		return map;
 	}
 
