@@ -50,8 +50,14 @@ public class ConfigurationHandler {
 	}
 
 	private static void loadTConstructConfigs(String category) {
-		Settings.TConstruct.enableTiCTweaks = configuration.getBoolean("enableTiCTweaks", category, true, "");
-		Settings.TConstruct.meltingTemps = parseTConstructConfig(category, "meltingTemps");
+		Settings.TConstruct.enableTiCTweaks = configuration.getBoolean("enableTiCTweaks", category, true,
+				"This will enable/disable all TiC tweaks.");
+		Settings.TConstruct.adjustMeltingTemps = configuration.getBoolean("adjustMeltingTemps", category, true,
+				"Set this to true to alter the melting temperatures for various molten metals in the TiC smeltery.");
+		Settings.TConstruct.adjustToolPartCosts = configuration.getBoolean("adjustToolPartCosts", category, true,
+				"Set this to true to alter the TiC tool part costs across the board.");
+		Settings.TConstruct.meltingTemps = parseMeltingTempsConfig(category, "meltingTemps");
+		Settings.TConstruct.toolPartCosts = parseToolPartCostsConfig(category, "toolPartCosts");
 	}
 
 	private static void loadNincodiumToolsConfigs(String category) {
@@ -130,10 +136,12 @@ public class ConfigurationHandler {
 	}
 
 	private static Map<String, Integer> parseOrechidConfig(String category, String configKey) {
-		return parseKeyValuePairs(category, configKey, new String[] { "oreIron|100" }, "");
+		return parseKeyValuePairs(category, configKey, new String[] {
+			"oreIron|100"
+		}, "Provide a list of ore dictionary names and their desired weights, in the format 'oreName|weight'.");
 	}
 
-	private static Map<String, Integer> parseTConstructConfig(String category, String configKey) {
+	private static Map<String, Integer> parseMeltingTempsConfig(String category, String configKey) {
 		return parseKeyValuePairs(category, configKey, new String[] {
 			"tin.molten|230",
 			"emerald.liquid|650",
@@ -144,18 +152,36 @@ public class ConfigurationHandler {
 			"copper.molten|1080",
 			"iron.molten|1400",
 			"steel.molten|1500"
-		}, "");
+		}, "Provide a list of fluid dictionary names and their desired melting temperature, in the format 'fluidName|temperature'.");
+	}
+
+	private static Map<String, Integer> parseToolPartCostsConfig(String category, String configKey) {
+		return parseKeyValuePairs(category, configKey, new String[] {
+				"pickaxe|3",
+				"shovel|1",
+				"axe|3",
+				"swordblade|2",
+				"frypan|4",
+				"sign|6",
+				"knifeblade|1",
+				"chisel|2",
+				"largeplate|9",
+				"broadaxe|9",
+				"scythe|3",
+				"excavator|9",
+				"largeblade|9",
+				"hammerhead|9"
+			}, "Provide a list of tool part names and their costs in ingots, in the format 'toolPart|numIngots'.");
 	}
 	
 	private static Map<String, Integer> parseKeyValuePairs(String category, String key, String[] defaultValues, String comment) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		
-		for (String entry : configuration.getStringList(key, category, defaultValues, comment))
-		{
+
+		for (String entry : configuration.getStringList(key, category, defaultValues, comment)) {
 			String[] entryData = entry.split(DELIMITER);
 			map.put(entryData[0], Integer.parseInt(entryData[1]));
 		}
-		
+
 		return map;
 	}
 
