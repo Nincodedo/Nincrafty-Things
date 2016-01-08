@@ -1,13 +1,12 @@
 package com.nincodedo.nincraftythings.block;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockFluidClassicNincrafty extends BlockFluidClassic {
 
@@ -24,7 +23,6 @@ public class BlockFluidClassicNincrafty extends BlockFluidClassic {
 		return (side == 0 || side == 1) ? stillIcon : flowingIcon;
 	}
 
-	@Override
 	public boolean canDisplace(IBlockAccess world, int x, int y, int z) {
 		if (world.getBlock(x, y, z).getMaterial().isLiquid())
 			return false;
