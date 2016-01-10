@@ -1,6 +1,5 @@
 package com.nincodedo.nincraftythings;
 
-import com.nincodedo.nincraftythings.handler.BucketHandler;
 import com.nincodedo.nincraftythings.handler.ChestGenHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
 import com.nincodedo.nincraftythings.init.ModBlocks;
@@ -8,12 +7,10 @@ import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
-import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -37,11 +34,6 @@ public class NincraftyThings {
 		ModBlocks.init();
 		ModItems.init();
 		ChestGenHandler.init();
-
-		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenNincodiumBlock, ModItems.bucketNincodium);
-		BucketHandler.INSTANCE.buckets.put(ModBlocks.moltenLapisBlock, ModItems.bucketLapis);
-		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
-
 
 		OreDictionaryRegister.init();
 

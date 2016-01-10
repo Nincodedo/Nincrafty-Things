@@ -7,7 +7,7 @@ import net.minecraftforge.common.util.EnumHelper;
 public class Material {
 	public static final class Armor {
 		public static final ItemArmor.ArmorMaterial NINCODIUM = EnumHelper.addArmorMaterial(Names.Materials.NINCODIUM,
-				11, Settings.Armor.nincodiumDurability,
+				Names.Materials.NINCODIUM, Settings.Armor.nincodiumDurability,
 				new int[] { Settings.Armor.nincodiumHelmetDamageReduction,
 						Settings.Armor.nincodiumChestplateDamageReduction,
 						Settings.Armor.nincodiumLeggingsDamageReduction, Settings.Armor.nincodiumBootsDamageReduction },

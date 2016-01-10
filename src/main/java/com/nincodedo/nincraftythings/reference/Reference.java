@@ -7,5 +7,5 @@ public class Reference {
 	public static final String CLIENT_PROXY = "com.nincodedo.nincraftythings.proxy.ClientProxy";
 	public static final String SERVER_PROXY = "com.nincodedo.nincraftythings.proxy.ServerProxy";
 	public static final String GUI_FACTORY_CLASS = "com.nincodedo.nincraftythings.client.gui.GuiFactory";
-	public static final String DEPENDENCIES = "required-after:nincraftlib;after:Botania@[r1.8,)";
+	public static final String DEPENDENCIES = "after:nincraftlib;after:Botania@[r1.8,)";
 }

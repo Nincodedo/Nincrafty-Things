@@ -38,8 +38,8 @@ public class ModBlocks {
 	}
 
 	private static void initFluids() {
-		moltenNincodium = new Fluid("moltenNincodium");
-		moltenLapis = new Fluid("moltenLapis");
+		moltenNincodium = new Fluid("moltenNincodium", null, null);
+		moltenLapis = new Fluid("moltenLapis", null, null);
 	}
 
 	private static void initBlocks() {

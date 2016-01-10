@@ -3,11 +3,8 @@ package com.nincodedo.nincraftythings.block;
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class BlockNincrafty extends Block {
 
@@ -28,13 +25,6 @@ public class BlockNincrafty extends Block {
 
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon = iconRegister
-				.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
 	}
 
 }

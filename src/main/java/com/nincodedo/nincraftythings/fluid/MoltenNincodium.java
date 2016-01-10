@@ -16,19 +16,11 @@ public class MoltenNincodium extends BlockFluidClassicNincrafty {
 	public MoltenNincodium(Fluid fluid, Material material) {
 		super(fluid, material);
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-		setBlockName(Names.Blocks.MOLTEN_NINCODIUM_BLOCK);
+		setUnlocalizedName(Names.Blocks.MOLTEN_NINCODIUM_BLOCK);
+		setRegistryName(Names.Blocks.MOLTEN_NINCODIUM_BLOCK);
 	}
 
 	public MoltenNincodium(Fluid moltenNincodium) {
 		this(moltenNincodium, Material.lava);
-	}
-
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerBlockIcons(IIconRegister register) {
-		stillIcon = register.registerIcon(Reference.MOD_ID + ":" + Names.Blocks.MOLTEN_NINCODIUM);
-		flowingIcon = register.registerIcon(Reference.MOD_ID + ":" + Names.Blocks.MOLTEN_NINCODIUM_FLOWING);
-		ModBlocks.moltenNincodium.setStillIcon(stillIcon);
-		ModBlocks.moltenNincodium.setFlowingIcon(flowingIcon);
 	}
 }

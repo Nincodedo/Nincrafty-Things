@@ -16,19 +16,11 @@ public class MoltenLapis extends BlockFluidClassicNincrafty {
 	public MoltenLapis(Fluid fluid, Material material) {
 		super(fluid, material);
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
-		setBlockName(Names.Blocks.MOLTEN_LAPIS_BLOCK);
+		setUnlocalizedName(Names.Blocks.MOLTEN_LAPIS_BLOCK);
+		setRegistryName(Names.Blocks.MOLTEN_LAPIS_BLOCK);
 	}
 
 	public MoltenLapis(Fluid moltenLapis) {
 		this(moltenLapis, Material.lava);
-	}
-
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerBlockIcons(IIconRegister register) {
-		stillIcon = register.registerIcon(Reference.MOD_ID + ":" + Names.Blocks.MOLTEN_LAPIS);
-		flowingIcon = register.registerIcon(Reference.MOD_ID + ":" + Names.Blocks.MOLTEN_LAPIS_FLOWING);
-		ModBlocks.moltenLapis.setStillIcon(stillIcon);
-		ModBlocks.moltenLapis.setFlowingIcon(flowingIcon);
 	}
 }
