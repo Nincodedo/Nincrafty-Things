@@ -54,7 +54,7 @@ configFile.withReader {
 apply plugin: 'forge'
 
 version = config.mod_version
-group= "com.nincodedo.nincraftythings" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "com.nincodedo" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "NincraftyThings"
 
 minecraft {
