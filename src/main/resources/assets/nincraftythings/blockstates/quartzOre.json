@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "NincraftyThings:quartzOre"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

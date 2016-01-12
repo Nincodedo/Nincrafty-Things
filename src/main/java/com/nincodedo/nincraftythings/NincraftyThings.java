@@ -31,8 +31,6 @@ public class NincraftyThings {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		proxy.registerEventHandlers();
 
-		ModBlocks.init();
-		ModItems.init();
 		ChestGenHandler.init();
 
 		OreDictionaryRegister.init();

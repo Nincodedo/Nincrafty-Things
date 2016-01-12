@@ -1,0 +1,6 @@
+{
+	"parent": "NincraftyThings:item/_standard_item",
+	"textures": { 
+		"layer0": "NincraftyThings:items/nincodiumLeggings"
+	}
+}

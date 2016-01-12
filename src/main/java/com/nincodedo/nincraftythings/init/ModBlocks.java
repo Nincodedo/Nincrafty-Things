@@ -15,6 +15,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
@@ -35,6 +37,15 @@ public class ModBlocks {
 		initBlocks();
 		registerBlocks();
 		registerOreDictionaryEntries();
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public static void initModels() {
+		nincodiumBlock.initModel();
+		nincodiumOre.initModel();
+		quartzOre.initModel();
+		moltenNincodiumBlock.initModel();
+		moltenLapisBlock.initModel();
 	}
 
 	private static void initFluids() {

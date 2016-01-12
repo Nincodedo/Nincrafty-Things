@@ -1,5 +1,8 @@
 package com.nincodedo.nincraftythings.proxy;
 
+import com.nincodedo.nincraftythings.init.ModBlocks;
+import com.nincodedo.nincraftythings.init.ModItems;
+
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
@@ -15,6 +18,8 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerEventHandlers() {
 		super.registerEventHandlers();
+		ModItems.initModels();
+		ModBlocks.initModels();
 	}
 
 	@Override

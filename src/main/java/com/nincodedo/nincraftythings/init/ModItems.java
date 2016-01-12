@@ -19,6 +19,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
@@ -43,6 +45,22 @@ public class ModItems {
 		registerFluidContainers();
 
 		registerOreDictionaryEntries();
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static void initModels() {
+		nincodiumIngot.initModel();
+		quartz.initModel();
+		nincodiumPickaxe.initModel();
+		nincodiumHelmet.initModel();
+		nincodiumChestplate.initModel();
+		nincodiumLeggings.initModel();
+		nincodiumBoots.initModel();
+		nincodiumSword.initModel();
+		jimmysSword.initModel();
+
+		bucketNincodium.initModel();
+		bucketLapis.initModel();
 	}
 
 	private static void registerOreDictionaryEntries() {
