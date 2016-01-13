@@ -11,7 +11,6 @@ import com.google.common.collect.Sets;
 import com.nincodedo.nincraftythings.reference.Settings;
 
 import net.minecraftforge.fluids.FluidRegistry;
-import tconstruct.library.TConstructRegistry;
 import tconstruct.tools.items.Pattern;
 
 public class TConstructTweaks {

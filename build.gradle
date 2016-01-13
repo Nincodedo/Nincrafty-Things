@@ -1,3 +1,7 @@
+def MAVEN_URL = System.getenv("maven_url") ?: ""
+def MAVEN_USER = System.getenv("maven_user") ?: ""
+def MAVEN_PASS = System.getenv("maven_pass") ?: ""
+
 buildscript {
     repositories {
         mavenCentral()
@@ -36,10 +40,16 @@ repositories {
         name 'DVS1 Maven FS'
         url 'http://dvs1.progwml6.com/files/maven'
     }
-    // maven {
-    //     name 'Nincraft'
-    //     url 'http://play.nincraft.com/maven'
-    // }
+    maven {
+        name 'Nincraft'
+        url 'http://play.nincraft.com/maven'
+    }
+
+    // This is a simple flatdir repository for "uploadArchives" when you don't have a remote repo to target
+    flatDir {
+        name "fileRepo"
+        dirs "repo"
+    }
 }
 
 ext.configFile = file "build.properties"
@@ -53,8 +63,10 @@ configFile.withReader {
 
 apply plugin: 'forge'
 
-version = config.mod_version
-group= "com.nincodedo.nincraftythings" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+// def versionInfo = getGitVersion()
+version = "${config.minecraft_version}-${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}" // "${versionInfo['Nincrafty-Things.version']}"
+
+group= "com.nincodedo" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "NincraftyThings"
 
 minecraft {
@@ -65,8 +77,6 @@ minecraft {
     replace "@MINECRAFT_VERSION@", "${config.minecraft_version}"
     replace "@MOD_VERSION@", "${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}"
 }
-
-version = "${config.minecraft_version}-${config.mod_version}+${System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"}"
 
 dependencies {
     // you may put jars on which you depend on in ./libs
@@ -87,13 +97,11 @@ dependencies {
     compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.cccore_version}:dev"
     compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.nei_version}:dev"
     compile "mcp.mobius.waila:Waila:${config.waila_version}_${config.minecraft_version}"
-    compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
-    // compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
-    // compile "com.nincraft:NincraftLib:${config.minecraft_version}-${config.nincraftlib_version}"
+    compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+    compile "com.nincraft:NincraftLib:${config.minecraft_version}-${config.nincraftlib_version}"
 }
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -101,13 +109,111 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+// Configure an upload task. this is setup for uploading to files.minecraftforge.net. There are other examples around
+uploadArchives {
+    repositories.mavenDeployer {
+
+        dependsOn 'build'
+
+        if (MAVEN_URL)
+        {
+            repository(url: MAVEN_URL) {
+                authentication(userName: MAVEN_USER, password: MAVEN_PASS)
+            }
+        }
+        else
+        {
+            // local repo folder. Might want to just use gradle install if you want to send it to maven-local
+            repository(url: 'file://localhost/' + project.file('repo').getAbsolutePath())
+        }
+
+        // This is just the pom data for the maven repo
+        pom {
+            groupId = project.group
+            // Force the maven upload to use the <mcversion>-<version> syntax preferred at files
+            version = project.version // "${project.minecraft.version}-${project.version}"
+            artifactId = project.archivesBaseName
+            project {
+                name project.archivesBaseName
+                packaging 'jar'
+                description 'Nincrafty Things'
+                url 'https://github.com/Nincodedo/Nincrafty-Things'
+
+                scm {
+                    url 'https://github.com/Nincodedo/Nincrafty-Things'
+                    connection 'scm:git:git://github.com/Nincodedo/Nincrafty-Things.git'
+                    developerConnection 'scm:git:git@github.com:Nincodedo/Nincrafty-Things.git'
+                }
+
+                issueManagement {
+                    system 'github'
+                    url 'https://github.com/Nincodedo/Nincrafty-Things/issues'
+                }
+
+                licenses {
+                    license {
+                        name 'GNU Public License (GPL), Version 3.0'
+                        url 'http://www.gnu.org/licenses/gpl-3.0.txt'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'Nincodedo'
+                        name 'Nincodedo'
+                        roles { role 'developer' }
+                    }
+
+                    developer {
+                        id 'Undead_Zeratul'
+                        name 'Undead_Zeratul'
+                        roles { role 'developer' }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// This is a special task for pulling the version information from git and the environment (for BUILD_NUMBER)
+def getGitVersion()
+{
+    def out = [:]
+
+    // call git command.
+    def outStream = new ByteArrayOutputStream()
+    def result = exec {
+        executable = 'git'
+        args = [ 'describe', '--long', "--match=[^(jenkins)]*"]
+        standardOutput = outStream
+    }
+
+    def fullVersion = outStream.toString().trim()
+    def matcher = fullVersion =~ /(\d+).(\d+)-(\d+)-(.*)/
+
+    def maj = matcher[0][1]
+    def min = matcher[0][2]
+    def rev = matcher[0][3]
+    def bn = System.getenv("BUILD_NUMBER") ?: "SNAPSHOT"
+
+    out['Nincrafty-Things.build.major.number'] = maj.toString()
+    out['Nincrafty-Things.build.minor.number'] = min.toString()
+    out['Nincrafty-Things.build.revision.number'] = rev.toString()
+    out['Nincrafty-Things.build.githash'] = matcher[0][4].toString()
+    out['Nincrafty-Things.build.number' ] = bn.toString()
+    out['Nincrafty-Things.version' ] = "${maj}.${min}.${rev}.${bn}".toString()
+
+    return out
 }
