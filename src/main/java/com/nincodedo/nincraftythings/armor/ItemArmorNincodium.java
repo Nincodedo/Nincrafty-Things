@@ -6,40 +6,39 @@ import com.nincodedo.nincraftythings.reference.Names;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
 public class ItemArmorNincodium extends ItemArmorNincrafty {
 
-	public ItemArmorNincodium(ArmorMaterial armorMaterial, int renderIndex, int armorType) {
+	public ItemArmorNincodium(ArmorMaterial armorMaterial, int renderIndex, EntityEquipmentSlot armorType) {
 		super(armorMaterial, 0, armorType);
 		this.setRepairIngot(ModItems.nincodiumIngot);
 	}
 
-	public ItemArmorNincodium(int armorType) {
+	public ItemArmorNincodium(EntityEquipmentSlot armorType) {
 		this(Material.Armor.NINCODIUM, 0, armorType);
 
 		switch (armorType) {
-		case 0:
+		case HEAD:
 			this.setUnlocalizedName(Names.Armor.NINCODIUM_HELMET);
 			break;
-		case 1:
+		case CHEST:
 			this.setUnlocalizedName(Names.Armor.NINCODIUM_CHESTPLATE);
 			break;
-		case 2:
+		case LEGS:
 			this.setUnlocalizedName(Names.Armor.NINCODIUM_LEGGINGS);
 			break;
-		case 3:
+		case FEET:
 			this.setUnlocalizedName(Names.Armor.NINCODIUM_BOOTS);
 			break;
 		}
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, String layer) {
-		if (armorType == 2) {
-			return "nincraftythings:textures/models/armor/nincodium_layer_2.png";
-		}
-		return "nincraftythings:textures/models/armor/nincodium_layer_1.png";
+	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
+		return EntityEquipmentSlot.LEGS.equals(slot) ? "nincraftythings:textures/models/armor/nincodium_layer_2.png"
+				: "nincraftythings:textures/models/armor/nincodium_layer_1.png";
 	}
 
 	@Override

@@ -3,7 +3,8 @@ package com.nincodedo.nincraftythings.armor;
 import com.nincodedo.nincraftythings.creativetab.CreativeTabNincrafty;
 import com.nincodedo.nincraftythings.reference.Reference;
 
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,7 @@ public class ItemArmorNincrafty extends ItemArmor {
 
 	private Item repairIngot;
 
-	public ItemArmorNincrafty(ArmorMaterial armorMaterial, int renderIndex, int armorType) {
+	public ItemArmorNincrafty(ArmorMaterial armorMaterial, int renderIndex, EntityEquipmentSlot armorType) {
 		super(armorMaterial, renderIndex, armorType);
 		this.setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}

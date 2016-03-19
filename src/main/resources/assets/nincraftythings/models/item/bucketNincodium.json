@@ -1,5 +1,5 @@
 {
-	"parent": "NincraftyThings:item/_standard_item",
+	"parent": "item/generated",
 	"textures": { 
 		"layer0": "NincraftyThings:items/bucketNincodium"
 	}

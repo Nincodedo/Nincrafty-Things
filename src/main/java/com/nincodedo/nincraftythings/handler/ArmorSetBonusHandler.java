@@ -30,8 +30,7 @@ public class ArmorSetBonusHandler {
 					float healed = event.ammount * Settings.Armor.nincodiumArmorHealingPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth() + (healed));
 					if (!closestPlayer.worldObj.isRemote) {
-						closestPlayer.worldObj.playSoundEffect(closestPlayer.posX, closestPlayer.posY,
-								closestPlayer.posZ, Names.Sounds.HEALING, 1, 2);
+						//play healing sound
 					}
 				}
 			}
@@ -52,10 +51,10 @@ public class ArmorSetBonusHandler {
 		EntityPlayer entityplayer = null;
 		List<EntityPlayer> playersNear = Lists.newArrayList();
 		List<EntityPlayer> playersInDimension = null;
-		WorldServer[] worlds = MinecraftServer.getServer().worldServers;
+		WorldServer[] worlds = player.getServer().worldServers;
 
 		for (WorldServer world : worlds) {
-			if (world.provider.getDimensionId() == player.dimension) {
+			if (world.provider.getDimension() == player.dimension) {
 				playersInDimension = world.playerEntities;
 				break;
 			}

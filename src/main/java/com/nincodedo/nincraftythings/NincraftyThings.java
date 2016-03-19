@@ -1,16 +1,12 @@
 package com.nincodedo.nincraftythings;
 
-import com.nincodedo.nincraftythings.handler.ChestGenHandler;
 import com.nincodedo.nincraftythings.handler.ConfigurationHandler;
-import com.nincodedo.nincraftythings.init.ModBlocks;
-import com.nincodedo.nincraftythings.init.ModItems;
 import com.nincodedo.nincraftythings.init.Recipes;
 import com.nincodedo.nincraftythings.proxy.IProxy;
 import com.nincodedo.nincraftythings.reference.Reference;
 import com.nincodedo.nincraftythings.tweaks.OreDictionaryRegister;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -30,8 +26,6 @@ public class NincraftyThings {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		proxy.registerEventHandlers();
-
-		ChestGenHandler.init();
 
 		OreDictionaryRegister.init();
 
