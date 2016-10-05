@@ -1,7 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": { 
-		"layer0": "NincraftyThings:items/nincodiumSword"
+		"layer0": "nincraftythings:items/nincodiumSword"
 	},
     "display": {
         "thirdperson": {

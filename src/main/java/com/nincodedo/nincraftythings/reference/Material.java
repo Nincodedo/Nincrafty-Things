@@ -11,7 +11,7 @@ public class Material {
 				new int[] { Settings.Armor.nincodiumHelmetDamageReduction,
 						Settings.Armor.nincodiumChestplateDamageReduction,
 						Settings.Armor.nincodiumLeggingsDamageReduction, Settings.Armor.nincodiumBootsDamageReduction },
-				Settings.Armor.nincodiumEnchantability, null);
+				Settings.Armor.nincodiumEnchantability, null, 5);
 	}
 
 	public static final class Tools {

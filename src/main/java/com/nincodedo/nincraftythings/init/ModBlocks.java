@@ -27,7 +27,6 @@ public class ModBlocks {
 		registerFluids();
 
 		initBlocks();
-		registerBlocks();
 		registerOreDictionaryEntries();
 	}
 	
@@ -47,12 +46,6 @@ public class ModBlocks {
 		nincodiumBlock = new BlockNincodium();
 		nincodiumOre = new BlockNincodiumOre();
 		quartzOre = new BlockQuartzOre();
-	}
-
-	private static void registerBlocks() {
-		GameRegistry.registerBlock(nincodiumBlock, "nincodiumBlock");
-		GameRegistry.registerBlock(nincodiumOre, "nincodiumOre");
-		GameRegistry.registerBlock(quartzOre, "quartzOre");
 	}
 
 	private static void registerFluids() {

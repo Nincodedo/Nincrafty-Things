@@ -1,5 +1,5 @@
 {
-	"parent": "NincraftyThings:block/nincodiumBlock",
+	"parent": "nincraftythings:block/nincodiumBlock",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

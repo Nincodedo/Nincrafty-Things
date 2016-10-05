@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "NincraftyThings:items/nincodiumIngot"
+		"layer0": "nincraftythings:items/nincodiumIngot"
 	}
 }

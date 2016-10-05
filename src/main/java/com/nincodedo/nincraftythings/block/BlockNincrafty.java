@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockNincrafty extends Block {
 
 	public BlockNincrafty() {
-		this(Material.rock);
+		this(Material.ROCK);
 		setCreativeTab(CreativeTabNincrafty.NINCRAFTY_TAB);
 	}
 
@@ -35,8 +35,7 @@ public class BlockNincrafty extends Block {
 
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
-				new ModelResourceLocation(getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 
 }

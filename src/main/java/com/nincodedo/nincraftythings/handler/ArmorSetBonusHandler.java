@@ -10,6 +10,8 @@ import com.nincodedo.nincraftythings.reference.Settings;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -18,19 +20,19 @@ public class ArmorSetBonusHandler {
 
 	@SubscribeEvent
 	public void entityAttacked(LivingAttackEvent event) {
-		if (event.source.getEntity() instanceof EntityPlayerMP) {
-			EntityPlayerMP player = (EntityPlayerMP) event.source.getEntity();
-			if (!player.isEntityEqual(event.entity) && isWearingNincodiumArmorSet(player)
+		if (event.getSource().getEntity() instanceof EntityPlayerMP) {
+			EntityPlayerMP player = (EntityPlayerMP) event.getSource().getEntity();
+			if (!player.isEntityEqual(event.getEntity()) && isWearingNincodiumArmorSet(player)
 					&& isHealingChanceSuccessful(player)) {
 				EntityPlayer closestPlayer = getClosestPlayerToEntityWithLeastHealth(player,
 						Settings.Armor.nincodiumArmorHealingRadius);
 
-				if (closestPlayer != null && event.entityLiving.getHealth() > 0
+				if (closestPlayer != null && event.getEntityLiving().getHealth() > 0
 						&& closestPlayer.getHealth() < closestPlayer.getMaxHealth()) {
-					float healed = event.ammount * Settings.Armor.nincodiumArmorHealingPercentage;
+					float healed = event.getAmount() * Settings.Armor.nincodiumArmorHealingPercentage;
 					closestPlayer.setHealth(closestPlayer.getHealth() + (healed));
 					if (!closestPlayer.worldObj.isRemote) {
-						//play healing sound
+						closestPlayer.playSound(new SoundEvent(new ResourceLocation("entity.wither.hurt")), 1F, 1F);
 					}
 				}
 			}

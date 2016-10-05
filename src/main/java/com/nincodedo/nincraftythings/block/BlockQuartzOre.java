@@ -7,6 +7,8 @@ import com.nincodedo.nincraftythings.reference.Names;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockQuartzOre extends BlockOreNincrafty {
 	public BlockQuartzOre() {
@@ -15,6 +17,8 @@ public class BlockQuartzOre extends BlockOreNincrafty {
 		setUnlocalizedName(Names.Blocks.QUARTZ_ORE);
 		setRegistryName(Names.Blocks.QUARTZ_ORE);
 		setHarvestLevel("pickaxe", 2);
+		GameRegistry.register(this);
+		GameRegistry.register(new ItemBlock(this), getRegistryName());
 	}
 
 	@Override

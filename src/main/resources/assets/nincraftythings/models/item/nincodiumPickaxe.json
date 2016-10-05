@@ -1,7 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": { 
-		"layer0": "NincraftyThings:items/nincodiumPickaxe"
+		"layer0": "nincraftythings:items/nincodiumPickaxe"
 	},
     "display": {
         "thirdperson": {
