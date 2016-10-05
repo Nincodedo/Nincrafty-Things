@@ -16,7 +16,7 @@ public class ItemSwordJimmysSword extends ItemSwordNincrafty implements IProcBuf
 
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
-		return EnumRarity.rare;
+		return EnumRarity.RARE;
 	}
 
 	@Override

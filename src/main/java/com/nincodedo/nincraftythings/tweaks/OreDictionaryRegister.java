@@ -1,15 +1,15 @@
 package com.nincodedo.nincraftythings.tweaks;
 
+import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 import static net.minecraftforge.oredict.OreDictionary.getOres;
 import static net.minecraftforge.oredict.OreDictionary.registerOre;
-import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
 import com.google.common.collect.Lists;
 import com.nincodedo.nincraftythings.reference.Settings;
 import com.nincodedo.nincraftythings.utility.LogHelper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class OreDictionaryRegister {
 

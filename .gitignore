@@ -13,3 +13,6 @@
 /.project
 /bin
 /libs
+*.launch
+*.bat
+.idea/
